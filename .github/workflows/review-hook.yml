@@ -32,24 +32,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          # Filter out removed files — review verifies hook content against on-chain
-          # source, which only makes sense for files still present on the PR head.
-          HOOK_FILES=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[] | select(.status != "removed") | .filename' | grep '^hooks/' || true)
+          HOOK_FILES=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[].filename' | grep '^hooks/' || true)
           if [ -n "$HOOK_FILES" ]; then
             echo "hooks=true" >> "$GITHUB_OUTPUT"
             # Save changed file list for Claude's prompt
             echo "$HOOK_FILES" > changed_hooks.txt
-            # Per-call unguessable heredoc delimiter (defense in depth
-            # against $GITHUB_OUTPUT duplicate-key last-write-wins injection;
-            # $HOOK_FILES is gh-api output but filenames are attacker-influenced
-            # via fork PRs, so per-call randomness is meaningful here).
-            HF_DELIM_RAND=$(openssl rand -hex 16)
-            [ -n "$HF_DELIM_RAND" ] || { echo "::error::openssl rand returned empty" >&2; exit 1; }
-            [ "$(printf '%s' "$HOOK_FILES" | wc -c)" -lt 900000 ] || { echo "::error::HOOK_FILES exceeds 900KB" >&2; exit 1; }
-            HF_DELIM="HOOK_FILES_DELIMITER_$(date +%s%N)_${HF_DELIM_RAND}"
-            echo "HOOK_FILES<<${HF_DELIM}" >> "$GITHUB_OUTPUT"
+            echo "HOOK_FILES<<EOF" >> "$GITHUB_OUTPUT"
             echo "$HOOK_FILES" >> "$GITHUB_OUTPUT"
-            echo "${HF_DELIM}" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
           else
             echo "hooks=false" >> "$GITHUB_OUTPUT"
             echo "No hook files changed, skipping review."
@@ -73,7 +63,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          HOOK_FILES=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[] | select(.status != "removed") | .filename' | grep '^hooks/')
+          HOOK_FILES=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[].filename' | grep '^hooks/')
           for HOOK_FILE in $HOOK_FILES; do
             CHAIN=$(echo "$HOOK_FILE" | cut -d/ -f2)
             ADDRESS=$(basename "$HOOK_FILE" .json)

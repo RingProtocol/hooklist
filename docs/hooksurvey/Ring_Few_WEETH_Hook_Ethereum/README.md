@@ -1,0 +1,37 @@
+# Ring Few WEETH Hook (Ethereum)
+
+> **地址**: [0x877323adbf747f85eb8d182d42f01f34a5492888](https://etherscan.io/address/0x877323adbf747f85eb8d182d42f01f34a5492888)
+> **链**: Ethereum (chainId=1)
+> **部署方**: `Unknown`
+> **审计报告**: _无_
+> **Dune label**: N/A
+
+## 基本信息
+
+| 字段 | 值 |
+|---|---|
+| 名称 | Ring Few WEETH Hook (Ethereum) |
+| 链 | Ethereum Mainnet |
+| 30d 交易量 | $0.00 |
+| 30d Swap 数 | N/A |
+| 关联 Pool 数 | N/A |
+| 最近 swap | N/A |
+
+## Hook 权限位
+
+`beforeInitialize`, `beforeAddLiquidity`, `beforeSwap`, `beforeSwapReturnsDelta`
+
+## 属性
+
+`swapAccess=none`
+
+## 功能描述
+
+A 1:1 wrapping/unwrapping hook for Ring Protocol's Few Wrapped WEETH token on Uniswap v4, enabling seamless swaps between WEETH and its few-wrapped variant. The hook intercepts swaps to atomically wrap or unwrap tokens using BeforeSwapDelta, and validates pool initialization to ensure only the wrapper/underlying pair with zero fee is permitted.
+
+## 调研结果 (待补充)
+
+- 收益结构
+- 工作原理
+- 时序图
+- 风险与限制
