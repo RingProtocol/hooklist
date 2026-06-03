@@ -1,0 +1,252 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import {BaseHook} from "@uniswap/v4-periphery/src/utils/BaseHook.sol";
+import {Hooks} from "@uniswap/v4-core/src/libraries/Hooks.sol";
+import {IPoolManager} from "@uniswap/v4-core/src/interfaces/IPoolManager.sol";
+import {PoolKey} from "@uniswap/v4-core/src/types/PoolKey.sol";
+import {SafeCast} from "@uniswap/v4-core/src/libraries/SafeCast.sol";
+import {PoolId, PoolIdLibrary} from "@uniswap/v4-core/src/types/PoolId.sol";
+import {BalanceDelta} from "@uniswap/v4-core/src/types/BalanceDelta.sol";
+import {Currency} from "@uniswap/v4-core/src/types/Currency.sol";
+import {CurrencySettler} from "@uniswap/v4-core/test/utils/CurrencySettler.sol";
+import {TickMath} from "@uniswap/v4-core/src/libraries/TickMath.sol";
+import {IHooks} from "@uniswap/v4-core/src/interfaces/IHooks.sol";
+import {StateLibrary} from "@uniswap/v4-core/src/libraries/StateLibrary.sol";
+import {SafeTransferLib} from "solady/utils/SafeTransferLib.sol";
+import {ReentrancyGuard} from "solady/utils/ReentrancyGuard.sol";
+import {ModifyLiquidityParams, SwapParams} from "@uniswap/v4-core/src/types/PoolOperation.sol";
+import {BeforeSwapDelta, BeforeSwapDeltaLibrary} from "@uniswap/v4-core/src/types/BeforeSwapDelta.sol";
+import "./ENSWheelInterfaces.sol";
+
+/// @title ENSWheelHook - Uniswap V4 Hook for ENSWheel
+contract ENSWheelHook is BaseHook, ReentrancyGuard {
+    using PoolIdLibrary for PoolKey;
+    using StateLibrary for IPoolManager;
+    using CurrencySettler for Currency;
+    using SafeCast for uint256;
+    using SafeCast for int128;
+
+    uint128 private constant TOTAL_BIPS = 10000;
+    uint128 private constant DEFAULT_FEE = 1000; // 10%
+    uint128 private constant STARTING_BUY_FEE = 9500; // 95%
+    uint160 private constant MAX_PRICE_LIMIT = TickMath.MAX_SQRT_PRICE - 1;
+    uint160 private constant MIN_PRICE_LIMIT = TickMath.MIN_SQRT_PRICE + 1;
+
+    IENSWheelFactory immutable ENSWheelFactory;
+    IPoolManager immutable manager;
+    address public feeAddress;
+
+    mapping(address => uint256) public deploymentBlock;
+
+    error NotENSWheel();
+    error NotENSWheelFactoryOwner();
+    error TradingNotEnabled();
+
+    event HookFee(bytes32 indexed id, address indexed sender, uint128 feeAmount0, uint128 feeAmount1);
+    event Trade(address indexed ENSWheel, uint160 sqrtPriceX96, int128 ethAmount, int128 tokenAmount);
+
+    constructor(
+        IPoolManager _poolManager,
+        IENSWheelFactory _ENSWheelFactory,
+        address _feeAddress
+    ) BaseHook(_poolManager) {
+        manager = _poolManager;
+        ENSWheelFactory = _ENSWheelFactory;
+        feeAddress = _feeAddress;
+    }
+
+    function updateFeeAddress(address _feeAddress) external {
+        if (msg.sender != ENSWheelFactory.owner()) revert NotENSWheelFactoryOwner();
+        feeAddress = _feeAddress;
+    }
+
+    /// @notice Start the fee countdown when trading is enabled
+    /// @dev Can only be called once by the ENSWheel contract itself, and only if deployed by factory
+    function startFeeCountdown(address ENSWheel) external {
+        if (msg.sender != ENSWheel) revert NotENSWheel();
+        
+        // Verify this is a legitimate ENSWheel deployed by the factory
+        if (ENSWheelFactory.ENSWheelToCollection(ENSWheel) == address(0)) revert NotENSWheel();
+        
+        if (deploymentBlock[ENSWheel] != 0) return; // Already set
+        
+        deploymentBlock[ENSWheel] = block.number;
+    }
+
+    /// @notice Distributes fees: 80% to wheel, 20% to team
+    function _processFees(address collection, uint256 feeAmount) internal {
+        if (feeAmount == 0) return;
+
+        // 80% to engine, 20% to team
+        uint256 depositAmount = (feeAmount * 80) / 100;
+        uint256 teamAmount = feeAmount - depositAmount;
+
+        // Deposit fees into ENSWheel collection
+        IENSWheel(collection).addFees{value: depositAmount}();
+
+        // Send remainder to global feeAddress
+        SafeTransferLib.forceSafeTransferETH(feeAddress, teamAmount);
+    }
+
+    /// @notice Calculate fee based on blocks since trading enabled
+    function calculateFee(address collection, bool isBuying) public view returns (uint128) {
+        if (!isBuying) return DEFAULT_FEE;
+
+        uint256 deployedAt = deploymentBlock[collection];
+        if (deployedAt == 0) return DEFAULT_FEE;
+
+        uint256 blocksPassed = block.number - deployedAt;
+        uint256 feeReductions = (blocksPassed / 5) * 100; // 1% per 5 blocks
+
+        uint256 maxReducible = STARTING_BUY_FEE - DEFAULT_FEE;
+        if (feeReductions >= maxReducible) return DEFAULT_FEE;
+
+        return uint128(STARTING_BUY_FEE - feeReductions);
+    }
+
+    function getHookPermissions() public pure override returns (Hooks.Permissions memory) {
+        return Hooks.Permissions({
+            beforeInitialize: true,
+            afterInitialize: false,
+            beforeAddLiquidity: true,
+            afterAddLiquidity: false,
+            beforeRemoveLiquidity: false,
+            afterRemoveLiquidity: false,
+            beforeSwap: true,
+            afterSwap: true,
+            beforeDonate: false,
+            afterDonate: false,
+            beforeSwapReturnDelta: false,
+            afterSwapReturnDelta: true,
+            afterAddLiquidityReturnDelta: false,
+            afterRemoveLiquidityReturnDelta: false
+        });
+    }
+
+    function _beforeInitialize(address, PoolKey calldata key, uint160)
+        internal
+        override
+        returns (bytes4)
+    {
+        if (!ENSWheelFactory.loadingLiquidity()) {
+            revert NotENSWheel();
+        }
+
+        // deploymentBlock will be set when trading is enabled
+
+        return BaseHook.beforeInitialize.selector;
+    }
+
+    function _beforeAddLiquidity(address, PoolKey calldata, ModifyLiquidityParams calldata, bytes calldata)
+        internal
+        view
+        override
+        returns (bytes4)
+    {
+        if (!ENSWheelFactory.loadingLiquidity()) {
+            revert NotENSWheel();
+        }
+        return BaseHook.beforeAddLiquidity.selector;
+    }
+
+    function _beforeSwap(
+        address sender,
+        PoolKey calldata key,
+        SwapParams calldata params,
+        bytes calldata data
+    ) internal view override returns (bytes4, BeforeSwapDelta, uint24) {
+        address ENSWheel = Currency.unwrap(key.currency1);
+        
+        // Allow swaps if ENSWheel is doing internal swaps (TWAP buybacks)
+        if (IENSWheel(ENSWheel).midSwap()) {
+            return (BaseHook.beforeSwap.selector, BeforeSwapDeltaLibrary.ZERO_DELTA, 0);
+        }
+        
+        // Check if trading is enabled
+        if (!IENSWheel(ENSWheel).tradingEnabled()) {
+            revert TradingNotEnabled();
+        }
+        
+        return (BaseHook.beforeSwap.selector, BeforeSwapDeltaLibrary.ZERO_DELTA, 0);
+    }
+
+    function _afterSwap(
+        address sender,
+        PoolKey calldata key,
+        SwapParams calldata params,
+        BalanceDelta delta,
+        bytes calldata
+    ) internal override returns (bytes4, int128) {
+        bool specifiedTokenIs0 = (params.amountSpecified < 0 == params.zeroForOne);
+        (Currency feeCurrency, int128 swapAmount) =
+            (specifiedTokenIs0) ? (key.currency1, delta.amount1()) : (key.currency0, delta.amount0());
+
+        if (swapAmount < 0) swapAmount = -swapAmount;
+
+        bool ethFee = Currency.unwrap(feeCurrency) == address(0);
+        address collection = Currency.unwrap(key.currency1);
+
+        uint128 currentFee = calculateFee(collection, params.zeroForOne);
+        uint256 feeAmount = uint128(swapAmount) * currentFee / TOTAL_BIPS;
+
+        if (feeAmount == 0) {
+            return (BaseHook.afterSwap.selector, 0);
+        }
+
+        manager.take(feeCurrency, address(this), feeAmount);
+
+        emit HookFee(
+            PoolId.unwrap(key.toId()),
+            sender,
+            ethFee ? uint128(feeAmount) : 0,
+            ethFee ? 0 : uint128(feeAmount)
+        );
+
+        if (!ethFee) {
+            uint256 feeInETH = _swapToEth(key, feeAmount);
+            _processFees(collection, feeInETH);
+        } else {
+            _processFees(collection, feeAmount);
+        }
+
+        emit Trade(collection, _getCurrentPrice(key), delta.amount0(), delta.amount1());
+
+        return (BaseHook.afterSwap.selector, feeAmount.toInt128());
+    }
+
+    function _swapToEth(PoolKey memory key, uint256 amount) internal returns (uint256) {
+        uint256 ethBefore = address(this).balance;
+
+        BalanceDelta delta = manager.swap(
+            key,
+            SwapParams({
+                zeroForOne: false,
+                amountSpecified: -int256(amount),
+                sqrtPriceLimitX96: MAX_PRICE_LIMIT
+            }),
+            bytes("")
+        );
+
+        if (delta.amount0() < 0) {
+            key.currency0.settle(poolManager, address(this), uint256(int256(-delta.amount0())), false);
+        } else if (delta.amount0() > 0) {
+            key.currency0.take(poolManager, address(this), uint256(int256(delta.amount0())), false);
+        }
+
+        if (delta.amount1() < 0) {
+            key.currency1.settle(poolManager, address(this), uint256(int256(-delta.amount1())), false);
+        } else if (delta.amount1() > 0) {
+            key.currency1.take(poolManager, address(this), uint256(int256(delta.amount1())), false);
+        }
+
+        return address(this).balance - ethBefore;
+    }
+
+    function _getCurrentPrice(PoolKey calldata key) internal view returns (uint160) {
+        (uint160 sqrtPriceX96,,,) = poolManager.getSlot0(key.toId());
+        return sqrtPriceX96;
+    }
+
+    receive() external payable {}
+}

@@ -1,0 +1,6 @@
+{
+  "contractName": "CustomHook",
+  "proxy": true,
+  "implementation": "0xcc42bf29069aa36f2f882f8c9e07d693cf2a2049",
+  "verified": true
+}

@@ -7,3 +7,34 @@ __pycache__/
 *.pyc
 __pycache__/
 .env
+
+# sources/ 下的依赖库文件 (flatten 后的第三方代码, 不入版本库)
+# 命名约定:
+#   纯 lib:   lib_*  / libraries_*  / library_*  / dependencies_*
+#   npm:      @*  / npm_*  / node_modules_*  / permit2_*
+#   solmate:  src_pkgs_*
+# (保留: contracts_* / project_* / src_* / meta.json / 直接命名的 .sol)
+sources/**/lib_*
+sources/**/libraries_*
+sources/**/library_*
+sources/**/dependencies_*
+sources/**/@*
+sources/**/npm_*
+sources/**/node_modules_*
+sources/**/permit2_*
+sources/**/src_pkgs_*
+
+# sources_dunehas/ 下的依赖库文件 (从 Dune 解出来的 flatten 第三方代码)
+# 命名约定:
+#   纯 lib:   lib_*  / libraries_*  / library_*  / dependencies_*
+#   npm:      @*  / node_modules_*
+#   Dune 扁平: source_* (hash 命名) / reference_*
+# (保留: contracts_* / src_* / meta.json / 直接命名的 .sol)
+sources_dunehas/**/lib_*
+sources_dunehas/**/libraries_*
+sources_dunehas/**/library_*
+sources_dunehas/**/dependencies_*
+sources_dunehas/**/@*
+sources_dunehas/**/node_modules_*
+sources_dunehas/**/source_*
+sources_dunehas/**/reference_*

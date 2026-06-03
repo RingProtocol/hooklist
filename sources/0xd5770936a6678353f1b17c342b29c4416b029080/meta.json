@@ -1,0 +1,6 @@
+{
+  "contractName": "CustomFeeAntiMevHook",
+  "proxy": false,
+  "implementation": "",
+  "verified": true
+}
