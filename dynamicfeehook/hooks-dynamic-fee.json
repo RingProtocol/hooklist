@@ -1,0 +1,1271 @@
+[
+  {
+    "address": "0x5e645C3D580976Ca9e3fe77525D954E73a0Ce0C0",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "Alphix",
+    "description": "JIT (just-in-time) liquidity hook that atomically adds concentrated liquidity around each swap in beforeSwap and removes it in afterSwap to improve price execution. Uses a dynamic fee algorithm that adjusts LP fees based on the pool's token ratio, and re-hypothecates idle liquidity to external yield sources.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0x2097d7329389264a1542ad50802bb0de84a650c4",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "BVCC Dynamic Fee Hook (Arbitrum)",
+    "description": "Dynamically adjusts LP fees per-swap based on current gas price tiers and penalizes high-frequency traders, while collecting an additional protocol fee in afterSwap from the swap output.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xfd213be7883db36e1049dc42f5bd6a0ec66b68cc",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "Clanker Dynamic Fee Hook (Arbitrum)",
+    "description": "Clanker V4 hook for autonomous token deployment with dynamic fees that adjust based on swap volatility using a tick-based accumulator model. Also includes MEV protection via an optional external module active for the first 2 minutes after pool creation.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xf7ac669593d2d9d01026fa5b756dd5b4f7aaa8cc",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "Clanker Static Fee Hook (Arbitrum)",
+    "description": "A Clanker token launch hook for Arbitrum that applies separate, configurable LP fees for buys and sells of the Clanker token (set statically at pool initialization), and collects a protocol fee on each swap via beforeSwap and afterSwap delta adjustments. It also includes a short-lived MEV protection module active in the first two minutes after pool creation.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xe025cb6c58826ac79e2052c350250881f8f51bc0",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "EMADynamicFeeHook",
+    "description": "EMA-based dynamic fee hook for Uniswap V4. Calculates swap fees using Exponential Moving Average of price, with 30-step fee schedule (0.01%-3.00%) and 300-block anti-JIT protection via tx.origin. No owner, no admin functions, fully immutable.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0xd73339564ac99f3e09b0ebc80603ff8b796500c0",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "Limit Order Hook (Arbitrum)",
+    "description": "A Uniswap v4 hook that enables limit order functionality by recording the tick before each swap and delegating to a LimitOrderManager contract after each swap to execute any limit orders whose tick range was crossed. Supports dynamic LP fee updates via a permissioned fee manager role.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0x3e61d0519d598bf2dfaef5b8fa0256bf7e1d60c0",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "SafeSwap",
+    "description": "Anti-rug and anti-whale protection hook. Sell rate limiting, cooldowns, progressive fees, launch protection mode. Immutable config per pool.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0xc4bf39a096a1b610dd6186935f3ad99c66239080",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "Slippage Fee Hook (Arbitrum)",
+    "description": "Dynamically computes LP fees before each swap based on the simulated price impact (tick difference between current and post-swap price), charging higher fees for larger swaps to reduce impermanent loss for liquidity providers. Requires pools to use dynamic fees and reverts any swap that would cause slippage exceeding 5%.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true
+    }
+  },
+  {
+    "address": "0x88c9ff9fc0b22cca42265d3f1d1c2c39e41cdacc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Aegis v3 Hook (Base)",
+    "description": "Spot is a Uniswap v4 hook that implements surge-based dynamic fees using a truncated geometric oracle, charges protocol fees (POL share) on swaps, and manages a full-range liquidity position that automatically reinvests accrued fees.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x7cBbfF9C4fcd74B221C535F4fB4B1Db04F1B9044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AlphixLVRFee",
+    "description": "A dynamic fee hook that combines per-pool adjustable LP fees set by a restricted admin with a configurable protocol hook fee captured from swap output as ERC-6909 claims, forwarded to a treasury address.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "afterSwap": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xf9527fb5a34ac6fbc579e4fbc3bf292ed57d4880",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Arrakis Private Hook (Base)",
+    "description": "A Uniswap v4 hook for Arrakis private vaults that restricts liquidity additions to the vault's authorized module and dynamically overrides LP fees per swap direction.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeAddLiquidity": true,
+      "beforeSwap": true
+    }
+  },
+  {
+    "address": "0x2c56c1302b6224b2bb1906c46f554622e12f10c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BVCC Dynamic Fee Hook (Base)",
+    "description": "An advanced dynamic fee hook by BlockVenture Chain Capital that adjusts LP fees based on gas price, price volatility, and 24-hour trade volume, while applying anti-bot cooldown penalties for repeated swaps. It also collects a small protocol fee on each swap output via afterSwapReturnsDelta.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x34a45c6b61876d739400bd71228cbcbd4f53e8cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Clanker Dynamic Fee Hook (Base)",
+    "description": "A Clanker hook that dynamically adjusts LP fees based on tick volatility accumulation, updating pool fees on every swap via updateDynamicLPFee. It also applies a protocol fee by capturing a portion of swaps as EIP-6909 claims, and optionally forwards hookData to an external MEV module during a post-launch window.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xd60d6b218116cfd801e28f78d011a203d2b068cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Clanker Dynamic Fee Hook v2 (Base)",
+    "description": "A Clanker v2 hook that dynamically adjusts LP fees based on a volatility accumulator derived from simulated tick movement. It also collects a protocol fee on Clanker token swaps and supports optional MEV protection modules and per-pool extensions via custom swap data.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xdd5eeaff7bd481ad55db083062b13a3cdf0a68cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Clanker Static Fee Hook (Base)",
+    "description": "A Uniswap v4 hook for the Clanker token launch platform that enforces separate, pre-configured LP fees for the clanker token and its paired token by updating the dynamic LP fee on each swap. It collects a 20% protocol fee from paired-token swaps and supports an optional MEV protection module active during the first two minutes after pool creation.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xb429d62f8f3bffb98cdb9569533ea23bf0ba28cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Clanker Static Fee Hook v2 (Base)",
+    "description": "A Uniswap v4 hook used by the Clanker token launch platform that enforces separate fixed LP fees for the clanker token and the paired token, collects a 20% protocol fee on each swap, and supports optional MEV protection modules and pool extensions.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x2F9354Bbb0eDEf5c2a5C4b78D0C59D73412A28CC",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ClawnchHookStaticFeeV2",
+    "description": "Token launcher hook for Base. Fork of Clanker ClankerHookV2 with security fixes: transient storage for reentrant fee safety, slippage protection on fee swaps, MEV decay boundary fix, per-direction static fees, fee preference system, VestedDevBuy extension.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xbb7784a4d481184283ed89619a3e3ed143e1adc0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DecayMulticurveInitializerHook",
+    "description": "A Uniswap v4 hook by Whetstone Research (Doppler v2) that implements time-based linear LP fee decay, lowering fees from a configurable start rate to an end rate over a set duration. Liquidity additions are gated to a designated initializer contract.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0x570a48f96035c2874de1c0f13c5075a05683b0cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Deli Hook (Base)",
+    "description": "Collects swap fees always in wBLT and forwards them to a FeeProcessor contract, while enforcing that all pools include wBLT as a token and use dynamic LP fees (overriding them to 0 at swap time). Syncs DailyEpochGauge and IncentiveGauge on every swap to support incentive accounting.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xbD2597a08627F119ED50C1A252f888F5BFd31B80",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DynamicFeeHook",
+    "description": "A Uniswap v4 hook implementing a 14-step dynamic fee schedule (0.03%\u20131.00%) based on price volatility, with anti-JIT liquidity protection that enforces a 300-block (~10 min) minimum hold period before liquidity can be removed.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true
+    }
+  },
+  {
+    "address": "0x5b409184204b86f708d3aebb3cad3f02835f68cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Fey Hook (Base)",
+    "description": "A Uniswap v4 hook for Fey Protocol that manages paired-token pools with per-direction static LP fees and a 20% protocol fee. It includes MEV protection active for 2 minutes post-launch, optional pool extensions, and LP locker integration for automatic fee collection.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x84129dc46b712614471131e8b9dadd64c7d21bc0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Hook_V2",
+    "description": "EMA-based dynamic fee hook for Uniswap V4. Calculates swap fees using Exponential Moving Average of price, with 30-step fee schedule (0.01%-3.00%) and 300-block anti-JIT protection via tx.origin. No owner, no admin functions, fully immutable.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0x9d11f9505ca92f4b6983c1285d1ac0aaff7ec0c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Limit Order Hook (Base)",
+    "description": "A limit order hook that records the tick before each swap and triggers limit order execution after the swap completes by delegating to a LimitOrderManager contract. It also supports role-based dynamic LP fee management via AccessControl.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0x80e2f7dc8c2c880bbc4bdf80a5fb0eb8b1db68cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LiquidHookDynamicFeeV2",
+    "description": "Liquid Protocol's dynamic fee hook that adjusts LP fees based on realized volatility (tick movement across swaps) and collects a 20% protocol fee on paired token swaps. It includes a time-limited MEV protection module that can temporarily increase fees and an optional pool extension system for post-swap callbacks.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x9811f10cd549c754fa9e5785989c422a762c28cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LiquidHookStaticFeeV2",
+    "description": "A Liquid Protocol hook that enforces a static LP fee per pool (configured at initialization with separate rates for buying and selling the liquid token) and collects a 20% protocol fee on swaps. Includes optional MEV protection that can temporarily raise fees for up to 2 minutes after pool creation.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x6145a9cd8d6b597af774ea95b73684416848e088",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "MoonpotHook",
+    "description": "A floor-price defense hook for a TMP/USDC pool. It applies a dynamic sell tax that ramps from a maximum rate near the floor tick down to a base rate as price rises above it, and intercepts and burns excess TMP tokens that would push the price below the protocol floor. Buys are charged a flat base defense tax.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeSwap": true,
+      "beforeSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x994f0eefe7a9857698218205b721466ef0038ac0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SwayHookJIT",
+    "description": "JIT-LP hook for token launches with engine-based dynamic pricing (PowerCurve / Momentum / Hybrid). Hook holds 100% of token supply at launch and provides liquidity just-in-time during swaps via beforeSwap/afterSwap callbacks. Designed to look like a standard V4 pool to off-chain quoters.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance",
+    "flags": {
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0xab29E4cb49980a6aC152515bb69470e0dEDC68cC",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "tokens.fun HookDynamicFee",
+    "description": "Token launchpad hook with volatility-based dynamic fees, MEV protection, and automated LP locking. Used by tokens.fun on Base.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x7deBE6943ACEFE85c4EE81Aadd736466e07528cC",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "tokens.fun HookDynamicFeeV2",
+    "description": "Token launchpad hook with volatility-based dynamic fees, MEV protection (sniper auctions, block/time delays), automated LP locking with up to 7 positions, fee conversion, and pool extensions. Used by tokens.fun on Base. All pools pair with WETH.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x73E74c090446ad7c9745EBa3c26F3E1a9680E8CC",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "tokens.fun HookStaticFee",
+    "description": "Token launchpad hook with static trading fees, MEV protection, and automated LP locking. Used by tokens.fun on Base.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x1f6C7744a0B0393db8E96D3aaA023146828028cC",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "tokens.fun HookStaticFeeV2",
+    "description": "Token launchpad hook with static fees, MEV protection, automated LP locking, fee conversion, and pool extensions. Used by tokens.fun on Base.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x0469a4Bd3724DC86C9542F4694c976DA13C450c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Zora Hook",
+    "description": "Zora's Uniswap v4 hook for their Coins protocol on Base, which applies a dynamic launch fee that decays from 99% to 1% over the 10 seconds after coin creation. On every swap it collects LP fees, converts them to a backing currency, and distributes rewards to creators and trade referrers.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0xe2b4100de1cd284bd364f738d1354715515c90c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Zora Post Hook v2.4.0 (Base)",
+    "description": "Powers the Zora Coins protocol by managing per-coin Uniswap v4 pools with automated multi-curve liquidity provisioning, a decaying launch fee (99% to 1% over 10 seconds), post-swap reward distribution to creators, referrers, and LPs, and a limit-order fill mechanism on tick crossings.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0xF6d0A13609bb5779Bc5D639F2bA3Bfda83D4D0C0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ZoraV4CoinHook",
+    "description": "Powers the Zora Coins protocol by managing per-coin Uniswap v4 pools with automated multi-curve liquidity provisioning, a decaying launch fee (99% to 1% over 10 seconds), and post-swap reward distribution to creators, referrers, and LPs.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0x8a36d8408f5285c3f81509947bc187b3c0efd0c4",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "BVCC Dynamic Fee Hook (BNB)",
+    "description": "Dynamically adjusts LP fees per swap based on gas price levels, price volatility, and 24-hour trading volume, with an anti-bot cooldown penalty for frequent swappers. Also collects a small hook fee from swap output amounts via afterSwapReturnsDelta.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x65ba941cdfec82af6686784ecaf4bc1b45f328cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "ClankerHookDynamicFee",
+    "description": "Clanker V4 hook for autonomous token deployment with dynamic fees that adjust based on trading volume.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x011a8ed40095f2d7e9c19125b8254b19678d68cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "ClankerHookDynamicFeeV2",
+    "description": "Clanker's v2 dynamic fee hook that adjusts LP fees based on a tick-difference volatility accumulator, collecting a 20% protocol fee on each swap. Supports optional MEV protection and pool extension modules.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xd0c5728911a9f67efe47cf25411c2e052a2fe8cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "ClankerHookDynamicFeeV2",
+    "description": "Clanker V4 hook v2 for autonomous token deployment with dynamic fees that adjust based on trading volume, MEV modules, and pool extensions.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xb3ea59248e7d7dbb9e0ea5f1f8a5b0d33ab5e8cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "ClankerHookStaticFee",
+    "description": "Clanker V4 hook for autonomous token deployment with fixed LP fee rates for buys/sells.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x0fcb2c049786054fd35330db361a75a88903a8cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "ClankerHookStaticFeeV2",
+    "description": "Clanker V4 hook v2 for autonomous token deployment with fixed LP fee rates, MEV modules, pool extensions, protocol fee, and LP locker fee collection.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x8f29bd5c8429730fa4c46e6295c4e679ededd0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Aegis",
+    "description": "AegisHook applies dynamic swap fees sourced from an external DynamicFeeManager, updates a TWAP oracle on each swap, charges a configurable hook fee on every trade (taken as a BeforeSwapDelta/AfterSwapDelta), and periodically reinvests accumulated fees as full-range liquidity via an AegisEngine on a 1-hour cooldown.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x0000000aa232009084Bd71A5797d089AA4Edfad4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Angstrom",
+    "description": "Angstrom is a decentralized exchange that takes control of its transaction ordering, preventing value extraction from liquidity providers and traders. By running application-specific auctions, Angstrom internalizes MEV and redirects the extracted value back to users, preventing arbitrage losses and sandwich attacks while reducing trading fees and gas.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "afterDonate": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xf9527fb5a34ac6fbc579e4fbc3bf292ed57d4880",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Arrakis Private Hook (Ethereum)",
+    "description": "Restricts liquidity additions to authorized Arrakis LP modules for private vaults, and applies per-direction dynamic fee overrides on swaps via the Uniswap v4 LP fee override mechanism.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeAddLiquidity": true,
+      "beforeSwap": true
+    }
+  },
+  {
+    "address": "0x00001f3b9712708127b1fcad61cb892535951888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BunniHook",
+    "description": "Core hook for Bunni v2, a concentrated liquidity protocol on Uniswap v4. Implements a virtual AMM with dynamic fees (TWAP-based + surge detection), am-AMM bidding for LVR/MEV recapture, auto-rebalancing via FloodPlain, and an on-chain price oracle.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "beforeSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xf9ced7d0f5292af02385410eda5b7570b10b50c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BVCC Dynamic Fee Hook (Ethereum)",
+    "description": "An advanced anti-bot Uniswap v4 hook by BlockVenture Chain Capital that dynamically adjusts LP fees based on gas price levels, volatility, and 24-hour pool volume. It applies a repeat-swap penalty to deter bot activity and collects a small hook fee from each swap's output amount.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x6c24d0bcc264ef6a740754a11ca579b9d225e8cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Clanker Static Fee Hook",
+    "description": "A Uniswap v4 hook for the Clanker token launchpad that enforces per-pool static LP fees configured at initialization, collects protocol fees on the paired token, and supports optional MEV-protection modules and pool extensions.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xd5770936a6678353f1b17c342b29c4416b029080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Custom Fee MEV Protection Hook (Ethereum)",
+    "description": "A Uniswap v4 hook for TOKEN/ETH and TOKEN/WETH pools that applies configurable directional buy/sell fee overrides and optional anti-MEV protections including blacklisting, one-trade-per-block enforcement, cooldown periods, and maximum sell amount limits.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true
+    }
+  },
+  {
+    "address": "0x3a3a9a072ab438335a52E0cF064F7ec91D824080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "CustomHook",
+    "description": "Hook for applying a dynamic (changeable) fee for any pool the hook works with. On each swap, it calls poolManager.updateDynamicLPFee() with an admin-configurable fee rate, and is deployed behind a TransparentUpgradeableProxy.",
+    "verifiedSource": true,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeSwap": true
+    }
+  },
+  {
+    "address": "0x924e5C44c3b82C2C0Ba231Cd0De7B581180E1bC0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EMADynamicFeeHook",
+    "description": "EMA-based dynamic fee hook for Uniswap V4. Calculates swap fees using Exponential Moving Average of price, with 30-step fee schedule (0.01%-3.00%) and 300-block anti-JIT protection via tx.origin. No owner, no admin functions, fully immutable.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0x000b70f7cd351f7479d1aa6f1354d32ed8821080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Nuclear Man's Pool Trader Hook",
+    "description": "A dynamic fee hook that adjusts LP fees based on volatility by comparing spot price from a Uniswap V2 pair against an exponential moving average filter \u2014 keeping fees low during calm markets and raising them up to 25% during high-volatility periods. It also collects a configurable developer fee on each swap.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true
+    }
+  },
+  {
+    "address": "0x4509b7eb3f9641226804fea4976963435d1c6080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "StableStableHook",
+    "description": "Dynamic fee hook for stable/stable pools that adjusts LP fees based on price deviation from a configurable reference price. Fees decay exponentially when the pool price is outside the optimal range, incentivizing arbitrage back to peg while charging reduced fees for stabilizing swaps.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeSwap": true
+    }
+  },
+  {
+    "address": "0x6fb14025194d3921942B269ba49c988fbD3fC0Cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TaxHook",
+    "description": "Collects configurable buy and sell taxes on swaps involving the boom.fun BOOM token, splitting fees between a global team address and per-pool developer addresses. Overrides LP fees to zero and applies custom basis-point tax rates via beforeSwap (sell-side) and afterSwap (buy-side) delta returns.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x74803bd586fa5ce3a9ab38b49a7ca633af8700cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Token Flow Tax Hook (Ethereum)",
+    "description": "A Uniswap v4 hook that applies configurable taxes on TOKEN/ETH swaps, collecting native ETH taxes on both inflows and outflows. Supports multiple tokens sharing one hook, with a configurable owner cut of all taxes collected.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xe620421BDE7D6A367d2c3b7E8dfA09B90AEa90CC",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "Aegis DFM",
+    "description": "A dynamic fee market maker hook that uses a truncated geometric oracle to compute base and surge fees, collects a protocol fee share on each swap, and reinvests collected fees into a full-range liquidity position.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xb1db44de89634a001ceb5847defc3ff1e5601bc0",
+    "chain": "optimism",
+    "chainId": 10,
+    "name": "EMADynamicFeeHook",
+    "description": "EMA-based dynamic fee hook for Uniswap V4. Calculates swap fees using Exponential Moving Average of price, with 30-step fee schedule (0.01%-3.00%) and 300-block anti-JIT protection via tx.origin. No owner, no admin functions, fully immutable",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0xb35297543d357ef62df204d8c3bd0e96038cf440",
+    "chain": "optimism",
+    "chainId": 10,
+    "name": "Findex Hook (Optimism)",
+    "description": "A Uniswap v4 hook for the Findex protocol that restricts pool initialization and liquidity additions to whitelisted pools and authorized providers, while managing dynamic LP fees and granting transfer exceptions to limited-account holders after swaps and liquidity events.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "afterAddLiquidity": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0x2c3254da64956f495356a482d51e7311347f5044",
+    "chain": "optimism",
+    "chainId": 10,
+    "name": "VolumeDynamicFeeHook",
+    "description": "Dynamically adjusts LP fees based on swap volume using an exponential moving average, cycling between floor, cash, and extreme fee tiers. Also charges a configurable hook fee collected as an afterSwap delta.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "afterSwap": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x15cD9520D0fAF71c938Db4426F8C58B5cBAa9ACc",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "Aegis V1.1",
+    "description": "Dynamic fee hook designed to optimize capital efficiency, protect LP value, and automatically adapt to market volatility.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x8eB0089d6c616bC2b7f69b3CAFECfEDc3eF11BC0",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "EMADynamicFeeHook",
+    "description": "EMA-based dynamic fee hook for Uniswap V4. Calculates swap fees using Exponential Moving Average of price, with 30-step fee schedule (0.01%-3.00%) and 300-block anti-JIT protection via tx.origin. No owner, no admin functions, fully immutable.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0x27bfccf7fdd8215ce5dd86c2a36651d05c8450cc",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Aegis v1 Hook (Unichain)",
+    "description": "A dynamic fee hook that uses a truncated geometric oracle to compute adaptive swap fees based on market volatility. Protocol fees are collected from swaps (both exact-in and exact-out) and automatically reinvested into full-range liquidity positions via an integrated liquidity manager.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xa0b0d2d00fd544d8e0887f1a3cedd6e24baf10cc",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Aegis v2 Hook (Unichain)",
+    "description": "Spot is a Uniswap v4 hook that implements dynamic fee management using a truncated geometric oracle and a DynamicFeeManager to compute base and surge fees based on recent trading activity. It also collects protocol fees and reinvests them into a full-range liquidity position via a FullRangeLiquidityManager.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x88c9ff9fc0b22cca42265d3f1d1c2c39e41cdacc",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Aegis v3 Hook (Unichain)",
+    "description": "A dynamic AMM hook that adjusts LP fees based on market volatility using a truncated geometric oracle with surge fee mechanism, enforces tick movement caps to limit price manipulation, and automatically reinvests protocol fees into full-range liquidity positions.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x9b37a43422d7bbd4c8b231be11e50ad1ace828cc",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Clanker Dynamic Fee Hook (Unichain)",
+    "description": "A Clanker-integrated hook that dynamically adjusts LP fees based on price volatility (tick-difference accumulation with decay), charging a base fee plus a variable component scaled by recent price movement. It also extracts a 20% protocol fee on non-clanker token sides of swaps, and temporarily protects newly launched pools via a configurable MEV module for the first 2 minutes post-creation.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0xbc6e5abda425309c2534bc2bc92562f5419ce8cc",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Clanker Static Fee Hook (Unichain)",
+    "description": "Applies configurable, direction-dependent static fees to swaps involving Clanker-deployed tokens, collecting protocol fees from the paired token side. Includes an optional MEV-protection module that is active for the first two minutes after pool deployment.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true
+    }
+  },
+  {
+    "address": "0x6398f3c67b03c4622bdaa48d9e340d66e23a1bc0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "EMADynamicFeeHook",
+    "description": "EMA-based dynamic fee hook for Uniswap V4. Calculates swap fees using Exponential Moving Average of price, with 30-step fee schedule (0.01%-3.00%) and 300-block anti-JIT protection via tx.origin. No owner, no admin functions, fully immutable.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0x2016c0e4f8bb1d6fea777dc791be919e2eda40c0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Limit Order Hook (Unichain)",
+    "description": "Enables limit order functionality on Uniswap v4 pools by storing the pre-swap tick in transient storage and executing limit orders after each swap based on tick crossings. Also supports dynamic LP fee updates through a role-based access control system.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeSwap": true,
+      "afterSwap": true
+    }
+  },
+  {
+    "address": "0xb9a17e66db950e00822c2b833d6bb304c9b86080",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "MEVTaxTestInProd",
+    "description": "Implements a priority-fee-proportional MEV tax as a dynamic LP fee. On each swap, the fee is scaled proportionally to the transaction's priority fee relative to the highest priority fee observed in the previous block, with owner-configurable minimum and maximum bounds.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "beforeInitialize": true,
+      "beforeSwap": true
+    }
+  },
+  {
+    "address": "0x09dea99d714a3a19378e3d80d1ad22ca46085080",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Renzo Hook (Unichain)",
+    "description": "A peg stability hook for the ETH/ezETH pool that charges a minimum fee for trades moving toward the peg and a linearly-scaled fee based on deviation from the ezETH rate provider price for trades moving away from the peg.",
+    "verifiedSource": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none",
+    "flags": {
+      "afterInitialize": true,
+      "beforeSwap": true
+    }
+  }
+]
