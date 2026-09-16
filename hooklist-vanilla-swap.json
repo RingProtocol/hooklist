@@ -71,6 +71,41 @@
   },
   {
     "hook": {
+      "address": "0x799080193fe10ef6d3b6de3a10ea269494b54040",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "ArbHook",
+      "description": "After each V4 swap, reads the post-swap sqrtPrice and compares it against a registered Uniswap V3 pool's slot0 price. If the deviation exceeds a configurable basis-point threshold, emits an ArbDetected event for off-chain arbitrage bots. No on-chain trade execution occurs.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8af0775a70cc94d71dfc0fe809435e833f2fe000",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -89,6 +124,41 @@
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
       "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8c56d33bec26cad3c3d51c84dd16eaa7fb434ac0",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "Counter",
+      "description": "A simple counter hook that tracks pool activity by incrementing per-pool counters on beforeSwap, afterSwap, beforeAddLiquidity, and beforeRemoveLiquidity. It performs no fee modifications, access control, or token transfers \u2014 purely observational state recording.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
@@ -11477,6 +11547,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfc09b9c20b61168c1c30e20ba77b299929ef2840",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniswapV4Hook",
+      "description": "One-time pool initialization and liquidity gate hook that selectively blocks sell-direction swaps (token1\u2192token0) for addresses not in an owner-managed allowlist when a per-token flag is set, while buy-direction swaps always succeed. Anyone can call tokenSet() to activate the sell restriction at any time. Only the deployer's tx.origin is initially allowlisted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
     }
   },
   {
