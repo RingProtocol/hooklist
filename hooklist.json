@@ -911,6 +911,41 @@
   },
   {
     "hook": {
+      "address": "0x2b0db369f3b1f3324fffd6c874763d9d63d0cdc8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OrketHook",
+      "description": "Uniswap v4 hook for binary prediction market pools (YES/NO) that implements VALS dynamic fees, computing fees as e^[\u03bb\u00b7(\u0394x/L)\u00b7\u03c3]\u22121 using a backend-signed volatility parameter (\u03c3). Fees are routed to a YieldDistributor rather than LPs; swaps require a valid signed sigma payload in hookData and revert if the market is resolved or disputed.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2b2e2102595dd5390a7ac8157552fe97efcb6a88",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -1115,6 +1150,41 @@
       "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x3286fac9f3677e85fa67fd7b9086e0f3bd89cdc8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OrketHook",
+      "description": "A Uniswap v4 hook for prediction market YES/NO pools that computes a VALS dynamic fee per swap (e^[\u03bb\u00b7(\u0394x/L)\u00b7\u03c3]\u22121) from a backend-signed volatility parameter, captures it via beforeSwapReturnsDelta, and routes it to a YieldDistributor rather than LPs. Swaps require a valid ECDSA-signed sigma struct in hookData.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
       "vanillaSwap": false,
       "swapAccess": "other"
     }
@@ -1756,6 +1826,41 @@
       "chainId": 42161,
       "name": "OrketHook",
       "description": "Prediction market pool hook implementing VALS dynamic fees (e^[\u03bb\u00b7(\u0394x/L)\u00b7\u03c3]\u22121) based on backend-signed toxic-velocity (sigma) parameters, capturing fees from the collateral (USDC) side and redistributing them to share holders via YieldDistributor. Tracks LP positions and updates prediction market YES/NO prices after each swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x55c750aaab7213c9c428ba1e530abfbac7d00dc8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OrketHook",
+      "description": "Uniswap v4 hook for prediction market pools (YES/NO outcome tokens) that implements VALS (Volatility-Adjusted Liquidity Sensitivity) dynamic pricing. Requires a backend-signed sigma parameter per swap to compute an exponential fee captured from the USDC collateral side and distributed to share holders via a YieldDistributor; swaps are blocked when the market is resolved or disputed.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -2626,6 +2731,41 @@
   },
   {
     "hook": {
+      "address": "0x7ca456299996cd6c26240e57177f72770b318dc8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OrketHook",
+      "description": "Uniswap v4 hook for prediction market YES/NO share pools. Implements VALS dynamic fees (e^[\u03bb*(\u0394x/L)*\u03c3]-1) based on off-chain signed toxic velocity parameters; fees are taken from the collateral (USDC) side and forwarded to a YieldDistributor rather than LPs. Requires a backend-signed SignedSigma in hookData for every swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7f8af8ab6b07069feb9f2edb601fbb0bc36b20c0",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -3287,6 +3427,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa82c933fbea5e5e4c2e27158bfbc4c18bbe20dc8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OrketHook",
+      "description": "A prediction market hook implementing VALS (Volatility-Adjusted Liquidity-Sensitive) fees. Each swap requires a fresh ECDSA-signed volatility parameter (sigma) from a trusted signer; the fee is computed as e^(\u03bb\u00b7\u0394x/L\u00b7\u03c3)\u22121 and forwarded to a YieldDistributor for share holders rather than LPs. Swaps and liquidity additions are blocked when the market is resolved or disputed.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -4061,6 +4236,41 @@
   },
   {
     "hook": {
+      "address": "0xc96e27c2051e4cdca340db49240121ba94304dc8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OrketHook",
+      "description": "Prediction market hook implementing VALS (Volatility-Adjusted Liquidity Sensitivity) dynamic fee pricing for YES/NO token pools. Captures fees from swaps based on trade size, liquidity, and a cryptographically signed toxic-velocity parameter (sigma), routing fees to a YieldDistributor rather than LPs.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0xcab62e007ab6656877ab556cea330de27ae025dc",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -4092,6 +4302,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcb6ff3e5fe0813e96bb3cbead525a71880ea4dc8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OrketHook",
+      "description": "A Uniswap v4 hook for prediction market pools (YES/NO share tokens vs USDC collateral) that implements VALS (Volatility-Adjusted Liquidity Sensitivity) dynamic fees. Each swap requires a fresh ECDSA-signed sigma parameter from an authorized backend; fees are calculated as e^[\u03bb*(\u0394x/L)*\u03c3]-1 in basis points, captured via BeforeSwapDelta, and distributed to share token holders through a YieldDistributor contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -4722,6 +4967,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xef574a62388034b5e408a1055620010503275540",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "GridHook",
+      "description": "A grid trading hook for Uniswap v4 that allows users to configure, deploy, rebalance, and close multi-order grid positions. After each swap, records the current tick and swap count for bookkeeping. Supports Permit2-based token transfers and keeper authorization for automated rebalancing.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
