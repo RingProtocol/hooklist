@@ -25129,6 +25129,41 @@
   },
   {
     "hook": {
+      "address": "0x12a8d42654213d66096c7c13aad893290ca56888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SatoHook",
+      "description": "Bonding curve hook that acts as the sole counterparty for ETH/SATO swaps: buys mint SATO via a forward curve and sells burn SATO via an inverse curve, paying ETH from accumulated reserves. Liquidity additions are permanently forbidden; hookData must encode the swapper address or the swap reverts.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x19083fbb165f1d62ad42efa41660910bc3078aec",
       "chain": "bnb",
       "chainId": 56,
@@ -25834,6 +25869,41 @@
       "chainId": 56,
       "name": "PmavHookBnb",
       "description": "A bonding curve launchpad hook for BNB Smart Chain that sells tokens along an AMM curve with block+1 anti-snipe protection, per-wallet 2% permanent caps, and dynamic fees. When the curve fills, it graduates the pool to a standard Uniswap v4 AMM with a permanently locked full-range liquidity position and a flat 1% LP fee set via updateDynamicLPFee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x457d15f9cc568b884c218f2b9cda1bdaa78368cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "PmavHookQuotedSlimX",
+      "description": "Bonding-curve token launch hook for a pump-style platform. Enforces a block+1 anti-snipe rule, a permanent 2% wallet buy cap with auto-refund, and a 1% trading fee (70% creator / 30% platform) with a decaying anti-snipe premium on buys. Graduates pools from the bonding curve to open liquidity once the curve completes, then passes swaps through unchanged.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -26595,6 +26665,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6e327611a4f3e0aa590d7f14e107318bd9fbe888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "LaunchSatoHook",
+      "description": "A launchpad bonding-curve hook for the LaunchSato platform that routes all buys and sells through a custom exponential curve, minting tokens on buys and burning on sells. Buys require a swapper address in hookData, are capped per transaction, and are permanently closed once 99% of the fair token supply is minted; sells remain enabled with a 1-block cooldown after a buy.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -27750,6 +27855,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9d4b16935ad67300d376fe6d65e30fbe5c196888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "MiniBTCHook",
+      "description": "A bonding curve hook for an ETH/MiniBTC pool. Buys mint MiniBTC via a forward curve (with a randomized entropy multiplier during early blocks); sells burn MiniBTC and pay ETH from accumulated reserves. Liquidity additions are permanently forbidden; all swap execution is fully taken over by the hook via BeforeSwapDelta. Requires a swapper address ABI-encoded in hookData on every swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
