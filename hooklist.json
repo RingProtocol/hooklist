@@ -36084,6 +36084,41 @@
   },
   {
     "hook": {
+      "address": "0x45a18b773102bde55aa71ea060a5336eadbb80c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "HystrategyHook",
+      "description": "Fee-skimming hook for ETH/WETH \u2194 HYSTR pools that deducts a fee from swap output on every trade. Sell-side fee is flat 10%; buy-side decays from 15% to 10% (1% per 5 blocks after deployment). Collected fees are split 80% to treasury and 20% to team via poolManager.take().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x47b35474ede2b3ae9b82915e2f57647073a6a0cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -39265,6 +39300,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x763cd7059ec816ab7a1cbd11539d908afef940cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "V4TaxHook",
+      "description": "A Uniswap v4 hook that collects a fixed 5% buy and sell tax on registered token pools. During swaps it intercepts the specified or unspecified base-asset amount, mints the tax portion as ERC6909 claims via poolManager.mint, and notifies the token contract via recordTaxFromHook.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
