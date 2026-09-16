@@ -1891,6 +1891,41 @@
   },
   {
     "hook": {
+      "address": "0xb4b5314e4512f601c9bb5b7ddd5a07837dc228a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "A custom-curve AMM hook that integrates with Euler Protocol vaults. Routes all swaps through Euler lending vaults using a proprietary invariant curve and custom delta returns, bypassing standard Uniswap v4 concentrated liquidity. Blocks native liquidity additions and donations to prevent misuse.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -27124,6 +27159,41 @@
   },
   {
     "hook": {
+      "address": "0x03fb7961a7ff2595717ea81ce3940f1b18e30044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PaydayHook",
+      "description": "Captures 3% of every swap's output side (buys in PAYDAY tokens, sells in ETH) via afterSwapReturnsDelta and distributes fees to token holders through seniority-weighted payroll and bonus pools, claimable directly from the contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x044301939deb7ca53c4733dd4d9b3bc5ea0c6888",
       "chain": "ethereum",
       "chainId": 1,
@@ -34649,6 +34719,41 @@
   },
   {
     "hook": {
+      "address": "0x85946081183a1085c7fb66d10fd469acc5b8c0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "HashtocksHook",
+      "description": "Charges a configurable protocol fee (default 2%, capped at 5%) on every swap via v4 delta accounting. Fees are taken on the input token for both exact-input (in beforeSwap) and exact-output (in afterSwap) swaps and routed to a designated treasury address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x85b648a64aed6307d5d5ce26e6ae086c17bde888",
       "chain": "ethereum",
       "chainId": 1,
@@ -34736,6 +34841,41 @@
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8821e9eabf1b838b9f920eac92c4441a18ba0044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "HookFee",
+      "description": "A fee-collecting hook that charges a configurable basis-point fee on currency0 output from one-for-zero swaps, routing proceeds to a fixed feeRecipient via afterSwap delta. The fee rate is owner-controlled and capped at 10,000 bps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
       "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
@@ -39051,6 +39191,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd08933577167168a997142af2513f44ef4d1f5df",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "VolatilityGuardHookV2",
+      "description": "A volatility-reactive dynamic fee hook that switches LP fees between a base rate (0.05%) and a panic rate (2.00%) based on tick movement. When price moves beyond a tick threshold within an anchor window, it enters panic mode with elevated fees for 60 seconds.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": true
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
