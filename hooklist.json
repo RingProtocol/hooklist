@@ -3151,6 +3151,41 @@
   },
   {
     "hook": {
+      "address": "0xea6a0c68087588d847e7816e5c0370998cce10c4",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "LiberHookV1",
+      "description": "Uniswap v4 hook for a LETH/rETH pool implementing directional dynamic fees (buying LETH is cheaper than selling it), a size-scaled impact surcharge, and a per-swap skim that burns LETH directly or accumulates rETH in a buyback pot. Also maintains a truncated TWAP oracle updated on every swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xec06b88dd3dbd68756e0f63945d84649831be8a8",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -35309,6 +35344,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x80a26a3650d03b6332f0d88450d5c396a2c880cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UnicoreHook",
+      "description": "A Uniswap v4 hook that levies a flat 3% tax on all native-ETH swaps. Buy-side tax is intercepted via BeforeSwapDelta (minted as ERC-6909 claims); sell-side tax is taken via AfterSwapDelta (physical ETH). Accumulated fees are pushed to an external reward distributor by calling normalize(), which is permissionless.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
