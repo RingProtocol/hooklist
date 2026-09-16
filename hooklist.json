@@ -1401,6 +1401,41 @@
   },
   {
     "hook": {
+      "address": "0x5e5fb9e79bc4d462a5e79ffd70010459a835a8a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "A custom-curve Uniswap v4 hook that implements a single-LP AMM backed by Euler lending vaults. Deployed as a delegatecall proxy clone per pool, it executes swaps by depositing and withdrawing assets directly from Euler vaults using a parameterized bonding curve, bypassing Uniswap's concentrated liquidity entirely.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5e645C3D580976Ca9e3fe77525D954E73a0Ce0C0",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -41999,6 +42034,41 @@
   },
   {
     "hook": {
+      "address": "0xde6092372f500d6947f19274fdf4f508e4540044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TribunalHook",
+      "description": "Implements sell-tax and protocol fee mechanics on TRIB/WETH swaps via afterSwap with delta return. On sells (TRIB\u2192WETH), deducts a personal sell tax (up to 8%, reduced by stake percentage via Court contract) plus a 1% protocol fee in WETH, sent to staker rewards and treasury respectively. On buys (WETH\u2192TRIB), deducts a 1% protocol fee in TRIB to treasury.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xdee7a2ffa963f82facbb12a4e3e8909e4a51a444",
       "chain": "ethereum",
       "chainId": 1,
@@ -42624,6 +42694,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe6a0f06b552747541f48fe01e1788f86ddffaaa8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "YieldHook",
+      "description": "A Uniswap v4 hook that implements a custom constant-product AMM for a YIELD token, deploying asset reserves into ERC4626 vaults (MetaMorpho) to earn yield. Fully overrides swap execution via beforeSwap with delta returns (FLOOD-style), supporting YIELD/wstETH, YIELD/USDC, and YIELD/USDT pools. YIELD token holders can claim pro-rata vault yield via MasterChef-style accumulators.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
