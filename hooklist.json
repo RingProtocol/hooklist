@@ -5111,6 +5111,41 @@
   },
   {
     "hook": {
+      "address": "0xe7b00d73f1a3a651f510bcd70822bef125bb68cc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "LaunchHook",
+      "description": "Singleton launch hook for the LaunchFactory supporting four launch modes (Beam, Prism, Flare, Dawn). Trading fees are split between a platform treasury, creator, and community; Flare pools accumulate fees for a permissioned buyback-and-burn to a dead address. Only the locker may add liquidity, and Dawn mode applies a 99% fade fee that decays 1% per second down to the resting rate.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe88693019576ee4a526756cf21b2810b1d3c00cc",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -5667,6 +5702,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf7ce34edeee3986e0c8dc573d171f7fb903fdacc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "GuUniswapV4Hook",
+      "description": "Singleton hook for GuCoin/reserve-token pools that computes dynamic swap fees using a volatility oracle (Algebra adaptive fee) and directional sliding fee factors. Collects fees via BeforeSwapDelta/AfterSwapDelta and distributes them to protocol and LP fee receivers. Swaps are gated by a per-pool security registry and a GuCoin LP status flag.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
