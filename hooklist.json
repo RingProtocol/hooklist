@@ -351,6 +351,41 @@
   },
   {
     "hook": {
+      "address": "0x300b9d513b65e8b56eb52699e606a29eb2a91acc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "GuUniswapV4Hook",
+      "description": "A singleton Uniswap v4 hook for GuCoin/reserve-token pools. Implements adaptive and sliding swap fees via a Camelot volatility oracle, collects fees as swap deltas in both beforeSwap and afterSwap, and supports a per-pool security registry that can disable swaps or restrict liquidity removal.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3043e182047f8696dfe483535785ed1c3681bac4",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -806,6 +841,41 @@
   },
   {
     "hook": {
+      "address": "0x6799554344650a194a9bd54e8a57c8e722020040",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "ArbitrageHook",
+      "description": "After each swap, compares the pool price to an external oracle (via INexArbitrage) and executes a nested rebalancing swap to push the pool price toward the oracle-derived target price.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6d9c97c94c88a67d1a93bbc8ccae3a5322208844",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -1222,6 +1292,41 @@
       "requiresCustomSwapData": true,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb046529771f5d01974913056843f1f0f77d81888",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "TokiHook",
+      "description": "Custom AMM curve hook for fixed-rate Principal Token (PT) trading using a Pendle-style yield curve. Handles its own swap math via beforeSwap with delta returns, blocks direct PoolManager liquidity ops, optionally rehypothecates idle liquidity into ERC4626 vaults, and maintains a TWAP oracle for logarithmic implied rates. Swaps are permanently disabled after PT maturity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
@@ -1716,6 +1821,41 @@
   },
   {
     "hook": {
+      "address": "0xf36793f6f6773ae4bb30edf211b43fe5ff6e4dc8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OrketHook",
+      "description": "Prediction market hook implementing VALS (Volatility-Adjusted Liquidity Sensitivity) fees for YES/NO share token pools. Every swap requires a signed sigma parameter in hookData; the hook computes an exponential fee from trade size, liquidity, and the signed toxic-velocity value, takes the fee from the USDC (collateral) side via BeforeSwapDelta, and distributes it to share token holders through a YieldDistributor contract. Swaps are blocked when the market is resolved or disputed.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xf7ac669593d2d9d01026fa5b756dd5b4f7aaa8cc",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -1738,6 +1878,76 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfa1a9d9ceda29fbec083656b713d8380c063c088",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "ArbHook",
+      "description": "Hook that intercepts swaps from a single authorized address (\"muscle\"), computing a custom BeforeSwapDelta based on input/output token decimals to absorb the swap amounts itself. All other callers receive a zero delta pass-through and proceed with standard pool behavior.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfb57566b95081447eb4ce217b621718e8d3100c0",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "LimitOrderHook",
+      "description": "Records the current tick before each swap using transient storage, then after the swap calls ILimitOrderManager.executeOrder() with the before/after ticks and swap direction to trigger limit order fills. A FEE_MANAGER_ROLE holder can update the pool's dynamic LP fee via poolManager.updateDynamicLPFee().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
