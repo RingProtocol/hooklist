@@ -1261,6 +1261,41 @@
   },
   {
     "hook": {
+      "address": "0x03d482cb3ff339c2d29736818d0f72c66dd6a040",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook that auto-harvests LP fees and executes a buyback pump after every swap, spending the pool's secondary token to accumulate the main token. Supports per-pool LP incentive programs with configurable fee splits and recipient routing.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x05321f37b95cbe2555f2ecbca4f126bed4750044",
       "chain": "avalanche",
       "chainId": 43114,
@@ -2797,6 +2832,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbb021554c5294328b04fa313669715bd201ba040",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook that runs a permissionless buyback-and-burn mechanism on every configured pool. After each swap, it optionally auto-harvests LP program fees and executes a pump swap \u2014 buying the pool's designated main token using a funded secondary-token balance \u2014 with size bounded by fee ceilings to prevent sandwich attacks and farming.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -38744,6 +38814,41 @@
   },
   {
     "hook": {
+      "address": "0xbb021554c5294328b04fa313669715bd201ba040",
+      "chain": "megaeth",
+      "chainId": 4326,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook for static-fee pools that auto-harvests LP fees and executes an automated \"pump\" after each swap \u2014 spending accumulated secondary-token balances to buy the pool's main token \u2014 then distributes proceeds (harvest legs, pump buyback, burns) to configured program recipients in a single batched send phase.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0bbe5891d54b56bc6fdcffb9244ec6bfce6b8040",
       "chain": "monad",
       "chainId": 143,
@@ -41181,6 +41286,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbb021554c5294328b04fa313669715bd201ba040",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook that runs a buyback (\"pump\") mechanism after every swap: it uses secondary tokens held in a per-pool pot to buy back the pool's main token in the same transaction. It also auto-harvests and optionally auto-compounds LP fees from a hook-held liquidity position.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -69334,6 +69474,111 @@
   },
   {
     "hook": {
+      "address": "0x50995539e4afaca479bb59b0d795d94e0efea0cc",
+      "chain": "tempo",
+      "chainId": 4217,
+      "name": "KlikHook",
+      "description": "A tiered fee hook for the Klik token launch platform on Tempo. Collects buy-side fees (0.10%\u20131.00% based on token market cap in USD) as ERC-6909 claims, then distributes them between a platform treasury and token creators. Includes anti-snipe protection that locks trading on the launch block and caps per-origin buys (in USD) during the first few blocks.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8f6d72d343bc00e3ac07105dee7ec083e58f8044",
+      "chain": "tempo",
+      "chainId": 4217,
+      "name": "TokenHook",
+      "description": "A DEX-tax hook that intercepts exactInput swaps post-execution: on buys (TOKEN as output) it takes TAX_RATE of the token output and sends it to a treasury; on sells (non-TOKEN as output) it takes REWARD_RATE and credits it to the seller via an external ITokenRewards contract. Both fees are applied via afterSwapReturnDelta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa0698a98771683f526f281e003af6a6a20c7e0cc",
+      "chain": "tempo",
+      "chainId": 4217,
+      "name": "CoalaHook",
+      "description": "Charges a fixed 1% tax on the WETH (base-asset) side of every buy and sell on factory-registered COALA token pools, minting the collected tax as a PoolManager ERC-6909 WETH claim to the launched token contract. Pool initialization is gated to a factory allowlist to prevent griefing.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
       "chain": "tempo",
       "chainId": 4217,
@@ -70419,6 +70664,41 @@
   },
   {
     "hook": {
+      "address": "0x03f4051e621ee3f3652adef2c453458a777e40cc",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "OmniHook",
+      "description": "Charges a fixed 10 bps fee on every swap by taking output tokens via poolManager.take() and splitting them among five hardcoded addresses. Fee recipients claim their share on demand; failed transfers keep balances owed rather than reverting swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0f41715dc432692b66a5adf8dcfef6ac407b20c8",
       "chain": "worldchain",
       "chainId": 480,
@@ -71044,6 +71324,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x026198469007ad6a9ffa9e161b7a2d6dce542088",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "EulrV4QuoteFriendlyTaxHook",
+      "description": "A buy/sell tax hook for token pools paired with a quote currency. Charges a fixed buy tax and a dynamic sell tax (ranging between configurable min/max BPS) that decreases as the token price rises above a sentiment baseline. Tax amounts are deducted from swap input via BeforeSwapDelta \u2014 sent to a tax recipient on buys, or burned via the token's hook contract on sells. Only exact-input swaps are supported.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
