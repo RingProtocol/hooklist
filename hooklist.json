@@ -421,6 +421,41 @@
   },
   {
     "hook": {
+      "address": "0x3dcd77fd23f362bd13c94f58b68560ad045c8dc8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OrketHook",
+      "description": "A prediction market hook for Uniswap v4 pools (YES/NO outcome shares vs collateral). Implements VALS (Volatility-Adjusted Liquidity Sensitivity) fees calculated as e^[\u03bb*(\u0394x/L)*\u03c3]-1, where \u03c3 is a per-swap toxic-velocity parameter supplied as a signed off-chain oracle message. Fees are captured from the collateral token via BeforeSwapDelta and routed to a YieldDistributor rather than to LPs.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3e61d0519d598bf2dfaef5b8fa0256bf7e1d60c0",
       "chain": "arbitrum",
       "chainId": 42161,
