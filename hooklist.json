@@ -30799,6 +30799,41 @@
   },
   {
     "hook": {
+      "address": "0x02449b70bc19029cddb8031187c06c057c5980cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DarwinHook",
+      "description": "Collects a variable ETH tax (in basis points, sourced from the DARWIN token contract's currentTaxBps()) on DARWIN/ETH swaps: buy taxes are deducted from the ETH input via BeforeSwapDelta, sell taxes from the ETH output via AfterSwapDelta. Accumulated taxes are withdrawable by the owner. Only exact-input swaps in the DARWIN/ETH pool are supported.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x025a386eaa79f6067d29848fd05ccc71beab20cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -31949,6 +31984,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x11112e31f78c7f7c9fea7c0e1ca2f8e16505d000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "A minimal hook that only uses afterInitialize (as a no-op stub) to satisfy the interface. Provides an initializePool() helper that deploys an ETH/token pool with fixed parameters (0.3% fee, tick spacing 60). Does not alter swap or liquidity behavior.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
@@ -37256,6 +37326,41 @@
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x64813896a6f4e6f56a411f9aaca68cfdd51384c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PegScapeHook",
+      "description": "A Uniswap v4 hook for the PegScape protocol that mints Runes to buyers based on swap size and market conditions, computing four boost flags (WHALE, DIP, REVENGE, LATE) from pre-swap state captured in transient storage. On sells, it updates a ring buffer tracking recent sellers for the REVENGE flag and drags the DIP price anchor downward as an anti-MEV measure.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
       "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
