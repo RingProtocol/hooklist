@@ -69754,6 +69754,41 @@
   },
   {
     "hook": {
+      "address": "0x17a10f791eefaa899281b3752733e4a2eae26888",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "Generic4626Router",
+      "description": "A hook that routes swaps through ERC4626 vaults by intercepting beforeSwap to deposit or redeem the underlying asset. Disallows direct liquidity addition and enforces pool initialization via the hook to ensure correct vault pairing.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2016c0e4f8bb1d6fea777dc791be919e2eda40c0",
       "chain": "unichain",
       "chainId": 130,
@@ -70314,6 +70349,41 @@
   },
   {
     "hook": {
+      "address": "0x966cf7b815cbdd26f2cc78838bba9c1a0f4dc444",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "UniderpHook",
+      "description": "Charges a 1% fee on each swap, distributing it among a platform recipient, an optional token creator address, and a multi-level referral tree (L1/L2/L3 uplines). Referrer registrations are optionally updated via hookData on swaps and liquidity additions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9b37a43422d7bbd4c8b231be11e50ad1ace828cc",
       "chain": "unichain",
       "chainId": 130,
@@ -70678,6 +70748,41 @@
       "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe5cdffb339dbacf87e8616af15112eba101f0444",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "UniderpHook",
+      "description": "Collects a 1% fee on each swap, distributing portions to the token creator (0.4%), a 3-level referral tree (0.1%), and a platform fee recipient. Referral relationships are optionally recorded via hookData in swaps and liquidity additions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
@@ -71609,6 +71714,41 @@
   },
   {
     "hook": {
+      "address": "0x1fa7648ba151640ba64dd5778aff1b89352ea8cc",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "OkMemeTaxHook",
+      "description": "Tax hook for meme tokens that charges configurable per-pool buy/sell fees (marketing, dividend, buyback, burn) by capturing swap deltas via poolManager.take(). Collected fees are forwarded to a settler contract; individual addresses can be exempted from taxes. Pool initialization is restricted to a designated venue address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x28f389d3d730c72141de6bb7516fef6f487f80cc",
       "chain": "xlayer",
       "chainId": 196,
@@ -71671,6 +71811,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x48ab5124b299c4c437ee6b3a03325ff3b9b56044",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "SizeMemeHook",
+      "description": "A fee-collecting hook for meme token launches that intercepts swap outputs via afterSwapReturnsDelta to take a configurable hook fee and creator tax on each swap. Fees accumulate per pool in pending mappings, with optional buyback-and-lock functionality. Pool registration is restricted to a designated factory contract via beforeInitialize.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -71846,6 +72021,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x955523a8ed7999e05015bc6f7b854d447717c088",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "OFAHook",
+      "description": "An orderflow auction hook that intercepts large exact-input swaps in `beforeSwap`, minting ERC-6909 claims inside PoolManager to custody the user's input. Solvers compete off-chain to fill at a better price; if no solver wins within the auction window, the hook falls back to executing the swap through the AMM.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -72099,11 +72309,81 @@
   },
   {
     "hook": {
+      "address": "0xd8b747e0e895ed02fbdac6378a9548368374d088",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "SUBAHook",
+      "description": "Implements a sealed-bid uniform-price batch auction over Uniswap v4 pools. Incoming exact-input swaps are buffered per epoch via ERC-6909 minting in beforeSwap (suppressing AMM execution); a permissioned keeper settles each epoch at a single uniform clearing price, matching buy and sell volume proportionally and distributing outputs to per-order user addresses.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd981f4f5894a89780f2e3a189ea5a559952328cc",
       "chain": "xlayer",
       "chainId": 196,
       "name": "OkMemeTaxHook",
       "description": "A Uniswap v4 hook that collects configurable buy/sell taxes on registered meme token pools, burning a portion of tokens to address(0xdead) and routing fees to a settler contract for dividends, marketing, and buyback distribution.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf1948f8cb74169ae4d76caa393dfb3bdc2fde8cc",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "OkMemeTaxHook",
+      "description": "Collects directional swap taxes on OK.MEME graduated Uniswap v4 pools. On each swap, burn fees are sent to address(0xdead) and marketing/dividend/buyback fees are forwarded to a settler contract, both taken via return deltas. Only exact-input swaps are supported; exact-output swaps revert.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
