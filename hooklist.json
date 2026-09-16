@@ -24779,6 +24779,41 @@
   },
   {
     "hook": {
+      "address": "0x0b5d719460df4e6460440f583a36e061ae8c2888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "MiniBTCHook",
+      "description": "A bonding-curve hook that replaces the Uniswap v4 AMM for an ETH/MiniBTC pool. Buys mint MiniBTC via a forward curve; sells burn MiniBTC and pay ETH from the hook's accumulated reserves. Liquidity additions are permanently forbidden. Requires a swapper address ABI-encoded in hookData; enforces a 1-block cooldown between a wallet's last buy and any sell.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0c2fcdddbcd5ae744f1ef26d9e09f4338533eaec",
       "chain": "bnb",
       "chainId": 56,
@@ -26564,6 +26599,76 @@
   },
   {
     "hook": {
+      "address": "0x64284d37ea3dcdf93187d15f699e2663a7e02888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "MiniBTCHook",
+      "description": "A bonding curve hook that fully replaces AMM pricing via BeforeSwapDelta. Buys (ETH\u2192MiniBTC) mint tokens through a forward curve; sells (MiniBTC\u2192ETH) burn tokens through an inverse curve priced against accumulated ETH reserves held by the hook. Liquidity additions are permanently forbidden; swaps require the swapper address encoded in hookData.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x650c40e697f882267d770db82a0b567d6da7cfe0",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "VerifierHook",
+      "description": "A KYC/AML compliance hook using PureFi protocol that requires senders to provide PureFi-formatted compliance payloads (with token identity and amount validation) on swaps, liquidity modifications, and donations \u2014 unless the sender is pre-approved as a market maker or router via an on-chain whitelist.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x65ba941cdfec82af6686784ecaf4bc1b45f328cc",
       "chain": "bnb",
       "chainId": 56,
@@ -27579,6 +27684,41 @@
   },
   {
     "hook": {
+      "address": "0x8ea950bc458888ca929f03ec42bcb9cf06e1e888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "NakaHook",
+      "description": "A bonding curve hook for the NAKA token on BNB Chain. Buys mint NAKA via a forward curve; sells burn NAKA via an inverse curve. The hook is the sole liquidity source, blocks external LP additions, requires the swapper address in hookData, enforces a per-wallet block cooldown between buys and sells, and auto-forwards fees to a hardcoded donation address. Self-deprecates (disables buys) at 99% of the 21M supply cap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x90908d039930aac7c13f2a2783b3b986cbc4c040",
       "chain": "bnb",
       "chainId": 56,
@@ -27785,6 +27925,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x997f63b0085771ef509b469bdc074165581d6888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "HookHook",
+      "description": "A bonding curve hook that mints a HOOK token on buys (BNB in, HOOK out) via a forward curve and burns HOOK on sells (HOOK in, BNB out) via the inverse curve. It fully intercepts all swaps via beforeSwapReturnsDelta, replacing Uniswap AMM mechanics entirely. Liquidity additions are forbidden; sells require a block-number cooldown after the last buy.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -28135,6 +28310,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xae3e67c0a435d95d0b408bab4b32a5d872e3e880",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "NLSTRHook",
+      "description": "A single-pool hook for native BNB/NLSTR that restricts liquidity provision to a treasury address and applies a dynamic LP fee decaying linearly from 95% to 10% over a configurable period after launch. Includes a temporal single-transaction buy-size cap during the decay window to limit large buys at launch.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
