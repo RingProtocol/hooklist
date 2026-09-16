@@ -36154,6 +36154,41 @@
   },
   {
     "hook": {
+      "address": "0x41e04d0b7fcc46c9eca8ba27f0fc08141bbf1fcc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LiquidityGenHook",
+      "description": "Collects configurable buy and sell taxes in WETH (up to 15% each) via beforeSwap and afterSwap delta returns, then automatically adds full-range liquidity to the pool when accumulated fees reach a configured threshold, distributing a platform fee cut to a collector address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x428091038f0e0631b627e1061475ad919a983acc",
       "chain": "ethereum",
       "chainId": 1,
@@ -45876,6 +45911,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbb53964f58b02ab19558402826567f4c6b793880",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DynamicFeeHook",
+      "description": "A hook that overrides the pool's LP fee on every swap with a fixed fee (set as a whole percentage at deployment), and restricts liquidity additions to only the original pool creator identified by tx.origin at initialization time.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
