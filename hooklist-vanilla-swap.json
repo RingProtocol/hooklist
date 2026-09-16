@@ -7946,6 +7946,41 @@
   },
   {
     "hook": {
+      "address": "0x5f7ee65db4740fbf5597bf56234b8742701dea20",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "NoncePoolHookV1",
+      "description": "A launchpad hook for nonce.fun that restricts pool initialization and liquidity operations to an authorized launchpad and position manager. Enforces fixed tick ranges and pool parameters for token launches, disables donations, and imposes no restrictions on swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x62ee80f068dce30ea4a275e91bb733fb17fd0ac0",
       "chain": "ethereum",
       "chainId": 1,
@@ -10042,6 +10077,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcb69d5abe0589af4c57b0dcca292980d5e52c0c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LaunchGuardHook",
+      "description": "Enforces launch-time trading protections on pools containing factory-launched tokens: blocks all non-creator swaps in the launch block, then enforces per-swap buy caps and per-address cumulative hold caps in subsequent blocks by reverting violating swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "temporal"
     }
   },
   {
