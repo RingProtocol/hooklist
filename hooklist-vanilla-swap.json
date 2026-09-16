@@ -16311,6 +16311,41 @@
   },
   {
     "hook": {
+      "address": "0x74c3c5743a9adade396538fd563c4934d0a7d5c0",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "GridHook",
+      "description": "Automated grid trading hook that deploys user-configured liquidity positions across evenly-spaced tick ranges. Supports per-user grid deployment, rebalancing when price moves beyond a configurable threshold, and enforces a per-block maximum price impact circuit breaker in afterSwap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x79330fe369c32a03e3b8516aff35b44706e39080",
       "chain": "unichain",
       "chainId": 130,
@@ -16329,6 +16364,41 @@
       "afterRemoveLiquidity": false,
       "beforeSwap": true,
       "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x82405512c6675613e8a5f6b1e8fcdb360f63d540",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "GridHook",
+      "description": "A grid trading hook that lets users configure and deploy automated grid liquidity orders around the current tick. After each swap, it records the updated tick and swap count to support user-triggered rebalancing of grid positions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
@@ -16381,6 +16451,41 @@
   },
   {
     "hook": {
+      "address": "0xdaa72a0557f5249a91a3bc31618c42c4fa085540",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "GridHook",
+      "description": "A grid trading hook that allows users to deploy configurable liquidity grids around the current tick. Supports manual and keeper-triggered rebalancing as price moves, with slippage protection and Permit2-based token settlement.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe550a677bb302d43dcc9bd30dc634cfe8369cac0",
       "chain": "worldchain",
       "chainId": 480,
@@ -16398,6 +16503,41 @@
       "beforeRemoveLiquidity": true,
       "afterRemoveLiquidity": false,
       "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x7defe0e1617f4ce2f147828ca8d9edbd525f6a40",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "LiquidsHookDemo",
+      "description": "A hackathon demo lending protocol hook that enforces hook-mediated-only liquidity operations (direct add/remove liquidity reverts) and accrues interest on every swap. Uses Chainlink oracle pricing, a kink-curve interest rate model, and an owner-controlled pause mechanism to gate supply and borrow operations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
       "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
