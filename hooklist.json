@@ -31569,6 +31569,41 @@
   },
   {
     "hook": {
+      "address": "0x0a71509dff50940945538b6c9137d26b1d4468a8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Sivo UniswapHook",
+      "description": "Oracle-priced Uniswap v4 hook for the Sivo SLP token. Absorbs stablecoin-to-SLP swaps at the Chainlink NAV price using BeforeSwapDelta custom accounting, bypassing the AMM curve entirely. SLP exits are handled via an async FIFO redemption queue filled by inbound deposits and operator replenishment. Third-party liquidity and donations are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0b68d4e0f9ca8109023ace9aef0f40e8aa9d0444",
       "chain": "ethereum",
       "chainId": 1,
@@ -47241,6 +47276,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdbc61875df1b1c477aedf91708750765dcb6c8c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AccessControlDynamicFeeHookV4",
+      "description": "A Uniswap v4 hook that restricts liquidity provision to an owner-managed allowlist, applies asymmetric directional dynamic LP fees (separate rates for zeroForOne vs oneForZero), enforces configurable sqrtPrice bounds (reverting swaps that push the pool outside [min, max]), and optionally charges an additional hook fee taken from swappers via the afterSwapReturnsDelta mechanism.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
