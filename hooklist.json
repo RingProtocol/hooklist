@@ -70699,6 +70699,41 @@
   },
   {
     "hook": {
+      "address": "0x03d482cb3ff339c2d29736818d0f72c66dd6a040",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 singleton hook implementing a buyback-and-burn program: after every swap on a configured pool, it executes a reference-price-gated market buy of the pool's designated token (MAIN) using a secondary-token donation pot, delivering purchased tokens to a recipient (default burn via Glue Protocol). Optionally runs an auto-compounding LP program that harvests position fees and splits them across compound, burn, and recipient legs.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x03f4051e621ee3f3652adef2c453458a777e40cc",
       "chain": "worldchain",
       "chainId": 480,
@@ -71574,6 +71609,41 @@
   },
   {
     "hook": {
+      "address": "0x691d17f0c422f17391a42b9cf729488442e6a0ec",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "CoalaXLayerHook",
+      "description": "A buy/sell tax hook for factory-launched token pools on XLayer that applies a fixed 1% tax on swaps using BeforeSwapReturnsDelta and AfterSwapReturnsDelta. Tax proceeds are minted as ERC-6909 claims on the pool manager. Only pools registered by the CoalaXLayerFactory are permitted to swap; donations are blocked outright.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x742d6c5ec8eca72096c24a1287f5ef0efd0c50c4",
       "chain": "xlayer",
       "chainId": 196,
@@ -71736,6 +71806,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd12fd82cbba717618c91952827fadac13066c080",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "VolGuardHook",
+      "description": "A beforeSwap hook that dynamically adjusts LP fees based on trade size and an exponentially weighted moving average (EWMA) of recent trade volumes. Small trades pay 0.05%, with fees escalating to 0.3%, 1%, or 2% for larger or volatility-spiking trades. Optionally accepts pool TVL via hookData to use a ratio-based fee model instead of absolute thresholds.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
