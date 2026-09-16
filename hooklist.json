@@ -35594,6 +35594,41 @@
   },
   {
     "hook": {
+      "address": "0x4593f22c5dbe5d183f6c086dde5f4af6cb1700cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "GBYV4Hook",
+      "description": "A gamified tax hook that applies dynamic randomized buy (1\u20138%) and sell (3\u201312%) taxes on each swap. Tax proceeds fund a round reward pool and a buyback reserve. Large buys above a USD threshold qualify for reward rounds; eligible holders receive token distributions when rounds finalize. A separate mechanism swaps reserve tokens for WETH and burns repurchased tokens.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x47b35474ede2b3ae9b82915e2f57647073a6a0cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -38564,6 +38599,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x75c3aa77fe2060ee9146a1bade0ff48483ed68a8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EulerSwap",
+      "description": "A custom-curve AMM hook that routes swaps through Euler Finance lending vaults. In beforeSwap, input tokens are deposited into an Euler vault and output tokens withdrawn from another, with pricing verified against an internal bonding curve (EulerSwap v1). Native Uniswap v4 liquidity positions are blocked; each instance is deployed as a per-pool delegatecall proxy.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -42909,6 +42979,41 @@
   },
   {
     "hook": {
+      "address": "0xaf1a424c53c1c086fa2baea2b31cdf8e7dea90c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BeanHook",
+      "description": "A Uniswap v4 hook for the RedBean ($BEAN) project that records users' $BEAN token balances before swaps and mints or burns PixelBean ERC-721 NFTs after swaps based on integer-unit balance changes. Users who hold tokens long-term can trigger an evolution mechanic that upgrades their NFT's appearance.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xaf53cb78035a8e0acce38441793e2648b15b88a0",
       "chain": "ethereum",
       "chainId": 1,
@@ -45866,6 +45971,41 @@
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdf280a3b8188cde2e03e6dca9b7eefab50500080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ZKHook",
+      "description": "A Uniswap v4 hook for a ZK/ETH pool that acts as a transparent pass-through in beforeSwap (no gating, no fee changes). Its main function is to custody the launch LP position; the owner can call removeLiquidity() to decrease liquidity, burn the NFT, and receive the recovered tokens.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
       "afterSwap": false,
       "beforeDonate": false,
       "afterDonate": false,
