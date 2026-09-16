@@ -526,6 +526,41 @@
   },
   {
     "hook": {
+      "address": "0x2a1aa80cf8517732277072dacd2b5e5227bba8a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "A custom-curve AMM hook backed by Euler Finance vaults. In beforeSwap, it computes swap quotes using a proprietary bonding curve, deposits input tokens into Euler vaults, withdraws output tokens from Euler vaults, and returns the full swap delta to bypass Uniswap v4's standard pool math. Liquidity addition and donations are intentionally blocked via reverts.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2a4adf825bd96598487dbb6b2d8d882a4eb86888",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -1607,6 +1642,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x696aae99f3b8a1aff646aab01b4c701ce3be28a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "Single-LP AMM hook implementing a custom bonding curve backed by Euler lending vaults. In beforeSwap, it computes quotes via its custom curve, deposits input tokens into an Euler vault, withdraws output tokens, and returns a BeforeSwapDelta to fully bypass Uniswap v4's CLAMM math. Prevents standard LP positions and donations via revert-only beforeAddLiquidity and beforeDonate.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -2906,6 +2976,41 @@
   },
   {
     "hook": {
+      "address": "0xc43927fd52580a30f694fb8b8f49f3444a6228a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "EulerSwap is a custom-curve AMM hook backed by Euler Finance lending vaults. In beforeSwap it computes pricing via its own curve invariant, deposits swap input into an Euler vault, withdraws swap output from another Euler vault, and returns a BeforeSwapDelta to the PoolManager, bypassing Uniswap concentrated liquidity entirely.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc4bf39a096a1b610dd6186935f3ad99c66239080",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -3427,6 +3532,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xec24a303988d0467c3fafd15b151c8916ea1e0c4",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "ShieldPadRouter",
+      "description": "A modular Uniswap v4 hook that delegates swap lifecycle callbacks to pluggable security modules via delegatecall. Returns a dynamic LP fee override aggregated from enabled modules, and collects a configurable protocol fee on each swap using afterSwapReturnsDelta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -29504,6 +29644,41 @@
   },
   {
     "hook": {
+      "address": "0x185b45b3b2193c911529d158e73cd83b52afc044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "VoltageHook",
+      "description": "A Uniswap v4 hook that captures a 3% fee on every ETH/VOLT swap: sell fees are taken in ETH and immediately distributed (70% to VOLT holders weighted by balance \u00d7 time-held multiplier, 30% to a capacitor reserve for holders with \u2265100 VOLT); buy fees are collected as VOLT tokens and converted to ETH via a permissionless convertVoltageFee() call.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x190bca1a2f6cad09efae5d0bab9564553ba640c4",
       "chain": "ethereum",
       "chainId": 1,
@@ -37554,6 +37729,41 @@
   },
   {
     "hook": {
+      "address": "0x976b437538937d431f4172e0cf26cc62ade560cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PopShibaLaunchpadHook",
+      "description": "A launchpad tax hook for ETH-paired token pools that intercepts a configurable percentage (up to 1.25%) of ETH on buys and sells, distributing fees between a platform treasury and the token creator address based on market-cap tiers queried from a factory contract. Exact-output sell swaps are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x982f06e8218ca86676c6c0a45172fbbdbb711888",
       "chain": "ethereum",
       "chainId": 1,
@@ -37690,6 +37900,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9993ad2765c251503914072dac959a2104f26840",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "OneTimeLaunchHookTemplate",
+      "description": "Restricts each token pool to a single initialization and a single liquidity addition. In afterSwap, when enabled via alpha(), limits non-zeroForOne swaps to an allowlist (hasValue mapping) checked against tx.origin; the allowlist is managed by the deployer via addValues().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
     }
   },
   {
