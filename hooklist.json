@@ -421,6 +421,41 @@
   },
   {
     "hook": {
+      "address": "0x552658e4dcb00c069ab97244489c830a87b380cc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OmniHook",
+      "description": "A fee-extraction hook that takes 10 bps of every swap's output amount and splits it among five hardcoded addresses via a pull-payment ledger. Fee recipients and split ratios are immutable; no owner or admin controls exist.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5e645C3D580976Ca9e3fe77525D954E73a0Ce0C0",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -627,6 +662,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x93edc2ff63f32aac9b8787ebd828601a4f5fe8cc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "SteadyHook",
+      "description": "A Uniswap v4 hook for Lumen's Beam and Prism token-launch pool modes that charges a fixed trading fee (up to 5%) on the stock currency (currency0), split among a platform treasury, pool creator, and token holders. Only a designated locker may add liquidity; exact-output sells are not supported.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -1047,6 +1117,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcab62e007ab6656877ab556cea330de27ae025dc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "Flaunch PositionManager",
+      "description": "The core Uniswap v4 hook for the Flaunch protocol, managing memecoin pool launches with scheduled temporal gates, an Internal Swap Pool that routes swaps through fee inventory before hitting the Uniswap pool, and a fee distribution system splitting swap fees among referrers, creators, LPs, and a BidWall.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
