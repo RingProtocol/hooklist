@@ -33459,6 +33459,41 @@
   },
   {
     "hook": {
+      "address": "0x29be2d4b843da604665c2c5c46d596890303e8a8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EulerSwap",
+      "description": "A Uniswap v4 hook implementing a custom AMM backed by Euler Finance vaults. Each pool is a delegatecall proxy instance; beforeSwap fully replaces standard concentrated liquidity by taking input tokens into an Euler vault, withdrawing output tokens from another Euler vault, and verifying a custom curve invariant \u2014 returning a full delta override to the pool manager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x29d6e0ff868ba37fd81f84208b1bc6781dffb0c0",
       "chain": "ethereum",
       "chainId": 1,
@@ -34714,6 +34749,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x39475c0b44556c658de0f8f4dd3a335702cbc0c8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "VirtualLiquidityHook",
+      "description": "A hook that implements a virtual constant-product AMM (x*y=k) using configurable virtual reserves, handling all swaps entirely in `beforeSwap` via `BeforeSwapDelta` without consuming pool liquidity. Only exact-input swaps are supported, and only a single authorized swap router may initiate swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "allowlist"
     }
   },
