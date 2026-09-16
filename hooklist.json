@@ -1506,6 +1506,41 @@
   },
   {
     "hook": {
+      "address": "0x45287a48e30aad12a74ec780bd86f6a5f393a8a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "EulerSwap implements a custom AMM curve as a Uniswap v4 hook, routing swaps entirely through Euler lending vaults. In beforeSwap, it computes quotes via a custom curve invariant, deposits input tokens into the appropriate Euler vault, withdraws output tokens, and returns a BeforeSwapDelta to bypass standard pool liquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x453cff45dac5116f8d49f7cfe6aeb56107a780c4",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -2556,6 +2591,41 @@
   },
   {
     "hook": {
+      "address": "0x8443a3266de297dcc107605ecf977a9aee7b48cc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "PhoenixV4ReturnDeltaHook",
+      "description": "Uniswap v4 hook for a PXT/USDC pool that charges buy and sell fees via swap delta adjustments rather than LP fees. Sells burn a fixed percentage of PXT and skim USDC at penalty rates, with an attribution rebate for sellers who identify themselves via attributeSell; buys are charged a USDC fee split between donation and marketing allocations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x85fc815a99141b64bb89147b5ab45463e76c55c0",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -2797,6 +2867,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9818d0624b96f661645f01d007367eeb8af84ccc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "PhoenixV4ReturnDeltaHook",
+      "description": "A return-delta hook for the Phoenix PXT/USDC pool that collects fees by adjusting swap deltas. Buys are charged a USDC skim; sells burn ~1.85% of PXT and skim USDC at a base rate, escalating to a penalty rate for large sells within a rolling window. Sell access is gated by a timestamp-based unlock and an anti-bot boolean cleared by the owner post-launch.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -3668,6 +3773,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc142d58b50a70ee5c6d6d5dca19bb24956c740c0",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "LimitOrderHook",
+      "description": "Records the pool tick before each swap using transient storage, then after the swap calls a LimitOrderManager to execute any limit orders whose tick range was crossed. Supports dynamic LP fee updates via a permissioned FEE_MANAGER_ROLE.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -4718,6 +4858,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfc5cf0b52f08d0fa3fc9dd73f224ad704b5028a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "Custom AMM hook for Uniswap v4 that implements a proprietary pricing curve backed by Euler Finance vaults. On each swap, it deposits input tokens into and withdraws output tokens from Euler vaults via EVC accounts, bypassing standard Uniswap concentrated liquidity. Each pool instance is deployed as a minimal delegatecall proxy to this implementation contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
