@@ -37239,6 +37239,41 @@
   },
   {
     "hook": {
+      "address": "0x1700adf9b6eabb43561b40b3f6151e7a4c8e30c8",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "LiquinkGraduationHook",
+      "description": "Graduation hook for a single LIQUINK pool that enforces exact-input-only swaps with a fixed 2% fee: WETH inputs fund a buyback vault, LIQUINK sell inputs are burned. Maintains a 1024-slot ring-buffer for TWAP and blocks pool initialization until the bonding curve has graduated.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x18d155d3a8d65ab32793926392a11671c78038cc",
       "chain": "ink",
       "chainId": 57073,
@@ -37266,6 +37301,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1acf9e1642a3edaf0013f3f1a48adfb7ab54a888",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "flETHHooks",
+      "description": "Hook implementing 1:1 ETH/flETH swapping on Uniswap v4; validates pools are ETH/flETH pairs only and fulfills swaps by minting/burning flETH via deposit/withdraw, returning a delta to the pool manager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -37375,6 +37445,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2d89ea366c31063043dfdb624c2bf62f78e32044",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "RektInstantHook",
+      "description": "A fee hook for Uniswap v4 instant-launch pools that deducts a 1% base fee plus a configurable creator tax from every swap output via afterSwapReturnsDelta. Buys incur a decaying surcharge starting at 50% that halves every minute after launch; the creator is exempt. Only exact-input swaps are permitted; fees accumulate and are swept to a vault.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -37620,6 +37725,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6794f750f988cdf745895488d37b73f0f1dfaac4",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "StocksHook",
+      "description": "Uniswap v4 hook for graduated meme stock pools that merges TWAMM long-term order execution with per-swap fee routing. On each swap, a configurable fee is taken from the output token and split: non-CHILL fees go to treasury and protocol; CHILL fees are burned or accumulated and gradually converted to stock via TWAMM orders.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -38289,6 +38429,41 @@
   },
   {
     "hook": {
+      "address": "0xe3246a74233611a81d4f885bac105d9fad736044",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "Current",
+      "description": "A single-pool hook pinned to an ETH/ABYSS pool that records signed net ETH flow per epoch via afterSwap. Charges a toll on the unspecified swap side: ABYSS received is burned, ETH tolls are split between a compile-time operator address and a Depth contract intake.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe449e013004db4a5681e9622ca10c5ba0ea610cc",
       "chain": "ink",
       "chainId": 57073,
@@ -38316,6 +38491,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf9c272f84c41c4bef259f1008430e905402a30c8",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "LiquinkGraduationHook",
+      "description": "A Uniswap v4 hook for a single Liquink pool that enforces a fixed 2% fee on exact-input swaps, routing buy-side fees (WETH) to a buyback vault and sell-side fees (tokens) to on-chain burns via the curve contract. Also maintains a 300-second TWAP tick history and restricts pool initialization to post-graduation only.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
