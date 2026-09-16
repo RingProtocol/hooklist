@@ -38359,6 +38359,41 @@
   },
   {
     "hook": {
+      "address": "0x62b2969b19f00aa3827d864689d4712ec6c8c0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "HookPadHook",
+      "description": "Launch-pad hook enforcing a 5-second anti-snipe window (60% tax on non-whitelisted buys) and cycling dynamic buy/sell tax tiers (1\u201330%) on ETH-denominated trades, routing fees to the token creator or protocol treasury via HookPadFeeLocker.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x62ee80f068dce30ea4a275e91bb733fb17fd0ac0",
       "chain": "ethereum",
       "chainId": 1,
@@ -42730,6 +42765,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9b9d1ba1d173516d21f7bc5c66207f0bf3f368cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniswapV4Hook",
+      "description": "A buy-and-burn hook that charges a 1.7% fee on buys (ETH accumulated into a burn pot for periodic token buybacks every 20 swaps) and sells (tokens queued for direct burning). Exact-output swaps always revert. Sell access can be restricted to an owner-managed allowlist when enabled per token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
