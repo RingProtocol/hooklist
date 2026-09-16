@@ -37239,6 +37239,76 @@
   },
   {
     "hook": {
+      "address": "0x18d155d3a8d65ab32793926392a11671c78038cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "SentryInkWethXStockHook",
+      "description": "A token launch hook with a time-decaying fee schedule (exponential half-life decay from startFee to endFee). On each swap, WETH fees are skimmed and distributed among reflection, creator, pot, and sink recipients. Liquidity additions are restricted to a factory-authorized vault. Whitelisted launch participants receive a discounted fee on buys during the launch window.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1d852a3c3367be65efd2f96d6a8fed12f03fe044",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "RektMemeHook",
+      "description": "A meme token hook for the Rekt protocol that collects a 1% platform fee plus a configurable creator tax on exact-input swaps in registered pools, using afterSwap return deltas to take fees in the output currency and forwarding them to a vault or converting them via a router.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2a2b25be7ac490a9468be03a9a300fd4a9328fcc",
       "chain": "ink",
       "chainId": 57073,
@@ -37255,6 +37325,41 @@
       "afterAddLiquidity": true,
       "beforeRemoveLiquidity": true,
       "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2c4e9e8b3577f1eeed0bb4262e7d14af2276a0cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "LiquinkFeeHook",
+      "description": "A launch-token fee hook that takes a fixed 2% fee in the paired quote asset on both buys and sells. 1.5% is credited to launch-token holders via a reward deposit and 0.5% is minted to an immutable buyback vault. Only exact-input swaps from a designated router are accepted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
       "beforeSwap": true,
       "afterSwap": true,
       "beforeDonate": false,
@@ -37309,6 +37414,76 @@
   },
   {
     "hook": {
+      "address": "0x4d1fe10afe0a94c86d9d284c3a7d8043cec42044",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "Current",
+      "description": "Monitors ETH/ABYSS swap flow on a single pinned pool, maintaining a signed running total of ETH flow per epoch for consumption by a companion Depth contract. After each swap, charges a toll on the unspecified output side: ABYSS tolls are burned via IBurnable, while ETH tolls are split between a fixed operator address and the Depth contract's intake.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4f5f142158a85f27556a7af848ae4d43f53b40c4",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "MemeowGuardHook",
+      "description": "Per-pool trading guard for memeow v4 launches with dynamic LP fees: anti-snipe window enforcing max-buy caps and optionally decaying snipe tax, surge fee on large buys, EWMA volatility surcharge. Auto-burns a configurable share of buy output to the dead address via afterSwapReturnsDelta. Also hosts trustless on-chain single-tick limit orders that fill atomically when the price crosses their tick.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x555650f67654eec6b27efa2c474455663c72f0cc",
       "chain": "ink",
       "chainId": 57073,
@@ -37340,6 +37515,76 @@
       "requiresCustomSwapData": true,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x58a0dff5a7da536b951e47800699bc874e7da0cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "BellHook",
+      "description": "Collects a configurable creator tax (in bps) on the quote currency (currency0) of every swap in pre-registered pools, accruing fees for the pool creator to withdraw via `collect`. Pools must be registered by a designated `pad` address before initialization; the hook enforces this in `beforeInitialize`.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x661455a91c57670ba405b88e871c7f89429ba0cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "RothWethFeeHook",
+      "description": "A single ROTH/WETH pool hook that collects a fixed 3% WETH fee on every swap via BeforeSwapDelta (when WETH is the specified token) and AfterSwapDelta (when it is not). Fees are accrued as PoolManager ERC-6909 credits and distributed in equal thirds to a terminal pot, a growth sink, and the creator address on each swap or via a public distribute() call.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -37410,6 +37655,76 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6fbb1831db71780875f6b2f33c97b4523c97e044",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "Current",
+      "description": "Sits on a single pinned ETH/ABYSS pool, recording a signed running ETH-flow total per epoch in afterSwap and taking a toll on the unspecified side of each swap. ABYSS tolls are burned; ETH tolls are split between a fixed operator address and a depth-contract intake.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x852b425d7d14b965ceccf4805b411b50767040c4",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "MemeowGuardHook",
+      "description": "Per-pool trading guard for memeow v4 launches: enforces anti-snipe windows (max ETH buy cap, exact-output refusal) with dynamic LP fees (base + optionally decaying snipe tax + surge fee for large buys + volatility EWMA surcharge), auto-burns a configurable share of buy outputs, and supports on-chain resting limit orders and trailing stop-loss orders filled atomically as price crosses their ticks.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
@@ -37589,6 +37904,41 @@
   },
   {
     "hook": {
+      "address": "0xa80b947e52684dfd85484f0e44765068991640c4",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "FoundryHookInkG2",
+      "description": "A bonding curve launchpad hook for Ink (INK-G2) that manages token pools with dynamic LP fees based on market cap bands. Applies quote-denominated protocol and creator fees on buys and sells, blocks exact-output sells, and supports pool graduation when accumulated liquidity reaches a configurable threshold.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0xaa49adadd33c5e953b645567afb10cbbba63afc4",
       "chain": "ink",
       "chainId": 57073,
@@ -37624,6 +37974,76 @@
   },
   {
     "hook": {
+      "address": "0xb65d730e9e9d2be9f2e37e55a349ef67730e0088",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "StopeHook",
+      "description": "Charges a configurable fee (initially 1%, hard-capped at 3%, can only be lowered) on exact-input swaps by taking a portion of the input currency as an ERC-6909 claim on the pool manager. Accrued fees can be permissionlessly collected to a deployer-set treasury address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb836fdffae6c50aea38435e3501814927f4fa0cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "PrintHook",
+      "description": "Charges a configurable toll (default 5%) on the gross ETH leg of every swap in a single pinned ETH/token pool. Fees accrue as ERC-6909 claims inside the PoolManager and are split 20% to a compile-time operator and 80% to a Printer address via a permissionless collect() function.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xba7a87d42cb13834086f3329d7ae8a0555982444",
       "chain": "ink",
       "chainId": 57073,
@@ -37655,6 +38075,111 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbd19382455599ebab1a12975b1fa62c4e426e0cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "LiquinkFeeHook",
+      "description": "Fee hook for Liquink launch token pools that collects a fixed 2% fee on each swap, splitting it 1.5% to token holders as rewards and 0.5% to a buyback vault. Only the designated Liquink router may initiate swaps; only exact-input swaps are accepted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbfde42d442c26b96be528b03fe540f64a5ed00c4",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "FoundryHookV4R2E2",
+      "description": "A bonding curve hook for token launches that charges dynamic ETH-denominated fees on both buys (via LP fee override scaled to market cap) and exact-input sells (via afterSwapReturnDelta), accumulating sell fees in the hook for periodic collection by a designated locker. Exact-output sells are unconditionally blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc0077b7efa559a839e85b4fe6ad2e654a95220cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "LiquinkFeeHook",
+      "description": "Takes a fixed 2% fee (1.5% distributed to launch-token holders, 0.5% sent to an immutable buyback vault) on every exact-input swap via delta returns. Swaps are restricted to a registered router, and pools must be registered through a bound factory contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
@@ -37724,6 +38249,76 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xda483b881fe166dd540e99f899f7f2499005e044",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "RektInstantHook",
+      "description": "Fee hook for token instant-launches: takes a 1% base fee plus a per-token creator tax from every swap's output, plus a decaying 50% buy surcharge that holds for 1 minute then halves every minute until it drops away. Accumulated fees are swept and split between a platform vault and the token creator after pool graduation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe449e013004db4a5681e9622ca10c5ba0ea610cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "AegisHook",
+      "description": "A Uniswap v4 hook that applies dynamic LP fees via an external fee manager, collects additional hook fees on swap input amounts (exact-in in beforeSwap, exact-out in afterSwap), records TWAP oracle observations, dispatches limit-order fills, and periodically reinvests accumulated hook fees as full-range liquidity via AegisEngine.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -70559,6 +71154,146 @@
   },
   {
     "hook": {
+      "address": "0x1f141a2f4eb256c58a6e008885c6fdc966576844",
+      "chain": "zora",
+      "chainId": 7777777,
+      "name": "StrategyHookV2",
+      "description": "A fee-taking hook that collects dynamic fees from swaps (fixed fee on buys; variable sell fees based on NFT accumulation state and a graduated cooldown mechanism), then distributes collected ETH to a strategy contract (80%) and an optional protocol fee recipient (20%). Locks liquidity after initial provision and requires pool initialization with a specific strategy token as currency1.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x228ee9f02eae140be28faef17f619adcea85e844",
+      "chain": "zora",
+      "chainId": 7777777,
+      "name": "StrategyHookV2",
+      "description": "A hook that collects fees after each swap at dynamic rates based on buy/sell direction, NFT accumulation state, and a graduated cooldown mechanism. Fees are distributed 80% to an immutable strategy contract and 20% to an optional protocol address; liquidity is permanently locked after the initial load.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x422c20b4147e3b3b2d035f38a421d5cf79362844",
+      "chain": "zora",
+      "chainId": 7777777,
+      "name": "StrategyHookV2",
+      "description": "A fee-collecting hook that takes dynamic fees from swap outputs in afterSwap and distributes them to a strategy contract (80%) and an optional fee split address (20%). Sells are subject to escalating fees based on NFT accumulation state and a block-based cooldown mechanism. Liquidity additions are permanently locked after initial provision; currency1 must be the strategy contract address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x7ae8de9614436814b985acccf450cef1c744e844",
+      "chain": "zora",
+      "chainId": 7777777,
+      "name": "StrategyHookV2",
+      "description": "A Uniswap v4 hook that collects dynamic swap fees (graduated by sell timing and NFT accumulation state) and distributes them 80/20 between an immutable strategy contract and a configurable protocol fee recipient. Liquidity is permanently locked after the initial provision, and pool initialization is restricted to pools where currency1 is the strategy contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
       "chain": "zora",
       "chainId": 7777777,
@@ -70621,6 +71356,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcf42d10596858706f823ec8116c5a800ece76844",
+      "chain": "zora",
+      "chainId": 7777777,
+      "name": "StrategyHookV2",
+      "description": "Collects dynamic fees from swaps (with graduated cooldown sell fees and a high initial sell fee before first NFT accumulation) via afterSwap delta accounting, distributes them to a strategy contract (80%) and optional protocol fee split (20%), and permanently locks pool liquidity after the initial addition.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
