@@ -37064,6 +37064,41 @@
   },
   {
     "hook": {
+      "address": "0x4cd6ccb0d373defe9fb426bd291664a25252c0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "V4TaxHook",
+      "description": "Collects a fixed 5% buy and sell tax on swaps involving a designated token in registered Uniswap v4 pools. Tax amounts are minted from the pool manager via beforeSwap/afterSwap delta returns and recorded on an ITaxedDividendToken contract for dividend distribution.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4e856363347659db3c222547035dde5c22e4dac8",
       "chain": "ethereum",
       "chainId": 1,
@@ -38569,6 +38604,41 @@
   },
   {
     "hook": {
+      "address": "0x63a172b0ada28bb78791b0f2993287766de24044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ShowtimeBurnHook",
+      "description": "On every swap in the ETH/SHOWTIME pool, collects 0.1% of the output as a burn fee via afterSwapReturnsDelta. Buys (ETH\u2192SHOWTIME) burn the SHOWTIME directly; sells (SHOWTIME\u2192ETH) accumulate ETH which anyone can trigger via executeSellBurn() to swap back for SHOWTIME and burn it.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x64170df72d0b528d10848f19e9c331f6d08fc040",
       "chain": "ethereum",
       "chainId": 1,
@@ -39877,6 +39947,41 @@
       "beforeInitialize": false,
       "afterInitialize": true,
       "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x792814c57bab50731d5729c8174997be1e0f8800",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TickRangeHook",
+      "description": "Restricts liquidity provision to a configured tick range by reverting in beforeAddLiquidity if the position's tick bounds fall outside the allowed range. A privileged manager role can update the tick range bounds.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
@@ -42835,6 +42940,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9aef5dd3be8ff4746e62946b85c5948cdd92c488",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Hyperhook",
+      "description": "A prediction-market hook that lets users trade binary outcome tokens (UP/DOWN) against a base asset using a custom bonding curve inside time-bounded epochs. Epochs are resolved by a Chainlink price feed; winning-side holders can redeem their tokens for the base asset after resolution, subject to a decay tax.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
@@ -48321,6 +48461,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe411bb2af563293a934716ce346ab31b3fcfc0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "V4TaxHook",
+      "description": "Collects a 5% buy and 5% sell tax (500 BPS) on swaps involving a registered taxed-dividend token by using beforeSwap and afterSwap delta returns to redirect the tax amount. Tax proceeds are minted to the token contract and recorded via recordTaxFromHook for dividend distribution to token holders.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
