@@ -33494,6 +33494,41 @@
   },
   {
     "hook": {
+      "address": "0x2a8dde6167d67dfab133a233b507bb3971ce6888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Vitalik0Hook",
+      "description": "A bonding curve hook that acts as sole counterparty for all ETH/Vitalik0 swaps, bypassing AMM liquidity entirely. Buys mint Vitalik0 via a forward curve; sells burn it via an inverse curve, with taxes routed to dev and public reward wallets. Liquidity additions are permanently forbidden.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2ac72baa335a901487a72b8428adb98104222840",
       "chain": "ethereum",
       "chainId": 1,
@@ -37480,6 +37515,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x622aaf2df234b8a14b76624769c328c9de0440c8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TaxHook",
+      "description": "A swap tax hook that levies a 10% fee on exact-input swaps in WETH-paired pools, reducing the swapped amount via BeforeSwapDelta and distributing 8% to a protocol wallet and 2% to a team wallet via poolManager.take() in afterSwap. Reverts on exact-output swaps and non-WETH pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -46331,6 +46401,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe37f0c95351ec954f9bddaf02f7dee511a03a888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "RelicMachine",
+      "description": "A gacha/lottery machine built as a Uniswap v4 hook. Players swap a payment token into a dedicated pool; beforeSwap intercepts the payment, distributes yield to NFT stockers, and triggers a Chainlink VRF prize draw. Winners receive NFT relics from the pool; stockers earn revenue-share yield and buyout payments.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
