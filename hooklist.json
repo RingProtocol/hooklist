@@ -19109,6 +19109,41 @@
   },
   {
     "hook": {
+      "address": "0xfe92de69d2dddcac2f864c4cf84e8ad5e17d2880",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LexifiHook",
+      "description": "Compliance-gating hook that enforces per-pool eligibility rules for swaps and liquidity additions. Each pool can be assigned a configurable policy contract that determines user access levels; non-compliant users are denied via revert. Resolves user identity through trusted routers' msgSender(), falling back to the caller address.",
+      "deployer": "0x4122c8b8080c8960F52d3D1cCb3A8d85EFF1f039",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0xfee99b847f90d7a7f87e273097b72e33d3490440",
       "chain": "base",
       "chainId": 8453,
@@ -34544,6 +34579,41 @@
   },
   {
     "hook": {
+      "address": "0xc670cc118be1ceab7ca19bf172071bc5df54e0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PerpFeeHook",
+      "description": "Collects a fixed 1.5% ETH-denominated fee on swaps in a single designated pool, minting fee claims to an external distributor contract. Records tick observations after each swap and pool initialization to maintain a 5-minute TWAP oracle via a 1024-entry ring buffer.",
+      "deployer": "0xe30d9d551C84Cd6A549d950C43C7DDEBc587c2d0",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xC804Af6EaA8269C71848e114571f2Dd5314C4044",
       "chain": "ethereum",
       "chainId": 1,
@@ -35520,6 +35590,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe12083b303ebb9097ee5dc5ff9f44ddbc321eacc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "3XHook",
+      "description": "A Uniswap v4 hook for signed 3x long positions, treasury-backed settlement, fee distribution, and liquidation.",
+      "deployer": "0xdB436562d3a0D7Eb714038895021bF1D0dFB1aC6",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
