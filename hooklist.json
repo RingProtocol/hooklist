@@ -32934,6 +32934,41 @@
   },
   {
     "hook": {
+      "address": "0x1ebf8380dca3c0bb66c73cd64323c9a42940a8a8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EulerSwap",
+      "description": "A Uniswap v4 hook implementing a custom AMM curve backed by Euler Finance lending vaults. On each swap, it computes amounts via a parameterized curve, deposits input tokens into an Euler vault, and withdraws output tokens from another vault, returning a full BeforeSwapDelta to bypass the pool's native liquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1f73ae8b1adcfff858cfe2cfb35e054d710fc880",
       "chain": "ethereum",
       "chainId": 1,
@@ -35995,6 +36030,41 @@
       "afterAddLiquidity": true,
       "beforeRemoveLiquidity": true,
       "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4e856363347659db3c222547035dde5c22e4dac8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Psyche",
+      "description": "An ERC20 token (ECHO) combined with a Uniswap v4 hook that applies variable swap surcharges (5\u201350 bps) via beforeSwapReturnsDelta, scaled by each swapper's contribution coefficient \u2014 a weighted product of token tenure, balance weight, and swap witness count. Higher-coefficient holders pay lower surcharges; the surcharge differential routes back to liquidity providers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
       "beforeSwap": true,
       "afterSwap": true,
       "beforeDonate": false,
