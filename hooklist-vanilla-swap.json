@@ -16836,6 +16836,41 @@
   },
   {
     "hook": {
+      "address": "0xcd5acbecd61727709729148ae770b3a390294ac0",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "Counter",
+      "description": "A simple counter hook that increments per-pool counters on beforeSwap, afterSwap, beforeAddLiquidity, and beforeRemoveLiquidity. Each callback only records call counts with no access control, fee logic, or swap modification.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xdaa72a0557f5249a91a3bc31618c42c4fa085540",
       "chain": "unichain",
       "chainId": 130,
