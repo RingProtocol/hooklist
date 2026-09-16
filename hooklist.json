@@ -631,6 +631,41 @@
   },
   {
     "hook": {
+      "address": "0x3e17096a281831af89106c6060d849e21ab24ac0",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "FedzHook",
+      "description": "A stablecoin depeg-protection hook for FUSD/USDT pools that gates all swaps and liquidity operations to NFT holders with active time slots in a round-robin scheduling system. Applies dynamic fees (base or crisis rate) in beforeSwap, and reverts afterSwap if the pool price falls below a configurable depeg threshold.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3e61d0519d598bf2dfaef5b8fa0256bf7e1d60c0",
       "chain": "arbitrum",
       "chainId": 42161,
