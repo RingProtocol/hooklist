@@ -38639,6 +38639,41 @@
   },
   {
     "hook": {
+      "address": "0xb8dd684f503c3386595d4a8886f29e0388b100cc",
+      "chain": "linea",
+      "chainId": 59144,
+      "name": "OmniHook",
+      "description": "A fee-extracting hook that takes 10 bps of each swap's output, split among five hardcoded recipients (STACC 1/8, DEPLOYER 2/8, PART2 2/8, PART1A 1/8, PART1B 2/8+dust). Fees are accumulated in an on-hook ledger and paid out on demand via `claim`/`claimAll`.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc7bc023afe5aec98f57452b53fa196433788e444",
       "chain": "linea",
       "chainId": 59144,
@@ -71201,6 +71236,41 @@
     "flags": {
       "beforeInitialize": false,
       "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbb021554c5294328b04fa313669715bd201ba040",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook that runs a buyback-and-burn mechanism after every swap on funded pools: it uses donated secondary-token funds to buy the pool's designated main asset (delivered to a configured recipient, burned by default if recipient is address(0)), and optionally auto-harvests and compounds fees from a hook-managed LP program.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
