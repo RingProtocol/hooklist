@@ -5181,6 +5181,41 @@
   },
   {
     "hook": {
+      "address": "0x79baeb9d542852e07a0c86f9646f88c4da47c540",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "ZA_Hook",
+      "description": "Owner-managed liquidity management hook that allows authorized callers to mint positions, increase liquidity, and withdraw funds from Uniswap v4 positions. The afterSwap, afterAddLiquidity, and afterRemoveLiquidity callbacks are all no-ops that do not alter swap or liquidity behavior.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7a68c85746679b45031b97e114ce3d612951d000",
       "chain": "bnb",
       "chainId": 56,
@@ -5584,6 +5619,41 @@
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
       "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa276d4a4ca98728c558da6631f01a57429434540",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "ZA_Hook",
+      "description": "A hook with no-op afterSwap, afterAddLiquidity, and afterRemoveLiquidity callbacks. Includes owner/authorized-caller controlled functions for minting, adding liquidity to, and withdrawing from Uniswap v4 positions held by the hook contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
