@@ -71469,6 +71469,76 @@
   },
   {
     "hook": {
+      "address": "0x0f307dc905592fbef047b8dddcc50f9415b286c0",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "PulseHookV4",
+      "description": "Dynamic fee oracle hook that adjusts LP fees based on pool swap pressure (directional flow imbalance) and EMA notional volume, ranging from 0.05% to 3%. Tracks liquidity provider scores and flags early exits within a 1-day window; does not restrict swaps or require custom swap data.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x170427f1465041badb0d579e8c003242a5e91acc",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "VipHook",
+      "description": "A Uniswap v4 hook that applies dynamic base+surge fees with VIP discounts verified by Brevis zero-knowledge proofs, looking up discount state via tx.origin. Includes oracle observation, per-swap tick-movement capping, and protocol fee collection reinvested via a full-range liquidity manager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1d18a1368e8931745d01f402909201ad4c01aacc",
       "chain": "xlayer",
       "chainId": 196,
@@ -71500,6 +71570,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1e992f5cbd297b93a9ccbe3ab427461594f0c0cc",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "XPEGHook",
+      "description": "A Uniswap v4 hook for the xPEG/OKB pool on XLayer that collects a configurable swap tax (default 3%) on OKB-side trades via beforeSwap and afterSwap return deltas, and optionally applies a dynamic LP fee override set by the token owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -71679,6 +71784,41 @@
   },
   {
     "hook": {
+      "address": "0x7cda90700b2b2957c73d3fd3afa0ba9f47e514c0",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "ConvictionHook",
+      "description": "A Uniswap v4 hook integrating a prediction market system. Regular swaps pass through with event observation; swaps carrying encoded conviction hookData (magic-prefixed) are gated to an authorized router and trigger market.enter or market.exit on a registered ConvictionMarket, minting or burning outcome tokens based on the swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x88c9ff9fc0b22cca42265d3f1d1c2c39e41cdacc",
       "chain": "xlayer",
       "chainId": 196,
@@ -71745,6 +71885,76 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xaa320b40c3cea1b1a5da440088900220070668cc",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "OkMemeTaxHook",
+      "description": "A Uniswap v4 tax hook for meme tokens that collects marketing, dividend, buyback, and burn fees on exact-input swaps. Fees are deducted from swap amounts via return deltas and forwarded to a settler contract for distribution, or burned by sending to address(0xdead). Exact-output swaps are rejected.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xadc0a0afc36e2663f9a19fe9560652a547da3ff0",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "LaunchGuardV4Hook",
+      "description": "A fair-launch Uniswap v4 hook that dynamically adjusts LP fees across multiple launch phases (guarded, cooldown, graduated), enforces per-wallet and per-transaction buy limits, locks creator liquidity, and redistributes penalty fees from suspicious trades into a community rebate pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -71859,6 +72069,41 @@
       "chainId": 196,
       "name": "OkMemeTaxHook",
       "description": "A Uniswap v4 hook for the OkMeme launchpad that collects swap taxes (marketing, dividend, buyback, and burn fees) on both buy and sell sides via delta adjustments in beforeSwap and afterSwap. Optional hookData (a 4-byte magic value) opts into gas-bounded post-sell settlement and liquidity reflow.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd981f4f5894a89780f2e3a189ea5a559952328cc",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "OkMemeTaxHook",
+      "description": "A Uniswap v4 hook that collects configurable buy/sell taxes on registered meme token pools, burning a portion of tokens to address(0xdead) and routing fees to a settler contract for dividends, marketing, and buyback distribution.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
