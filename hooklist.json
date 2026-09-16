@@ -841,6 +841,41 @@
   },
   {
     "hook": {
+      "address": "0x5d6a1ea5c89c0f63f6d147d755b45314151aa8a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "A Uniswap v4 hook implementing a custom AMM curve backed by Euler Finance lending vaults. In beforeSwap, the hook takes full control of swap accounting: input tokens are deposited into an Euler vault and output tokens are withdrawn from another, with the curve invariant verified before returning a BeforeSwapDelta to the pool manager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5e645C3D580976Ca9e3fe77525D954E73a0Ce0C0",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -1471,6 +1506,41 @@
   },
   {
     "hook": {
+      "address": "0x9d1031b9ac7afe0bc0e9bb127b68caa00f21da00",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "ClassicSwapHook",
+      "description": "A Uniswap v4 hook that wraps a single pool with V2-style full-range liquidity, issuing fungible ERC-20 LP tokens proportional to deposited amounts. Direct liquidity modification is blocked at the hook level; all deposits and withdrawals go through the hook's own deposit/withdraw functions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa4e6f5500e88691fdcb289aa0e99067481434880",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -1884,6 +1954,41 @@
     "properties": {
       "dynamicFee": false,
       "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc2146a4e7dc8102d85e983407f840f42e87be8a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "A Uniswap v4 hook implementing a custom single-position AMM backed by Euler lending vaults. In beforeSwap, it takes input tokens into an Euler vault, withdraws output tokens from another Euler vault, and verifies trades against a parameterized pricing curve, fully replacing pool liquidity with Euler vault collateral.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
