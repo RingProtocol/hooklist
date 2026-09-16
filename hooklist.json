@@ -40319,6 +40319,41 @@
   },
   {
     "hook": {
+      "address": "0xcd2e1a2e28fbd9735f244418f4f447cbe34fa840",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "OneTimeLaunchHookTemplate",
+      "description": "A one-time launch template that restricts pool initialization and initial liquidity to a single occurrence per token. In afterSwap, when activated via trigger(), non-zeroForOne swaps are gated by an owner-managed allowlist (hasValue mapping) checked via tx.origin.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0xcdde8f9c3414a00f804e5c565eed9949ad17e888",
       "chain": "ethereum",
       "chainId": 1,
@@ -40963,6 +40998,41 @@
       "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdbeecf2c3a2de8136333e4571c5e874b2c120044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TribunalHook",
+      "description": "Imposes a tiered sell tax (8%\u20130.3% based on the seller's TRIB stake ratio) plus a 1% protocol fee on every swap via afterSwap. Fees are taken from the swap output: sell taxes go to TRIB stakers via the Court contract; protocol fees go to a treasury address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
