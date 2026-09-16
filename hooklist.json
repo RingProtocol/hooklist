@@ -34404,6 +34404,41 @@
   },
   {
     "hook": {
+      "address": "0x31ce97b1c0e720fae74ad1806d05d786f3ef4080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "WhitelistTaxHook",
+      "description": "A beforeSwap hook that applies dynamic LP fee overrides based on buy/sell direction and a whitelist. Whitelisted addresses swap fee-free; non-whitelisted buyers pay a configurable buyTaxRate, and sellers pay a configurable sellTaxRate (reduced after 10 blocks since the user's first buy).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3226136d52beac0ecf777cedaca5c02a1373f0cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -48089,6 +48124,41 @@
   },
   {
     "hook": {
+      "address": "0xe587618a4ca6f0f4890f7dfb92aa32e7854da0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ConfigurableKlikHook",
+      "description": "A configurable per-pool tax hook for ETH-token pools that charges buy and sell taxes (with optional launch-period decay and volume-based surcharge), splits fees between platform, hook creator, token creator, buyback, and holder rewards, and automatically burns tokens via a buyback mechanism funded from collected fees.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe5a480ce8095000672c37b0660df4b8f903260cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -49484,6 +49554,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfb54ec364c22868eeeb18786dc6cb19ab3590440",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DynoPEGHook",
+      "description": "Calls `start` on a configured token contract when the first liquidity is added to its pool; updates an internal random seed after each swap involving the token, supporting on-chain NFT/SVG generation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
