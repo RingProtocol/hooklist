@@ -31744,6 +31744,41 @@
   },
   {
     "hook": {
+      "address": "0x0e4c50c8a6f1747854b4705a11fe5760d34d00cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniForge",
+      "description": "A Uniswap v4 hook that collects a 10% ETH tax on buys and sells in an ETH/uniFOR pool, forwarding proceeds to a fixed treasury address. Swappers who spend \u22650.0001 ETH earn non-transferable Bronze shard counters, which can be forged 2-for-1 into Silver, Gold, or Diamond tiers via a separate forge() function.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0eddd960839444ddc68be768eba48b508136d000",
       "chain": "ethereum",
       "chainId": 1,
@@ -35345,6 +35380,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x3e8e395ff81273ccae88e2d09eaea48dec51a888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "SoulHook",
+      "description": "A pump.fun-style bonding-curve hook for Uniswap V4. ETH buys mint SOUL tokens along a constant-product curve; sells burn them. The hook intercepts all swaps via beforeSwap (requiring an encoded swapper address in hookData), handles token minting and burning directly, and graduates to a locked Uniswap V3 LP position once the bonding curve fills.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -40524,6 +40594,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8b213861686173c34fb633b26bcf3e675d4f8500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that manages creator-gated, one-sided token/ETH liquidity positions. Token creators initialize a pool, seed an LP with a percentage of total supply, and later withdraw principal and accrued fees; swaps are unaffected by the hook.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
