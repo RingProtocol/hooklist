@@ -981,6 +981,41 @@
   },
   {
     "hook": {
+      "address": "0x6b5a84afbfe180dc8c26fac43fea24d091e10dc8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OrketHook",
+      "description": "Prediction market hook that applies VALS (Volatility-Adjusted LP-Sensitive) dynamic fees on swaps via signed off-chain sigma parameters. USDC fees are captured through BeforeSwapDelta and routed to a YieldDistributor for share token holders, with LP positions tracked and pool prices updated after each swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6d9c97c94c88a67d1a93bbc8ccae3a5322208844",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -2027,6 +2062,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xea27c43bfada8855bc8bb099fdcdf8f2761f4dc8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "OrketHook",
+      "description": "A prediction market pool hook implementing VALS (Volatility-Adjusted Liquidity Sensitivity) dynamic fees. Captures fees from swaps using a signed toxic-velocity (sigma) parameter, routing them to a YieldDistributor for share holders rather than LPs. Requires a backend-signed sigma payload in hookData and blocks swaps when the prediction market is resolved or disputed.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
