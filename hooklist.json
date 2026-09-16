@@ -52709,6 +52709,41 @@
   },
   {
     "hook": {
+      "address": "0x5ae59a607fbe48e62270272ee0ec266a544368cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "Ctrl Immutable Launch Hook",
+      "description": "Immutable, non-proxy launchpad hook for Ctrl tokens paired with native ETH. Collects a fixed 1% ETH fee using swap return deltas for creator rewards, referrals, treasury and a graduation bounty. Empty swap hookData is accepted; attribution data is optional. Core LP fee is zero. Only the initial factory seed liquidity can be added, and its position is permanently locked. Graduation at 4.2 ETH net principal releases the bounty without migrating liquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5b1d9e18641f20eb799374ab1d359d93110c80cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -64675,6 +64710,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdd1a91b3093c12bbe38ab80537f1b53a7d07a880",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FlockFall Dynamic Fee Hook",
+      "description": "Dynamic LP fee hook for FlockFall's ETH/SHELL pool that fetches the current fee decision from an external policy contract on each swap, overriding the LP fee. Restricts pool initialization to a designated bootstrap venue and blocks general liquidity additions until bootstrap is complete.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
