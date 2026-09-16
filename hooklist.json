@@ -34124,6 +34124,41 @@
   },
   {
     "hook": {
+      "address": "0x2d2523c292359e7dea2617214cb5ae62c79fb0c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ImpactHook",
+      "description": "Computes a dynamic LP fee based on estimated price impact and an illiquidity metric (price impact divided by swap volume), overriding the fee before each swap via OVERRIDE_FEE_FLAG. Tracks actual post-swap price impact and updates the illiquidity state used to estimate fees for future swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2d4d0ed9e40e8ef81cc1a01a29e296a153a21000",
       "chain": "ethereum",
       "chainId": 1,
@@ -34644,6 +34679,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x332439aea2389a91df9cc4b6c00d96d907936888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AtlasHook",
+      "description": "A smart-routing hook that intercepts swaps in beforeSwap and fills them by routing across multiple hardcoded V3 and V4 pools at the best available price, collecting a small service fee via donate. Pool initialization and liquidity addition are restricted to a single admin address enforced via tx.origin check.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -39864,6 +39934,41 @@
   },
   {
     "hook": {
+      "address": "0x770d0dcbba728c68f1b58c1239f0a4e2176880cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "V4TaxHook",
+      "description": "A tax hook that applies a 5% buy and 5% sell tax on registered token/base-asset pools. Tax is deducted from the swap's base asset amount via BeforeSwapDelta and afterSwapReturnsDelta, then minted to the token contract and recorded via recordTaxFromHook().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x777f3b0c2ba4c68240bbf3d5a155fe671c000080",
       "chain": "ethereum",
       "chainId": 1,
@@ -40104,6 +40209,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x7ac676b917f1c4664808c3df640c185421672888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AtlasHook",
+      "description": "A routing aggregator hook that splits swaps across multiple Uniswap V3 and V4 pools in real time, selecting the best route by effective price. Returns swap deltas via beforeSwapReturnsDelta and charges a per-swap service fee; liquidity can only be added by the contract admin.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -42384,6 +42524,41 @@
   },
   {
     "hook": {
+      "address": "0x9547e5723b4902af276dadea621d1f643e83e0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TaxHook",
+      "description": "Charges a 1% tax on every swap in the specified pool pairs (ETH/FRAC and MEME/FRAC): ETH tax is accumulated in the contract and forwarded to a team wallet via `sweep()`; MEME tax is burned to address(0xdead). Tax is deducted in `beforeSwap` or `afterSwap` depending on whether the taxed currency is the specified or unspecified leg.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x95518bfd15fc8da9fb62f7b5f5af7a87cf7fe888",
       "chain": "ethereum",
       "chainId": 1,
@@ -43605,6 +43780,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa2816ed011b3b00df97c013ae9d520e4c0584440",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AsteroidHook",
+      "description": "A hook for the Asteroid token project that calls start() on the token when the first liquidity is added to its pool, and updates an on-chain random seed (using block.timestamp, prevrandao, and block.number) on every swap involving the token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -45429,6 +45639,41 @@
   },
   {
     "hook": {
+      "address": "0xb92062274798f2732dca315cf7185884e7295d57",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AICEHook",
+      "description": "A Uniswap v4 hook for the AICE platform that emits events on pool initialization and swaps for real-time price indexing, and restricts liquidity additions to a designated factory address when factory lock is enabled.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": true
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb98766a35cdc28415be0767d4ea41e39fba3e000",
       "chain": "ethereum",
       "chainId": 1,
@@ -46020,6 +46265,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbf870c242e0dadcd91a7d6296ae420f9ed9f9040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "OwnerFeeHook",
+      "description": "A Uniswap v4 hook that accumulates ETH received via its payable `receive()` function and, after each swap (or on demand via `claimFees()`), forwards the accumulated balance to a single immutable `feeOwner` address once the threshold of 0.001 ETH is reached.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -48995,6 +49275,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe7f2cd31e61b05b7634fc532c59b78a5dfba8080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PredicateHook",
+      "description": "Gates swaps via the Predicate attestation network: callers must supply a signed PredicateMessage in hookData, validated against a configurable policy and a quorum of EigenLayer operators before the swap is permitted. Requires hookData on every swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
