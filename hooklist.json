@@ -32864,6 +32864,41 @@
   },
   {
     "hook": {
+      "address": "0x1add0f8faf3516240c73180649134e504b7f40c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "HystrategyHook",
+      "description": "Skims a fee on the output token of every swap, split 80/20 between a treasury and team address. Buy-side fee decays from 15% to 10% (1% per 5 blocks from deployment); sell-side fee is a flat 10%. Fees are accrued in-contract and withdrawn by recipients separately.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1b153a4ed40929dc2e699b6020296843ad98aacc",
       "chain": "ethereum",
       "chainId": 1,
@@ -35695,6 +35730,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x41837c10df7598a5517de2cf1c48e50ab8556880",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PredicateHook",
+      "description": "A Uniswap v4 hook that enforces transaction compliance by validating swaps against off-chain Predicate policies. Authorized users bypass policy checks; others must supply signed authorization data in hookData. Liquidity additions are restricted to an owner-managed allowlist.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
@@ -43749,6 +43819,41 @@
   },
   {
     "hook": {
+      "address": "0xacd03658158d1cbdbf23fa26ac152e51dd0c8044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PactHook",
+      "description": "Extracts a 3% fee on every swap (2% to a configurable pactGame contract, 1% to a dev wallet) via afterSwapReturnsDelta. Owner can update the pactGame and devWallet addresses post-deployment.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xad3cc8eb9d34abeb3b0ca9b98cbfd3837b7d40c8",
       "chain": "ethereum",
       "chainId": 1,
@@ -45320,6 +45425,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbf9828455cdc5f02771536e3ecb3c0f931eabec4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "SimHook",
+      "description": "Dynamic-fee Uniswap v4 hook that prices each swap based on cumulative directional price impact with time decay, simulating the swap first to estimate impact before execution. Includes JIT liquidity protection via block-based position locks and takes a governance-controlled protocol fee split from the dynamic LP fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -48890,6 +49030,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf5283d90e14df651d23df172d7af89d6de574044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BlueHook",
+      "description": "Charges a 3% fee on every swap, taking it from the output token (BLUE on buys, ETH on sells). Fees are split 70% to weighted BLUE token holders (weight = balance \u00d7 a time-based hold multiplier capped at 2\u00d7) and 30% to a restore stream for addresses holding \u2265100 BLUE. A permissioned sweepFees function lets the launcher drain all accumulated ETH and BLUE from the contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
