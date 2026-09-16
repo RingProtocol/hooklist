@@ -38569,6 +38569,41 @@
   },
   {
     "hook": {
+      "address": "0x72cba6d38f0ff20b1129bd1949f8eff48ddc60c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DialHook",
+      "description": "A dynamic-fee hook that adjusts LP fees between 0.30% and 1.00% based on order-flow imbalance, computed as an exponential moving average of buy vs. sell volume. Fees rise during one-sided flow and fall during balanced trading, with a warmup period and epoch-sealed on-chain audit trail.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x732141b61dda494653cad374bb5577c68b6a1000",
       "chain": "ethereum",
       "chainId": 1,
@@ -47175,6 +47210,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xea15e6dea1cd69a4042e0d36c8de99588872a8a8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EulerSwap",
+      "description": "A custom-curve AMM hook that routes swaps through Euler vaults. In beforeSwap, it deposits input tokens into an Euler vault, withdraws output tokens from another Euler vault, verifies the trade against a custom price curve, and returns a BeforeSwapDelta to fully override standard pool accounting. Standard Uniswap concentrated liquidity is intentionally disabled.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
