@@ -42069,6 +42069,41 @@
   },
   {
     "hook": {
+      "address": "0xa05b9e5fba8d28f4b6ee8e0d36c7b98001da5040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "GUNHook",
+      "description": "A gamified hook for a GUN/ETH pool that records each swap as a \"shot\" in a Western-themed game, tracking buy/sell pressure (heat/recoil), advancing a chamber based on tick distance from genesis, and resolving periodic \"duels\". Swaps via the designated gunRouter can supply hookData with a player address and stance for personalized scorekeeping; swaps without hookData succeed normally.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa13d895fa8f654d3e24ff86ed7a2efc173e5a888",
       "chain": "ethereum",
       "chainId": 1,
@@ -44770,6 +44805,41 @@
       "name": "PerpFeeHook",
       "description": "Collects a fixed 1.5% ETH-denominated fee on swaps in a single designated pool, minting fee claims to an external distributor contract. Records tick observations after each swap and pool initialization to maintain a 5-minute TWAP oracle via a 1024-entry ring buffer.",
       "deployer": "0xe30d9d551C84Cd6A549d950C43C7DDEBc587c2d0",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc6e971ae875ec08fc18089621018652ec50820cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "HooksToken",
+      "description": "Combined ERC-20 token (HOOKS) and Uniswap v4 hook for a single bound HOOKS/ETH pool. Charges immutable buy/sell fees on the ETH leg via BeforeSwapDelta/AfterSwapDelta, splits proceeds among holder ETH rewards and two treasury addresses, and maintains a \"build state\" mechanic that completes cycles as qualifying HOOKS buys accumulate.",
+      "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
     },
