@@ -4481,6 +4481,41 @@
   },
   {
     "hook": {
+      "address": "0x111101de7079cbde03aeebabb1f801d5dc221000",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "Minimal hook for the Saturn Omnichain project. Stores the initial tick and a pool-initialized flag when `initializePools()` delegates to an external `ISaturnOmnichainLiquidityBootstrapper` contract; the `afterInitialize` callback itself is a no-op that only returns its selector.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x111157d643499ed3870cb7bdb848303c85fb9000",
       "chain": "bnb",
       "chainId": 56,
@@ -6266,6 +6301,41 @@
   },
   {
     "hook": {
+      "address": "0xf5775c0f162735b00623125d7fbe8ef831530440",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "PokpegHook",
+      "description": "Hook for a Pokpeg NFT project that calls `start()` on a configured token when the first liquidity is added to its pool, and updates an on-chain random seed (using block data) on each swap involving that token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xf7311f0fe6a17495ddf2f60a069a48fd525f9000",
       "chain": "bnb",
       "chainId": 56,
@@ -6319,6 +6389,41 @@
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
       "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfbd4644305d13d35acd48feb6281f9b6c9430440",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "UpegHook",
+      "description": "A hook that calls `start()` on a configured token when the first liquidity is added to its pool, and updates an on-chain pseudo-random seed on every swap involving that token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
@@ -16416,6 +16521,41 @@
   },
   {
     "hook": {
+      "address": "0x0050e651c7b8662f4e17c589b6387db8f7488503",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "LiquidityPenaltyHook",
+      "description": "A JIT (Just-in-Time) liquidity protection hook that withholds LP fees when liquidity is added and removed within a configurable block window. Fees collected during rapid add/remove cycles are penalized proportionally and donated to in-range liquidity providers, disincentivizing JIT attacks.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": true
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x298ea05d0356b2ae5ccaa3169e471783ee9ea000",
       "chain": "unichain",
       "chainId": 130,
@@ -16650,6 +16790,41 @@
       "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb09470fad3b3b46fe0e8ec598e799664fe0bcd03",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "TornadoHook",
+      "description": "A privacy-preserving hook implementing Tornado Cash-style anonymous deposits and withdrawals. Users deposit ERC-20 tokens by adding liquidity with a cryptographic commitment, and withdraw by submitting a ZK proof (Circom Groth16 or Noir Honk) against a Merkle tree root, with fees redistributed to the pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": true
     },
     "properties": {
       "dynamicFee": false,
