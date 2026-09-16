@@ -36609,6 +36609,41 @@
   },
   {
     "hook": {
+      "address": "0x48dc3009ec1d3298bba31f718a9a29d02fc9b0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LiquidityGrowthFeeOracleHookV1",
+      "description": "A Uniswap v4 hook that charges directional native-token swap fees (configurable buy/sell rates, 1%\u201310%) distributed between a creator and a launcher fee recipient, while maintaining an on-chain tick observation oracle per pool using a truncated Panoptic-style observation history.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x49380c4efab1b491006af7fabab8b3459f0e6000",
       "chain": "ethereum",
       "chainId": 1,
@@ -41676,6 +41711,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8fb082c4ddd29c051ffa0d57bf4bf6d8004a0044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "RuntimeBurnHook",
+      "description": "Burns 0.3% of RUNTIME tokens on every buy swap (ETH\u2192RUNTIME). In afterSwap, the hook takes the burn amount from the pool via afterSwapReturnDelta and calls burn() on the RUNTIME token contract, permanently reducing supply and tracking cumulative burned amounts.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
