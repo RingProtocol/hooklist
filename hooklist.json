@@ -2731,6 +2731,41 @@
   },
   {
     "hook": {
+      "address": "0x9264eeec1d091ddf6d1c9e88d01f5abcb843e8a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "EulerSwap is a custom-curve AMM hook that routes swaps through Euler Finance lending vaults rather than Uniswap concentrated liquidity. It implements its own bonding curve invariant in beforeSwap, depositing input tokens into and withdrawing output tokens from Euler vaults, returning a full BeforeSwapDelta to settle the swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x93edc2ff63f32aac9b8787ebd828601a4f5fe8cc",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -4486,6 +4521,41 @@
       "chainId": 42161,
       "name": "EulerSwap",
       "description": "A Uniswap v4 hook that implements a custom AMM curve backed by Euler Finance lending vaults. It handles swaps entirely in beforeSwap via a BeforeSwapDelta return, routing token flows through EVC vaults; native LP positions and donations are blocked to prevent unproductive or unrecoverable fund usage.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf6b8010aacc8fcedc8e8239579b86030a166a8a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "A custom-curve AMM hook for Uniswap v4 that routes swaps through Euler Finance lending vaults. It fully handles swap execution in beforeSwap via BeforeSwapDelta, implementing its own bonding curve invariant, and blocks native concentrated liquidity positions by reverting on beforeAddLiquidity and beforeDonate.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
