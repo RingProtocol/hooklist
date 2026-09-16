@@ -386,6 +386,41 @@
   },
   {
     "hook": {
+      "address": "0x1a1979536a1e1d82fea48f71553c6463196140c8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "GoldenGateFeeHook",
+      "description": "Routes v4 swaps through one or more Uniswap V3 reference pools (selecting best output), absorbing the full input via BeforeSwapReturnDelta and returning net output after a time-varying pulse fee (0.0005%\u20130.02% depending on day of week). The v4 pool holds no liquidity; the hook acts as the sole liquidity source.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1b8aca4da3f29e244be0e8e9824233ab44970dc8",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -42940,6 +42975,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xea83e887a6a14c93639e5351084a38cf1a9fc044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PKMNBurnHook",
+      "description": "Burns 0.1% of the output token on every swap by sending it to address(0xdead), using afterSwapReturnsDelta to reduce the swapper's received amount. Tracks cumulative PKMN burned for buys; applies the same burn to ETH received on sells.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
