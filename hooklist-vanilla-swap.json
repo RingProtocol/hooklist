@@ -8856,6 +8856,41 @@
   },
   {
     "hook": {
+      "address": "0x6f22590e69a76997e84342ec3582f77aeb3ea4c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "OB0LHook",
+      "description": "An ETH/token pool hook for the $0B0L token that permanently disables sells, optionally gates external buys via an owner-controlled boolean flag (externalBuysEnabled), and restricts liquidity additions and pool initialization to a designated nodes address. Emits Trade events with price and amounts on each swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6f43871c25acf149d68629490af33774d09c1000",
       "chain": "ethereum",
       "chainId": 1,
@@ -10816,6 +10851,41 @@
   },
   {
     "hook": {
+      "address": "0xc12ac37e156d47bc22cf74bdb5e574ebc6f5c040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EthornHook",
+      "description": "Anti-snipe hook for the HORN token that enforces a time-decaying max wallet limit in afterSwap. Buys that would push a wallet above the limit are reverted. The cap follows an exponential curve (0.05%\u21921%) for the first 30 minutes, then linear (1%\u2192100%) until 6 hours post-launch, after which all restrictions are lifted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc1523e353260130a61f9482103366d74d2b51000",
       "chain": "ethereum",
       "chainId": 1,
@@ -11582,6 +11652,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf0305c7751177c3d1c1cae98043012a981a60500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that lets token creators initialize a Uniswap v4 ETH/token pool, seed a one-sided (token-only) LP position sized as a percentage of the token's total supply, and later withdraw the full position plus any accrued fees back to the creator. The afterAddLiquidity and afterRemoveLiquidity callbacks return zero deltas and perform no additional logic.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
