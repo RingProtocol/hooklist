@@ -28384,6 +28384,41 @@
   },
   {
     "hook": {
+      "address": "0xa9a9d12d88af335bfacfef94e72d2974cc88a8cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "PmavHookQuotedSlimX",
+      "description": "A bonding-curve token launchpad hook for pmav.fun V2 (ERC20-quoted). Each pool represents a newly launched coin trading against a fixed quote ERC20 (e.g. USDG). Enforces a block+1 anti-snipe delay, 1% trading fee split 70/30 creator/platform, a permanent 2% wallet cap with automatic refund, and auto-graduates the pool to a full-range position when the raise target is reached.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa9bc2984a3e42b27d90abd56e6d1323bc66f80c0",
       "chain": "bnb",
       "chainId": 56,
