@@ -41719,6 +41719,41 @@
   },
   {
     "hook": {
+      "address": "0x8b41362da5db5742ee8a5049e18f4c0c29ca80cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "HookPadStandardHook",
+      "description": "A HookPad token launch hook that collects a flat 1% buy/sell tax on every swap, forwards 20% of collected fees to a fixed protocol treasury, and accrues the remaining 80% for the token creator to claim via `claimFees`. Optionally enforces a 60% anti-snipe tax during the first 10 seconds after launch for non-whitelisted buyers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8bd422134164f74023308a22ba991ae0412900cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -44029,6 +44064,41 @@
   },
   {
     "hook": {
+      "address": "0xa35bbd05d8de4dcd46b0103a687eff5184a5c044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "MentalUniswapHook",
+      "description": "A hook for MENTAL token pools that tracks an ICO phase (complete when 1,050,000 MENTAL net sold) and applies a 1% tax on all post-ICO MENTAL swaps, forwarding the tax to a fee recipient via afterSwap delta return and POOL_MANAGER.take().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa4e6f5500e88691fdcb289aa0e99067481434880",
       "chain": "ethereum",
       "chainId": 1,
@@ -46016,6 +46086,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbba49ba998fc656136bb841d676ec676512840c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DynamicFeeHook",
+      "description": "A dynamic fee hook that reads stress and volatility signals from an Oracle contract and overrides the LP fee on every swap. The fee ranges from 1% to 5%, defaulting to 3% when no live quorum signal is available. Emits telemetry events after each swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -50569,6 +50674,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfa5edc077dcadccd388e89fdc5a99aec8b69e0c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PercentProfitHarvestOnZeroHook",
+      "description": "A Uniswap v4 hook that overrides the LP fee dynamically per swap direction (configurable for zeroForOne, zero for oneForZero) and charges an owner-configurable hook swap fee (up to 0.01%) taken from the output token after each swap. Accrued fees are held by the hook contract and claimable by the owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
