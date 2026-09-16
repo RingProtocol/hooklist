@@ -4201,6 +4201,41 @@
   },
   {
     "hook": {
+      "address": "0x0a4c262633120f0161d751b856acd051810ca8cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ClankerHookDynamicFeeV2",
+      "description": "A Clanker protocol hook that dynamically adjusts LP fees based on a volatility accumulator derived from tick movement, takes a 20% protocol fee on each swap, and runs an optional MEV-protection module during the initial 2-minute window after pool creation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0a64921a53e1daed380d5b44817befc4b5d39000",
       "chain": "base",
       "chainId": 8453,
@@ -16480,6 +16515,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcd6822f6373bd730b71c69ee3af96214e86280c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "DynamicStableFeeHook",
+      "description": "Dynamic-fee hook for a single Uniswap v4 pool that overrides LP fees per-swap via lpFeeOverride and collects a separate hook fee from the unspecified swap currency, sending it directly to a configurable fee recipient. Total fees (LP + hook) are capped on-chain at 300 pips (0.03%) and can be paused by the owner.",
+      "deployer": "0x8eba552Ae7Ecc746E0A41Ca824A6494fa04cFa89",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
