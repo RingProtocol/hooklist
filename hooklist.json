@@ -1611,6 +1611,41 @@
   },
   {
     "hook": {
+      "address": "0x8635bb5c388bb3fc61c3d7c2c3791328b0c9a8a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "EulerSwap implements a custom AMM curve as a Uniswap v4 hook, routing swap inputs into Euler Finance lending vaults and paying swap outputs from them. All swap accounting is handled in beforeSwap via a BeforeSwapDelta return, bypassing the pool's native concentrated-liquidity math entirely.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8af0775a70cc94d71dfc0fe809435e833f2fe000",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -2272,6 +2307,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb5e1cd67ada4902011b4930b302ced50258c40c8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "GoldenGateFeeHook",
+      "description": "Routes all v4 swaps through configured Uniswap v3 reference pools by absorbing the full input via BeforeSwapReturnDelta, executing the v3 swap inside beforeSwap, deducting a time-varying pulse-based fee retained as ERC20 balance in the hook, and settling net output back to the PoolManager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -34229,6 +34299,41 @@
   },
   {
     "hook": {
+      "address": "0x7a3bc37f63a1f20fc621fae1d5a58aedd4774044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TrinityHook",
+      "description": "Uniswap v4 hook for a TRI/ETH pool that charges a flat 3% fee on every swap (split 1% burn, 1% liquidity reinvestment, 1% rewards). In afterSwap it skims the fee from the unspecified currency via the afterSwapReturnsDelta mechanism and routes it into accounting buckets; heavy actions (burns, conversions, liquidity adds) execute separately in keeper-callable transactions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7a68c85746679b45031b97e114ce3d612951d000",
       "chain": "ethereum",
       "chainId": 1,
@@ -37025,6 +37130,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa04171f7509e9062215ce9b22bf76fbf520d28cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "GoldHook",
+      "description": "Uniswap v4 hook for a TOKEN/PAXG gold pool with an ETH gateway bridge. Applies 3% buy and 3\u201310% sell taxes (in PAXG, converted to ETH via Chainlink-oracle-guarded swaps), restricts gold pool liquidity to the owner, and includes same-block sandwich detection.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
