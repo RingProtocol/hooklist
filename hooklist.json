@@ -736,6 +736,41 @@
   },
   {
     "hook": {
+      "address": "0x3af115fd79e1e0060b2fa6901a047a52ef6ee8a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "A custom curve AMM hook backed by Euler Finance vaults. Swaps are handled entirely in beforeSwap using a custom bonding curve, with input tokens deposited into and output tokens withdrawn from Euler vaults; beforeSwapReturnsDelta bypasses standard Uniswap v4 pool accounting. Prevents standard liquidity additions, donations, and external pool initialization.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3dcd77fd23f362bd13c94f58b68560ad045c8dc8",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -39510,6 +39545,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xce6a59a06615b55a5126e0c80fb3c8374df9d880",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AntiSniperHook",
+      "description": "Applies a linearly-decaying dynamic swap fee that starts at 99% (990,000 bps) and falls to 0% over 3 days after pool initialization, deterring launch snipers. During the decay window, only the original pool creator (`tx.origin` at deploy time) is permitted to add liquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
