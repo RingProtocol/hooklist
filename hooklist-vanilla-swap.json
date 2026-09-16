@@ -7701,6 +7701,41 @@
   },
   {
     "hook": {
+      "address": "0x345fcacd71e4790a3c28e5155ff438f15348c440",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PepeHook",
+      "description": "Calls `start` on a configured token contract when the first liquidity is added to a pool involving that token. On each swap involving that token, updates an internal random seed using block entropy (timestamp, prevrandao, block number).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x35839b084137f4b79ad5e994714dd5cdcc985000",
       "chain": "ethereum",
       "chainId": 1,
