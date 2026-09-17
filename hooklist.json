@@ -40529,6 +40529,41 @@
   },
   {
     "hook": {
+      "address": "0x5cec52611fbb3c85f3a8b85422f548452faa40c8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DragonHook",
+      "description": "A v4 hook for an ETH/Dragon token pool that charges a 3% swap tax on every swap (2.5% routed to a hoard vault, 0.5% to a platform wallet) via BeforeSwapDelta, and forwards buy/sell events to an external arena contract tracking sell streaks, whale buys, dip buys, and daily crit intervals.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5cf8e499c7c466c7e2cf127bdf129f57151e65dc",
       "chain": "ethereum",
       "chainId": 1,
@@ -50675,6 +50710,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcd36cc7d9892b5d50e7bcfbf81d56e3e6c1028a8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EulerSwap",
+      "description": "A custom-curve AMM hook backed by Euler Finance lending vaults. It handles swaps entirely in beforeSwap by depositing input tokens into and withdrawing output tokens from Euler vaults using a concentrated invariant curve, replacing standard Uniswap pool mechanics. Native LP positions and donations are blocked via revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
