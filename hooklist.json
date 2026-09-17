@@ -50399,6 +50399,41 @@
   },
   {
     "hook": {
+      "address": "0xaa0e37270aff14b46f0db24e8aa5e97fa80c00cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BaseEthHook",
+      "description": "Charges a fixed 1% fee on both buy and sell swaps in a native ETH / ERC-20 token pool. In beforeSwap it returns a BeforeSwapDelta to retain the fee on exact-input ETH buys; in afterSwap it collects the fee via poolManager.take() and notifies the paired token contract via a safe callback.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xaa49adadd33c5e953b645567afb10cbbba63afc4",
       "chain": "ethereum",
       "chainId": 1,
@@ -50920,6 +50955,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xaef271991ad1f25de6590c62a23d7e0691505acc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TerrariumHook",
+      "description": "An AMM hook that takes a fixed 2% skim on the input currency of every swap and deposits it as permanent, unremovable liquidity in the price stratum the swap just traversed (buys build support below, sells build resistance above). A creator cut starting at 25% of buy-side skim decays hyperbolically toward zero as cumulative volume grows; sell-side skim goes entirely to sediment.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
