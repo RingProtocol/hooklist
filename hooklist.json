@@ -65484,6 +65484,41 @@
   },
   {
     "hook": {
+      "address": "0xd3856a846f1e5e1d4c32145dd2ed4ecd7d0e28cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniswapV4Hook",
+      "description": "A buy/sell hook deducting a 4% fee per swap: ETH fees from buys accumulate in a burn pot for buyback-and-burn via the pool; token fees from sells queue for burning. Pool init and liquidity addition are one-time per token; exact-output swaps always revert. Sells can be gated by an admin allowlist (timeBased/hasValue): any address can activate the restriction per token via pitchWC(), after which only deployer-allowlisted addresses can sell, and only the deployer can deactivate it.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd3aee1d3d02ae89a7fae8e13e2868a473d4b9000",
       "chain": "ethereum",
       "chainId": 1,
