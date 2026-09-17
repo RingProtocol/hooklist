@@ -35909,6 +35909,41 @@
   },
   {
     "hook": {
+      "address": "0x2f598e61146a845f1d02e9d22e3de3ce361a90c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AuroraHook",
+      "description": "A Uniswap v4 hook implementing a loyalty-based dynamic fee system. Traders accrue a \"lumi\" score based on time (blocks) elapsed since their last swap, scaled by global trading activity, unlocking lower swap fees (1.00% down to 0.10% across four tiers). Sellers who exit within 24 hours of their last buy pay a 15% impatient tax on ETH output, which is redistributed to registered Stellar-tier Archiver holders.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2fa194dc476d2b3c091dd13f76908f7294aa95c8",
       "chain": "ethereum",
       "chainId": 1,
