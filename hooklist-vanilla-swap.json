@@ -10816,6 +10816,41 @@
   },
   {
     "hook": {
+      "address": "0x878215ac15bdcb953e290597ac28a1d8cecb4500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that manages one-sided token/ETH liquidity positions on Uniswap v4. Creators initialize a pool, seed a one-sided token range at the current tick, and can later withdraw principal and accrued fees. The afterAddLiquidity and afterRemoveLiquidity callbacks return zero deltas and do not modify swap behavior.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x890681cff5ad2069f020027f41f5f68f6a292000",
       "chain": "ethereum",
       "chainId": 1,
@@ -12897,6 +12932,41 @@
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xec679c6aa6cbc13a551d6fb44ebcf45877b04500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that creates Uniswap v4 ETH/token pools, restricting initialization to the Ownable token's owner (creator). Manages liquidity add/remove via a creator-gated pending-op pattern; afterAddLiquidity and afterRemoveLiquidity are pass-through callbacks returning ZERO_DELTA.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
       "beforeSwap": false,
       "afterSwap": false,
       "beforeDonate": false,
