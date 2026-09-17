@@ -34159,6 +34159,41 @@
   },
   {
     "hook": {
+      "address": "0x16b47fc3630d978016a33772fecd88a5f4b220cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "WojakToken",
+      "description": "ERC20 token combined with a Uniswap v4 hook. Implements tiered buy/sell fees in ETH based on the swapper's WOJAK token balance, taking fees via BeforeSwapDelta/AfterSwapDelta and distributing all collected ETH to token holders weighted by balance and hold duration (Trust Multiplier).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x17b796af8d8d0e4cb0c7947487267cd48b3cc0cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -36814,6 +36849,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x34a3f8939338e80886dc9ae88e596ced65f68044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ForestHook",
+      "description": "A Uniswap v4 hook that collects 1% of each swap's output as \"sap\" via afterSwapReturnsDelta and distributes it to registered FOREST token holders in a tier-weighted reward pool. Holders earn proportional to their tier (Seedling to Wolf, weights 1\u20135) based on FOREST balance. Also custodies the launch LP NFT with an owner-callable burn function.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -43084,6 +43154,41 @@
   },
   {
     "hook": {
+      "address": "0x79ea21e7aa42daa1c0d3bb204e5482e9611428a8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EulerSwap",
+      "description": "Custom-curve AMM hook that replaces Uniswap v4's CLMM mechanics with a configurable bonding curve backed by Euler vaults. In beforeSwap, it intercepts all swaps, computes quotes against the curve, deposits input assets into and withdraws output assets from Euler vaults directly, and returns a BeforeSwapDelta to bypass standard pool accounting.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7a380b486ccc5e5c19879eb8c6e5c5b6b7fc80cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -47909,6 +48014,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa76f2f205d46df606da8d4bef570240288194500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook managing creator-controlled, single-sided ERC20/ETH liquidity positions. Token owners (creators) initialize a pool, seed a one-sided LP range sized as a percentage of total supply, and can later withdraw principal plus accrued fees. The afterAddLiquidity and afterRemoveLiquidity callbacks simply return zero deltas.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
