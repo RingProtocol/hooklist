@@ -50364,6 +50364,41 @@
   },
   {
     "hook": {
+      "address": "0x70c6f3b35dc7844a23009eca6506efc8468d28cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniswapV4Hook",
+      "description": "Extracts a 2.2% tax on buy and sell swaps via BeforeSwapDelta. Buy-side ETH fees accumulate in a burn pot for buyback-and-burn every 20 swaps; sell-side tokens are queued and burned on later swaps. Only one liquidity addition per token is permitted. Additionally, afterSwap enforces a sell-side allowlist: when timeBased[token] is enabled (activatable by anyone via registerBurner()), sells revert for any tx.origin not in the deployer-controlled hasValue allowlist.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7183e65e2f35c45233acdef6457e8c4e3cd8e0cc",
       "chain": "ethereum",
       "chainId": 1,
