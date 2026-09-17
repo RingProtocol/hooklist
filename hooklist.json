@@ -11166,6 +11166,41 @@
   },
   {
     "hook": {
+      "address": "0x1427050c1b5886471ca7ce656ab6ec22e86e40c8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TrinityHookV5",
+      "description": "Manages concentrated LP bands to approximate a linear bonding curve. Extracts a fixed 1% fee on exact-input swaps before the AMM executes (buy fees forwarded to a multisig, sell fees burned to 0xdead), then rebalances LP positions across configured tick bands after each swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1573146c5b0cc3e6353fbe6fa78e9a1005f768cc",
       "chain": "base",
       "chainId": 8453,
@@ -14977,6 +15012,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x500caabab0dce54cdf5687459060f5df53302fdc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BoardHook",
+      "description": "A Uniswap v4 hook that manages token launches with a time-gated fair launch window, optional Merkle-proof whitelist, and custom fee capture distributed to creators, protocol, referrers, and a muse manager. Swaps are blocked until the scheduled launch timestamp and sell orders are prevented during the fair launch period.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
@@ -21481,6 +21551,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa48f3fe21c5896cebb3ae8f7cce65eb45feb6ac8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ClawclickHook",
+      "description": "A two-phase token launch hook that applies a decaying swap tax (up to 50%, halving each epoch) with per-user position limits during Phase 1, then graduates to a passive 1% LP fee mode after 16x market cap growth. Fees are collected via BeforeSwapDelta with a 70/30 beneficiary/platform split.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
