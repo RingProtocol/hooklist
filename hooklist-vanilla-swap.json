@@ -4866,6 +4866,41 @@
   },
   {
     "hook": {
+      "address": "0x11112d0042da957999f439649988684c1cd55000",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "A minimal hook for the Saturn Omnichain project that records the initial tick and pool initialization state in its public initializePool() function; the afterInitialize callback is a no-op. All other hook callbacks are no-ops; the hook has no swap logic or access control.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x11112e31f78c7f7c9fea7c0e1ca2f8e16505d000",
       "chain": "bnb",
       "chainId": 56,
@@ -7316,6 +7351,41 @@
   },
   {
     "hook": {
+      "address": "0x14c7edc434d196b373ef35050e22437ce214a040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DaemonsHook",
+      "description": "Claims a single canonical ETH/DAEMON v4 pool by enforcing initialization parameters (fee, tick spacing, starting price) in beforeInitialize. After each swap, folds the direction, token deltas, block number, and swap count into a rolling keccak256 hash stored on-chain as \"corruption\" state, emitted via Mutation events for use by external ERC20/ERC721 NFT renderers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x17bd8d34236697c14283c7003f45618a90160080",
       "chain": "ethereum",
       "chainId": 1,
@@ -7351,6 +7421,41 @@
   },
   {
     "hook": {
+      "address": "0x17e4fd33b47372930fb760ee6558e9b028069040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ERCV4AWeatherHook",
+      "description": "After each swap on the designated ERCV4A token pool, records buy/sell volume by calling V4AWeatherEngine.recordTrade(), which updates an epoch-based market-sentiment state (Cold/Warm/Hot/Storm). Emits a SwapWeatherPulse event on success or SwapWeatherPulseSkipped if the engine call reverts.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x198b4bed782d8ebff7d878b10c2fd4b377ce9000",
       "chain": "ethereum",
       "chainId": 1,
@@ -7367,6 +7472,41 @@
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1a3d5691f1e385678f18393d12aa9fd874b7c500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A Uniswap v4 token launchpad hook that manages creator-controlled, one-sided liquidity positions for new ERC20/ETH pool launches. Token owners initialize pools and add single-sided token-only liquidity; the hook holds LP positions on their behalf and settles proceeds to the creator on removal.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
       "beforeSwap": false,
       "afterSwap": false,
       "beforeDonate": false,
@@ -7929,6 +8069,41 @@
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
       "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x366af5d3dfe58a93e89f76892eaf1c0f74a90040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AvaHook",
+      "description": "Tracks sell-side tax accrual (default 3%, owner-adjustable up to 10%) on an ETH/AVA Uniswap v4 pool via afterSwap; increments a cumulative counter and emits an event per AVA-sell, but does not transfer or collect any tokens.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
