@@ -28419,6 +28419,41 @@
   },
   {
     "hook": {
+      "address": "0x723afd30a8825b32b810fdbe06df8545adc590cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "Spot",
+      "description": "Dynamic-fee AMM hook that charges protocol-owned liquidity (POL) fees on swaps and auto-reinvests them as full-range liquidity. Uses a truncated geometric oracle to track tick movement per swap or per block, feeding a dynamic fee manager that applies base + surge fees overridden on every swap via lpFeeOverride.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x72afde52897532ff915190796cda0043b86ac888",
       "chain": "bnb",
       "chainId": 56,
@@ -28449,6 +28484,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x730b7a987a015a2d60f8b6a93ad31fa752560540",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "ZA_Hook",
+      "description": "An owner-controlled liquidity management hook that holds tokens and manages Uniswap v4 positions on behalf of authorized operators. Hook callbacks (afterSwap, afterAddLiquidity, afterRemoveLiquidity) are pure no-ops returning zero deltas; active management is performed via privileged ZA_* functions for minting positions, adding/removing liquidity, and executing swaps through a configured v4 router.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
