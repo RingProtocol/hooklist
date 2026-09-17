@@ -38919,6 +38919,41 @@
   },
   {
     "hook": {
+      "address": "0x4a9139d91ec8e32255fa73dae4a0e60b3c5be0c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PercentProfitHarvestOnZeroHook",
+      "description": "A Uniswap v4 hook that enforces dynamic LP fee overrides per swap direction (configurable fee for zeroForOne swaps, zero fee for oneForZero) and collects an additional owner-configurable hook swap fee (up to 0.01%) from the output token for exact-input swaps and from the input token for exact-output swaps. Accrued fees are held in the hook contract and claimable by the owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4ac78eb937f13cac03ee891ca1df02a1aa1280c0",
       "chain": "ethereum",
       "chainId": 1,
@@ -43640,6 +43675,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8301a6b5ef08596e7455a6595502512298b31fcc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "OLYHook",
+      "description": "An upgradeable single-pool hook for an OLY token that collects a dynamic market-sell tax based on market cap tiers (using a TWAP oracle) and implements epoch-based limit orders. Tax is taken via BeforeSwapDelta on exact-output OLY sells and via AfterSwapDelta on exact-input OLY sells; limit orders are filled in afterSwap as ticks are crossed.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
