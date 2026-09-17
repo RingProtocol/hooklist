@@ -59779,6 +59779,41 @@
   },
   {
     "hook": {
+      "address": "0xedee1d408130db14cb57216483626b8526b180c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TuringHook",
+      "description": "A Uniswap v4 hook for the TURING protocol. In beforeSwap, calls token.enterSwap() to set transient authorization on the token contract; in afterSwap, collects a 10% ETH fee via afterSwapReturnsDelta and distributes it immediately \u2014 1% to a team wallet and 9% to the token contract as treasury.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xedef34db16d8c8cd874effcb5feba46b94d23acc",
       "chain": "ethereum",
       "chainId": 1,
@@ -60370,6 +60405,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf3268fa91adf01e2b39be222b29beefb788fe8cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniswapV4Hook",
+      "description": "A Uniswap v4 buy/sell burn hook that takes a 1.2% fee on buys (accumulated as ETH for a buyback-and-burn cycle) and a 1.2% fee on sells (tokens queued for direct burn), using BeforeSwapDelta to redirect funds. Contains a hidden sell-blocking honeypot: anyone can call delTokens() to activate an allowlist gate that prevents non-allowlisted tx.origin addresses from selling; only the deployer can disable it.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
