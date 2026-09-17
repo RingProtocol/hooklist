@@ -43714,6 +43714,41 @@
   },
   {
     "hook": {
+      "address": "0x409def896fbf1185d3c1e006edcd419cd71980cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Pyre",
+      "description": "Pyre is a Uniswap v4 hook bundled with an ERC20 token (v4PYRE) that levies a 15% ETH tax on both buys and sells. On buys (ETH\u2192v4PYRE), it skims 15% of the ETH input via beforeSwap delta; on sells (v4PYRE\u2192ETH), it skims 15% of ETH output via afterSwap delta. All tax proceeds are forwarded to a hardcoded treasury address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x40db0c4cf39f7b20a3a8afa92e2f1ecff7eca8cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -73604,6 +73639,41 @@
   },
   {
     "hook": {
+      "address": "0x03d482cb3ff339c2d29736818d0f72c66dd6a040",
+      "chain": "megaeth",
+      "chainId": 4326,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook singleton that triggers a buyback-and-burn mechanism after every swap: it uses a per-pool \"secondary\" donation pot to execute a nested market buy of the pool's designated \"main\" token, delivering proceeds to a configured recipient or burning them. Optionally supports auto-compounding LP programs with fee harvesting and split distribution.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0f41715dc432692b66a5adf8dcfef6ac407b20c8",
       "chain": "megaeth",
       "chainId": 4326,
@@ -79130,6 +79200,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x03d482cb3ff339c2d29736818d0f72c66dd6a040",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook that runs an automated buyback-and-burn (\"pump\") after every swap on pools that opt in by funding a secondary-token pot. It also supports a single auto-compounding LP fee program per pool, with configurable compound, buyback, and burn splits harvested inside every swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
