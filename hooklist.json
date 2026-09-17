@@ -30449,6 +30449,41 @@
   },
   {
     "hook": {
+      "address": "0xcd65aa1716491e259423acc48d6af6eca7148088",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "StablecoinHook",
+      "description": "Collects a fixed 0.01% fee on exact-input swaps for stablecoin pairs by returning a BeforeSwapDelta that redirects fee tokens as ERC6909 claims to an immutable fee receiver address. The receiver can redeem accumulated fees via withdrawFees or emergencyWithdraw using the pool manager's unlock pattern.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd0966c65720ebc4196857b4ddf6f1419825bb0c0",
       "chain": "bnb",
       "chainId": 56,
