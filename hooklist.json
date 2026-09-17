@@ -61564,6 +61564,41 @@
   },
   {
     "hook": {
+      "address": "0xb94c84f0c8c64086f451f23b6ea88856478d60c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "SwaputerHook",
+      "description": "ETH/SWAPUTER pool hook that gates swaps behind a governance-controlled trading flag. ETH\u2192SWAPUTER swaps with encoded hookData execute programs in the SwaputerVM, burning SWAPUTER tokens as fuel cost taken from the swap output via afterSwapReturnDelta; plain swaps with no hookData pass through normally.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb98766a35cdc28415be0767d4ea41e39fba3e000",
       "chain": "ethereum",
       "chainId": 1,
@@ -63764,6 +63799,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc7515da3f2910374b26ec5a9ee2d175334118040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ULiquid",
+      "description": "A minimal observation-only Uniswap v4 hook bound to a single token. After each swap on an ETH/token pool, it increments a counter and emits a Swapped event. It does not alter swap amounts, fees, or pool state in any way.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
@@ -70091,6 +70161,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf6f49a81308d90f560b8201e90792394f5fa28c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "StrategyPunkHook",
+      "description": "Hook for a CryptoPunks liquidity strategy that restricts pool initialization and liquidity provision to an authorized vault contract. Charges a time-decaying buy fee (starting at 95%, decreasing by 100 bips per 5 blocks, flooring at 10%) and a fixed 10% sell fee, collecting fees via afterSwapReturnsDelta and distributing 80% to the strategy vault and 20% to a fee address. Non-ETH fees are converted to ETH via a nested swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
