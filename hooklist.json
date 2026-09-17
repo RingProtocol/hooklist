@@ -34929,6 +34929,41 @@
   },
   {
     "hook": {
+      "address": "0x20f2d7a439bb0ca611c68ed536a796e9de0ec0c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ZeroHook",
+      "description": "Hook for $ZERO that gates all swaps behind a launcher-controlled trading-enable flag, enforces an NFT holder allowlist with a per-address buy cap during an initial time window, and captures a 200 bps fee on every swap by taking output tokens to a fee router via afterSwap delta return.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x211d79ee98c5658989763bc367ded650a3a7d0cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -41929,6 +41964,41 @@
   },
   {
     "hook": {
+      "address": "0x6ed6d54b05e6018ed563fdf7e6f3a116d62f2ac0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EJungleHook",
+      "description": "A single-pool hook for an EJungle ETH/token market that restricts liquidity management and pool initialization to a designated locker address. On buys (zeroForOne), it tracks token output as buy credits in transient storage; on sells, it triggers fee collection via the locker contract. A market contract can redeem accumulated buy credits as NFT quotas.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6f22590e69a76997e84342ec3582f77aeb3ea4c0",
       "chain": "ethereum",
       "chainId": 1,
@@ -44856,6 +44926,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8e4714aa1d1201f96ae721d0398be1c09b7aa8a8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EulerSwap",
+      "description": "Custom curve AMM hook for Uniswap v4 that replaces concentrated liquidity with an Euler vault-backed bonding curve. Swaps are fully handled in beforeSwap via BeforeSwapDelta, routing input funds into Euler vaults and withdrawing output funds from them, while verifying a configurable curve invariant after each trade.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
