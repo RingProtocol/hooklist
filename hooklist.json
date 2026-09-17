@@ -25864,6 +25864,41 @@
   },
   {
     "hook": {
+      "address": "0x02c0b306d52ef96f63d18886522c5a35af9b8088",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "StablecoinHook",
+      "description": "Collects a 0.01% fee on exact-input swaps by diverting the fee amount via BeforeSwapDelta and minting ERC6909 claims to itself; only the designated FEE_RECEIVER can withdraw accumulated fees via the pool manager's unlock-burn-take pattern.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x032c985fb17cceeef6d6a724de003d3a592828cc",
       "chain": "bnb",
       "chainId": 56,
@@ -27081,6 +27116,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x17ed3305fd6c461c8334b955baf1735aa87af0c0",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "BSC_FeeCaptureHook",
+      "description": "A hook that applies a dynamic LP fee (0.5% base, 2.0% when the current tick drops \u2265300 ticks below the last stable tick) and, after each swap, extracts fee amounts from the pool via poolManager.take() and transfers them directly to a hardcoded owner address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -28734,6 +28804,41 @@
   },
   {
     "hook": {
+      "address": "0x56e67fdc2517eeae9147c72de3283422487f0aec",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "BucketHook",
+      "description": "A single-pool hook for a BucketToken/USDT pair that levies a configurable fee (1\u20135%) on swaps denominated in USDT, accumulates fees into an epoch-based escrow contract, and restricts LP operations to a designated lock contract. Trading is gated by an admin-finalized bootstrap phase and a configurable epoch start timestamp.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x589778fdd3cff327c6465f1af6ef037ee69da8cc",
       "chain": "bnb",
       "chainId": 56,
@@ -29084,6 +29189,41 @@
   },
   {
     "hook": {
+      "address": "0x6114a0863920e59739c9a4dd4470ef3c1ea6afcf",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "ERC1967Proxy",
+      "description": "An ERC-1967 upgradeable proxy contract whose hook implementation is not verified on-chain. All hook logic is delegated to an unverified implementation address; the actual swap behavior, fee mechanism, and access control cannot be determined from the available source.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": true
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6180d6c1f1178bf25a8774af89972d30248f6a40",
       "chain": "bnb",
       "chainId": 56,
@@ -29254,6 +29394,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6a6b03265d6619267b2a520ab740cc8105b7cf88",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "TestHook",
+      "description": "A buy/sell tax hook that deducts a configurable fee (in basis points, max 2%) from each swap's input amount via custom accounting (BeforeSwapDelta), accumulating proceeds in the contract. An immutable owner address set at deployment can withdraw collected fees. Liquidity hooks are no-ops.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -30099,6 +30274,41 @@
   },
   {
     "hook": {
+      "address": "0x7f1c090c18bee10b232dae0b9ed3d11d5001e888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "BSCHook",
+      "description": "A bonding curve hook that fully replaces Uniswap v4 swap execution by minting and burning BSCToken against a single canonical ETH reserve state. Buys are capped at 5 ETH per swap and a 1-block cooldown is enforced between a wallet's last buy and first sell; all swaps require an encoded swapper address in hookData.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x807cc83fc83bb3e07ec2f5cfed023c8bd8d19000",
       "chain": "bnb",
       "chainId": 56,
@@ -30869,6 +31079,41 @@
   },
   {
     "hook": {
+      "address": "0x96166bb75ebab9225a91b762642caef88a064f88",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "TestHook",
+      "description": "A buy/sell tax hook that deducts a configurable fee (capped at 2% each side) on each swap using Uniswap v4 custom accounting: pulls the fee via poolManager.take() and returns a BeforeSwapDelta so pool accounting nets to zero. Collected fees accumulate in the contract and can be withdrawn only to the immutable owner address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x965030c35195c0eb042272d8136a386b815f8088",
       "chain": "bnb",
       "chainId": 56,
@@ -31499,6 +31744,41 @@
   },
   {
     "hook": {
+      "address": "0xab0c4c13e6a11fe7be361cfaf0f8dcbd1a140aec",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "BucketHook",
+      "description": "A Uniswap v4 hook for a single USDT/token pool that extracts a configurable fee (1\u20135% BPS) on each swap via beforeSwap/afterSwap return deltas, depositing fees into an epoch-based escrow contract. Trading is gated by an admin-controlled bootstrap finalization flag and a configurable epoch start timestamp.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xab88e32d92e4fbbf05a77fdec311467cd53508c0",
       "chain": "bnb",
       "chainId": 56,
@@ -31565,6 +31845,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb0bcb37dd65712c3afa101d54389c8279659a880",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "V4AlphaHook",
+      "description": "A Uniswap v4 hook that gates pool initialization, liquidity additions, and swaps behind a configurable per-pool start timestamp set by an owner. Designated pool owners may initialize pools and add liquidity before the public start time; general swaps are blocked until the timestamp is reached via block.timestamp comparison.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "temporal"
     }
   },
   {
@@ -33661,6 +33976,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf942da07687967af929537ba2e344f1d4c05e8a8",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "EulerSwap",
+      "description": "EulerSwap is a custom-curve Uniswap v4 hook backed by Euler Finance lending vaults. Swaps bypass Uniswap's concentrated liquidity and route directly through Euler vaults using a custom AMM curve; standard liquidity addition and donations are intentionally disabled.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
