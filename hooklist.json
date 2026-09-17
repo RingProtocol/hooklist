@@ -42209,6 +42209,41 @@
   },
   {
     "hook": {
+      "address": "0x2c600f5bf2832bdc449b8dc33bf20cde7a4ba8cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PrismReflectionV4Hook",
+      "description": "Collects a 1.2% fee on buys (ETH into a reflection pot) and sells (tokens sent to the token contract). Every 20 swaps a buyback is queued; execution needs a manual buyAndReflectPrism() call that buys back and distributes the token. Same-block-as-buyback sells revert; exact-output unsupported. afterSwap also gates sells: when reflectionBase[token] is set, non-canReflect addresses cannot sell - anyone can enable it via excludeReflections(), only genesisAddress disables it.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2c67eba8a50af0db5fba55f725247a75cbda6444",
       "chain": "ethereum",
       "chainId": 1,
@@ -48785,6 +48820,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x52c228a2c2aa03870b94e9e665ed090dd249a8cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniswapV4Hook",
+      "description": "Charges a 1.2% fee on all swaps: buy-side (ETH->token) fees accumulate in a native burn pot and are periodically used to buyback and burn tokens; sell-side (token->ETH) fees are taken and burned directly. Blocks all liquidity additions after the first and reverts exact-output swaps. An afterSwap allowlist (hasValue) can gate sells; the restriction is enabled permissionlessly by anyone via burner(), while allowlist membership is owner-controlled.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -101056,6 +101126,41 @@
     "flags": {
       "beforeInitialize": true,
       "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbdabb12876bc524b75e4fdb0f76dce360c6df8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RobinhoodV4SelectableFeeHook",
+      "description": "A token-launchpad hook that charges a fixed 1.5% base fee plus a configurable 0-10% creator fee on the payment-token side of each swap. Fees are collected in beforeSwap/afterSwap via delta returns and minted as ERC-6909 claims to a single claimRecipient. Pool fee configs and LP positions are immutable after factory registration.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
       "beforeAddLiquidity": true,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
