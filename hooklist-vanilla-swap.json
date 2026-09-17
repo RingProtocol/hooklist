@@ -5181,6 +5181,41 @@
   },
   {
     "hook": {
+      "address": "0x29cb6d7ace545e9f5e9e378d01ac9d2d7b7fc440",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "PokpegHook",
+      "description": "A hook that calls `start()` on a configurable token when the first liquidity is added to its pool, and updates an on-chain random seed after each swap involving that token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2c59f71726e45fd9622bfabf34ca5c2842ce9000",
       "chain": "bnb",
       "chainId": 56,
@@ -6371,11 +6406,81 @@
   },
   {
     "hook": {
+      "address": "0x96bf7679572fc5b82b286b2ac734d3dbb1b4c040",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "DooV4BuyHook",
+      "description": "An afterSwap hook for a Doo token pool that records buy events to an external DooPowerRegistry. When hookData containing (buyer address, USDT principal, Doo amount) is provided, it logs the purchase via the registry; swaps with empty or invalid hookData emit an ambiguity event and complete normally without reverting.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9c99ed3c8127977311d1e8cc37e882c421141000",
       "chain": "bnb",
       "chainId": 56,
       "name": "SaturnOmnichainV4Hook",
       "description": "A Uniswap v4 hook for the Saturn Omnichain protocol that activates only on afterInitialize. Provides an initializePools() function that delegates to an external LiquidityBootstrapper contract to seed initial liquidity and records the starting tick; the hook itself performs no swap-time logic.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa10c7be9e946ab9eecdb35ca789a7f19fccf5000",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "HumansHook",
+      "description": "A minimal hook that, on first pool initialization, registers the PoolManager address with an external HumansToken contract via `xpegToken.start()`. No swap or liquidity hook logic is implemented; all token mechanics are handled ERC-20-side in HumansToken.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -6910,6 +7015,41 @@
       "afterInitialize": true,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd4c26bbce34b29e6befd757d0e1eae3f9254c400",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "UniswapV4BixelHook",
+      "description": "Calls token.start() on the associated Bixel token contract upon the first liquidity addition to the pool containing that token, triggering its launch. Has no swap hooks and does not affect swap behavior.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
