@@ -40284,6 +40284,41 @@
   },
   {
     "hook": {
+      "address": "0x3fe6d3327092eecaa3345acc23f2a79bce4a20c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "RipeHook",
+      "description": "A minimal Uniswap v4 observer hook for the RIPE project that records the pool key on first initialization and tracks the last swap block number in afterSwap. It performs no fee modifications, token transfers, or access control on swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x40db0c4cf39f7b20a3a8afa92e2f1ecff7eca8cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -57259,6 +57294,41 @@
   },
   {
     "hook": {
+      "address": "0xe6ea8afc2539993a88b880404d899bf17f0ee0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "NeurusHookV2",
+      "description": "A Uniswap v4 hook that applies a configurable ETH-leg tax (up to 5%) on each swap and returns a per-address dynamic LP fee via the Cortex contract. Tax accrues in the hook and is permissionlessly paid out to an immutable recipient; the owner can only lower tax rates, never raise them.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe7f2cd31e61b05b7634fc532c59b78a5dfba8080",
       "chain": "ethereum",
       "chainId": 1,
@@ -57806,6 +57876,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xef31ce66cb7b49a3e71782e43754733cb747c0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "GluttonHook",
+      "description": "A deflationary hook that burns a configurable percentage (burnFeeBps, capped at 10%) of the token (currency1) on every swap. Uses beforeSwap and afterSwap return deltas to intercept token amounts and call burn(), permanently reducing the token supply.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
