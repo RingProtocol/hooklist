@@ -41649,6 +41649,41 @@
   },
   {
     "hook": {
+      "address": "0x6ba93f37cbca7ee851a25ba5af7222ec50181080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UspegHook",
+      "description": "Activates a USPEG ERC-20 collectible token at pool initialization and enforces a time-increasing per-buy token limit during swaps. Also permanently ends a 10:1 early-mint discount once the pool price crosses a configured sqrtPrice threshold.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6c24d0bcc264ef6a740754a11ca579b9d225e8cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -52989,6 +53024,41 @@
   },
   {
     "hook": {
+      "address": "0xe644a76f682e7329d50365e1fd4072869ff84044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ZapHook",
+      "description": "A Uniswap v4 hook that taxes each exact-input swap: 2% of ZAP output on buys redirected from the swapper via ERC20 transfer, and 3% of ETH output on sells redirected via pool manager take(), both sent to a randomly selected eligible holder (\u22655,000 ZAP held 5 min\u201324 h) or burned to 0xdead if none exists.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe6a0f06b552747541f48fe01e1788f86ddffaaa8",
       "chain": "ethereum",
       "chainId": 1,
@@ -54630,6 +54700,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfded69207d7e927da7a2208bc1ce54b3d51ca8a8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EulerSwap",
+      "description": "EulerSwap implements a custom AMM curve routing swaps through paired Euler Finance vaults: on each swap it deposits the input token into one vault and withdraws the output from another, enforcing a custom curve invariant. Liquidity positions are blocked (beforeAddLiquidity reverts); the hook acts as the sole market maker using a MetaProxy delegatecall architecture.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
