@@ -71,6 +71,76 @@
   },
   {
     "hook": {
+      "address": "0x3ca6ea684bced16f2bfa95d9b815fdd01d2a6800",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "TestHook",
+      "description": "A minimal test hook that increments an on-chain counter and emits events on beforeInitialize and beforeAddLiquidity calls. Has no swap hooks and does not modify swap execution.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5f65f898e879c903ea78ce565756ec6f27a48ac0",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "BaseHookMock",
+      "description": "A minimal BaseHook mock implementation for Uniswap v4 that stubs beforeAddLiquidity, beforeRemoveLiquidity, beforeSwap, and afterSwap as no-ops. The beforeSwap returns a hardcoded fee value (4000) without the OVERRIDE_FEE_FLAG set, so it has no effect on swap execution.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x613f49b3e1b3c770494fe9acd45f2918c9680ac0",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -312,6 +382,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdb7644dc0b963b0ef1ff732f028e8adb9f310080",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "BlackListHook",
+      "description": "A Uniswap v4 hook that restricts swaps to a single trusted router and blocks blacklisted addresses from swapping in specified pools. The pool owner can add or remove addresses from the per-pool blacklist; any swap attempted through a router other than the trusted router is rejected.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
     }
   },
   {
@@ -7211,6 +7316,41 @@
   },
   {
     "hook": {
+      "address": "0x17bd8d34236697c14283c7003f45618a90160080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "SpectraBlocklistHook",
+      "description": "Uniswap v4 hook that blocks swaps from addresses on a configurable blocklist, checking both the immediate swap caller (sender) and tx.origin. The immutable owner can update the blocklist but cannot affect fees, liquidity, or swap amounts.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x198b4bed782d8ebff7d878b10c2fd4b377ce9000",
       "chain": "ethereum",
       "chainId": 1,
@@ -8429,6 +8569,41 @@
     "properties": {
       "dynamicFee": false,
       "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5003b9063e5968f2586483b810a8582aa8b08040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "VolcanoHook",
+      "description": "Tracks buy/sell swaps on a designated volcano token pool: buys increment \"volcano energy\" (+1% per transaction) and sells mark the seller as \"ashed\" (ineligible for rewards). When energy reaches 100% an \"eruption\" occurs, distributing the accumulated ETH reward pool proportionally to non-ashed token holders, then resetting energy and the round.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
