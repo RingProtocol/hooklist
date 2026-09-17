@@ -28034,6 +28034,41 @@
   },
   {
     "hook": {
+      "address": "0x5cee8d488fa24919ceea0afe74aee359bab32acc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "KnotV4Hook",
+      "description": "Uniswap v4 hook for launch token markets that applies configurable per-token buy/sell taxes via hook deltas in beforeSwap/afterSwap, and collects a 1% protocol fee on swaps routed to a FeeVault. Pool initialization and liquidity operations are restricted to an authorized adapter; trading is permissionless but taxes and fees are deducted atomically through the hook delta mechanism.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5ed9a793f7ce3f23c9077121f3e47ea259b6d000",
       "chain": "bnb",
       "chainId": 56,
@@ -28730,6 +28765,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x7803bd0255ab28ebbf65a845cd807cb5fefda8cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "PmavHookQuotedSlimX",
+      "description": "A bonding curve launchpad (pmav.fun v2.2) for launching ERC20 meme coins paired with an immutable quote ERC20 (e.g. USDG). Manages a concentrated liquidity curve position, charges 1% fees split 70/30 creator/platform, enforces a permanent 2% wallet cap with fill-to-cap refund logic, applies a decaying anti-snipe premium on buys, and graduates in-place to a full-range locked position upon reaching the raise target.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
