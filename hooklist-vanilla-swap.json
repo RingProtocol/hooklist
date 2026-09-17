@@ -7596,6 +7596,41 @@
   },
   {
     "hook": {
+      "address": "0x10aebdeb878509a3e579a78083348f9d6dee0440",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UpegHook",
+      "description": "Calls `start()` on a configured token contract when the first liquidity is added to the token's pool, and updates an internal random seed after each swap involving that token. The random seed is derived from block data and is readable by external contracts.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x11112e31f78c7f7c9fea7c0e1ca2f8e16505d000",
       "chain": "ethereum",
       "chainId": 1,
@@ -8681,6 +8716,41 @@
   },
   {
     "hook": {
+      "address": "0x3c64ce6fdbf7ecf61d4529ed5903c879d2d70500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that initializes ETH/token Uniswap v4 pools and manages one-sided liquidity positions on behalf of token creators. Exposes no-op afterAddLiquidity and afterRemoveLiquidity callbacks; all pool and liquidity operations are creator-gated.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3c6beb48947ac0ea2222c6abfc5674ac7f2a1000",
       "chain": "ethereum",
       "chainId": 1,
@@ -8874,6 +8944,41 @@
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
       "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x3fc630e0208fbe969f111435dab1a247067d4440",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ToshisHook",
+      "description": "On first liquidity add, calls token.start() on the bound IStartableToken to lift a pre-start trading cap. On each swap, re-rolls an internal random seed by mixing swap count, prevrandao, block number, and timestamp; the seed is publicly readable via randomSeed().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
@@ -12251,6 +12356,41 @@
   },
   {
     "hook": {
+      "address": "0xa6f73cc88723f04b85e2c2af3e35f759dc1a9440",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "RelicsV4Hook",
+      "description": "Tracks global market state (swap volumes, tick movements, volatility, stress metrics) for a single owner-bound canonical pool containing a Relics token. Each swap and liquidity event updates on-chain market statistics emitted as events and stored in contract state.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa76f2f205d46df606da8d4bef570240288194500",
       "chain": "ethereum",
       "chainId": 1,
@@ -13406,6 +13546,41 @@
   },
   {
     "hook": {
+      "address": "0xd594ab5a27868068284f0b7a5dc23fdc2f1c8500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that manages one-sided ETH/token Uniswap v4 liquidity positions. Creators initialize a pool, seed token-only liquidity at launch price, and can later withdraw principal and accrued fees. Hook callbacks (afterAddLiquidity/afterRemoveLiquidity) return zero deltas and do not affect swap execution.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd8cb4ab0cfa0b25ac2452b62ad37d9c541bbea20",
       "chain": "ethereum",
       "chainId": 1,
@@ -14286,6 +14461,41 @@
       "chainId": 1,
       "name": "SpecHook",
       "description": "A purely observational hook for the SPEC/ETH Uniswap v4 pool that records buy/sell volume, price, drawdown from the high, EWMA volatility, and a net flow ratio (LUSTRE) after each swap, emitting a Surface event used by the Specula NFT collection to re-render on-chain reflections.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf6624abfe758e6679659b297a4510e2285e31040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BastionHook",
+      "description": "A gamified Uniswap v4 hook that tracks tick-segment \"battles\" after each swap, accumulating defense (buy) and pressure (sell) points per segment. Optionally attributes swaps to a named player address when routed through the BastionRouter via hookData.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
