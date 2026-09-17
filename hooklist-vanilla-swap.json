@@ -7596,6 +7596,41 @@
   },
   {
     "hook": {
+      "address": "0x0f3346933184b483c8a80b556dc65374ea0f8080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "OTYHook",
+      "description": "Gates swaps on the OTY pool by querying tradingEnabled() on the token contract; swaps revert until trading is enabled by the token owner/admin.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x10aebdeb878509a3e579a78083348f9d6dee0440",
       "chain": "ethereum",
       "chainId": 1,
@@ -8016,6 +8051,41 @@
   },
   {
     "hook": {
+      "address": "0x20fb2a0ff4a1a81d3049b64f5f1a6d0a145fc500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that manages creator-gated, one-sided token/ETH liquidity positions. The afterAddLiquidity and afterRemoveLiquidity callbacks are no-ops (return zero delta); actual LP seeding and withdrawal occur through separate creator-only entry points (initializePool, addLiquidity, removeLiquidity).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x256a0e100d31c65fdce12822e4af472697699000",
       "chain": "ethereum",
       "chainId": 1,
@@ -8226,6 +8296,41 @@
   },
   {
     "hook": {
+      "address": "0x2c5d7988e1035f75481dddd43137a80c62d30500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that manages one-sided ETH/token LP positions on behalf of token creators. Creators initialize a pool, seed token liquidity into a one-sided range, and can later withdraw their position plus accrued fees. The afterAddLiquidity and afterRemoveLiquidity callbacks return zero delta and perform no additional logic.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2d4d0ed9e40e8ef81cc1a01a29e296a153a21000",
       "chain": "ethereum",
       "chainId": 1,
@@ -8366,6 +8471,41 @@
   },
   {
     "hook": {
+      "address": "0x3224309f77dc3ab053657992b19bb9bc848a6840",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniswapV4Hook",
+      "description": "Restricts pool initialization and liquidity addition to a single occurrence per token (currency1). When a per-token timeBased flag is enabled, afterSwap reverts non-zeroForOne swaps for tx.origin addresses not in the owner-controlled hasValue allowlist, blocking non-allowlisted addresses from executing sell-direction swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x32d36eb0c06fb9fa6a652236684d8a0e6c78d000",
       "chain": "ethereum",
       "chainId": 1,
@@ -8485,6 +8625,41 @@
       "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x351dfb2608642dcf191d9d7ae5d6eee183fc8040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Uniliquid",
+      "description": "A minimal observation-only hook that listens to afterSwap events for pools pairing ETH (currency0) with a single bound token. It increments a global swap counter and emits a Swapped event; it never modifies swap amounts, charges fees, or alters pool state.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
@@ -9085,6 +9260,41 @@
       "beforeSwap": false,
       "afterSwap": false,
       "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4129eb91565e09daada0ac2ce0d1f4d3b4eac500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "Token launchpad hook that lets a creator initialize a Uniswap v4 ETH/token pool and seed a one-sided (token-only) liquidity position. The afterAddLiquidity and afterRemoveLiquidity callbacks return zero deltas; actual pool mutations are performed via an unlockCallback driven by creator-gated addLiquidity/removeLiquidity entry points.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
@@ -10396,6 +10606,41 @@
   },
   {
     "hook": {
+      "address": "0x6a4945b23f104a934c67b07228134ae5c8e1e000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UHook",
+      "description": "Minimal Uniswap v4 hook that implements only beforeInitialize, firing once on pool initialization. Stores an immutable token address but performs no logic during swaps or liquidity operations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6b9f01218afa5f7e24036b4e3770e8f4f09a9000",
       "chain": "ethereum",
       "chainId": 1,
@@ -10427,6 +10672,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6e50a05f189d728f416e2a385acf5141232c8ab0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "FairLaunchHook",
+      "description": "A token-launch hook that restricts liquidity addition and selling until a factory-managed minting phase completes. The factory exclusively donates ETH to trigger token distribution to minters; once all tokens are distributed, unrestricted trading is enabled. Liquidity removal is permanently disabled.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
     }
   },
   {
@@ -11656,6 +11936,41 @@
   },
   {
     "hook": {
+      "address": "0x857840be2c35cc7a9d0186f5873918438d44a040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EdenHook",
+      "description": "Binds to a single pool on initialization and, after each qualifying zeroForOne swap (buy) above a minimum token threshold, calls an external IEdenGarden contract to plant a flower for the buyer. Swap execution is entirely unaffected; the hook acts as an on-chain participation tracker for a gamified garden mechanic.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x85924013546818b73e99ce5b441ab6c594519000",
       "chain": "ethereum",
       "chainId": 1,
@@ -12230,6 +12545,41 @@
       "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x99496221f3a9e1f24d633178f8ac78a9d0088040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ProofOfTime",
+      "description": "ERC20 token (symbol: POT, 21M fixed supply) that doubles as a Uniswap v4 hook. The afterSwap callback is entirely passive \u2014 it returns the selector with a zero delta and performs no computation \u2014 making the contract a valid hook address without altering swap behavior. The owner can seed an ETH/POT pool via addLiquidity and manage protocol-owned liquidity. Holders can burn POT via burn() or burnFrom().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
@@ -13721,6 +14071,41 @@
   },
   {
     "hook": {
+      "address": "0xcc251e64f0933dc1c8a6b1b518f6ec8d4cb20440",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PokpegHook",
+      "description": "Calls `start()` on a configured token contract when the first liquidity is added to its pool, and updates an on-chain random seed on each subsequent swap involving that token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xcc67f01797bfa6a31535d2037d2116f76fc49000",
       "chain": "ethereum",
       "chainId": 1,
@@ -13809,6 +14194,41 @@
       "afterRemoveLiquidity": true,
       "beforeSwap": false,
       "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd29bf26587f761e50a309edc1f5157834887c040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "WeatherHook",
+      "description": "Tracks a per-pool \"weather\" score (clamped to [-7, 7]) that increments on buys (ETH\u2192FARMERS) and decrements on sells, then emits an event. Exposes a stageOf() view returning one of five named stages (Drought, Dry, Cloudy, Clear, Bountiful) for use by an off-chain game. Does not affect swap execution.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
