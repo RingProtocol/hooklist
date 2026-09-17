@@ -34999,6 +34999,41 @@
   },
   {
     "hook": {
+      "address": "0x07b62d57d9c5c9197a3791084561b6b634b968c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "NFTStrategyHook",
+      "description": "A Uniswap v4 hook for NFT collection trading pools that takes dynamic buy fees (starting at 95% and decaying ~100 bps per 5 blocks down to 10%) and a fixed 10% sell fee. Fees are split 80% to the NFT collection contract and 20% to a configured fee address. Pool initialization and liquidity addition are restricted to the NFTStrategyFactory.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x07c74299a953731e378de8a4051cdcb7f303a888",
       "chain": "ethereum",
       "chainId": 1,
@@ -47394,6 +47429,41 @@
       "chainId": 1,
       "name": "StrategyHook",
       "description": "Skims a flat 5% protocol fee on every exact-input swap, taking the fee from the output token (ETH or SPCXSTR) via afterSwapReturnsDelta, and accrues it until anyone calls sweep() to push funds to a configurable treasury address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5be26e4e12c2ac570c9911e228146918da728044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "NyxoraTaxHookV2",
+      "description": "Takes a 1% fee from the output side of every swap (buy or sell) and transfers it to a configurable treasury address using afterSwap delta returns.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
