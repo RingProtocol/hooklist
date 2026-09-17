@@ -39059,6 +39059,41 @@
   },
   {
     "hook": {
+      "address": "0x394aafb0138ec990a6e74a56258893180cdd8044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BoredStrategyHook",
+      "description": "Collects a configurable trade tax (default 10%) on the token0 (ETH) leg of every swap via afterSwap returnDelta, splitting proceeds between a strategy contract (80%), a team wallet, and a spotlight wallet. The tax rate and allocation percentages are adjustable by the owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x396505179f48bd9674e2cf7ad7a991b8bc778088",
       "chain": "ethereum",
       "chainId": 1,
@@ -41960,6 +41995,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x596b6655ec830461c9a9d5d5308401c21120e8cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniswapV4Hook",
+      "description": "A burn-and-buyback hook that charges a 2.2% fee on buys (ETH routed to a reserve for periodic buybacks) and burns 2.2% of tokens on sells. Liquidity additions are restricted to one initial deposit. Contains a hidden allowlist mechanism in afterSwap that can selectively block sells from non-allowlisted addresses when activated by any caller via superposition() (allowlist membership itself is controlled by the deployer).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
