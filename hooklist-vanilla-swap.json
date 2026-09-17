@@ -14456,6 +14456,41 @@
   },
   {
     "hook": {
+      "address": "0xc5b077778ce0cc12c120fb9cd64eab733f584040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "WhalesHook",
+      "description": "Classifies swap participants as 'whales' (\u22650.69 ETH per buy) or 'shrimp' (< 0.69 ETH) in afterSwap, and reverts sell transactions where a shrimp address attempts to sell more than 1% of their token balance per transaction.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc7515da3f2910374b26ec5a9ee2d175334118040",
       "chain": "ethereum",
       "chainId": 1,
@@ -20266,6 +20301,41 @@
   },
   {
     "hook": {
+      "address": "0xa59d2a582db5b361b4eef1dd39a91efe15108040",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ValleyPulse",
+      "description": "An afterSwap hook for Uniswap v4 on Robinhood Chain that emits a ValleyPulseSwap event on every swap, recording the pool ID, sender, swap direction, and token deltas. It performs no fee changes, storage writes, or external calls.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa6c9f8ceed4b35daa104bd2eb7b8edc2174c5000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -20418,6 +20488,41 @@
     "flags": {
       "beforeInitialize": false,
       "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb725d44ea09ba4c1c8650d79adb84c06d3cbe000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RobinhoodRWIV4LaunchHook",
+      "description": "A factory and beforeInitialize hook on Robinhood Chain for permissionless fixed-supply TOKEN/RWI Uniswap v4 pool launches. Liquidity is permanently locked and priced via 30-minute TWAP oracles (RWI/WETH and WETH/USDG) targeting a $10,000 USD market cap. Pool creators can claim accrued swap fees automatically converted to native ETH.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
