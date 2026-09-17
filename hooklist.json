@@ -25549,6 +25549,76 @@
   },
   {
     "hook": {
+      "address": "0x032c985fb17cceeef6d6a724de003d3a592828cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "PmavHookQuotedSlimX",
+      "description": "Bonding curve launchpad for ERC20-quote-denominated token launches on Uniswap v4. Each coin is 1B fixed supply, trading through a concentrated hook-owned curve position until 800M tokens sell, at which point the hook auto-graduates by converting to a permanently locked full-range position. Enforces 1% fees (70/30 creator/platform split), anti-snipe decay, a permanent 2% per-wallet buy cap, and a block+1 trading delay.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x038e193d640711f58ab4b3d2c881c8888ee90888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "JurassicPlatformV4Hook",
+      "description": "Routes swaps through Jurassic Protocol's external core pools instead of standard Uniswap v4 AMM liquidity, using beforeSwapReturnsDelta to fully handle token settlement. Supports only exact-input swaps; direct liquidity provision via Uniswap v4 is disabled.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x03d482cb3ff339c2d29736818d0f72c66dd6a040",
       "chain": "bnb",
       "chainId": 56,
@@ -25720,6 +25790,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x0953d4a0a63ebf88b62e83b3b7fa874295b90440",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "UpegHook",
+      "description": "Calls `start` on a configured token contract when the first liquidity is added to that token's pool, and updates an internal random seed on every swap involving that token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -26879,6 +26984,41 @@
   },
   {
     "hook": {
+      "address": "0x39d4bb1dc166032669fae37b7f7ccdb6d02828a8",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "EulerSwap",
+      "description": "Custom-curve AMM hook backed by Euler Protocol vaults. In beforeSwap, it fully handles swap execution: takes input tokens from the PoolManager, deposits them into an Euler vault, withdraws output tokens from another vault, and returns a BeforeSwapDelta \u2014 bypassing standard Uniswap v4 concentrated liquidity. beforeAddLiquidity and beforeDonate always revert to protect users from non-productive positions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x39ea3916caba437e82dd7ec5c01c95ff0b6880cc",
       "chain": "bnb",
       "chainId": 56,
@@ -27364,6 +27504,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5007ece68d2f8c0df0e3d1257e675d813d8948c0",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "OmniPriceHook",
+      "description": "A JIT AMM hook that anchors swap prices to a threshold-signature-based cross-chain oracle. Before each swap it mints a one-tick liquidity band at the oracle-derived price and harvests it after, applying dynamic fees and routing proceeds to configured recipients. External liquidity is blocked; only the hook's own positions are allowed.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
