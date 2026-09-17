@@ -41544,6 +41544,41 @@
   },
   {
     "hook": {
+      "address": "0x46ae3a411326ef77d475b0ee46624ea225c1c040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "RuneHook",
+      "description": "An afterSwap-only hook that advances a 16-joint inverse-kinematics (CCD) animation on each swap. Joint angles are packed into two storage slots; targets track the pool tick; 1\u20134 solver passes run per swap scaled by swap size. Emits Step events and seals the rig after 12 stalled improvement steps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x46df328a24cb43a2cead3d28e03fa4de1411e444",
       "chain": "ethereum",
       "chainId": 1,
@@ -41575,6 +41610,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4728b9ceb075a3121b48a33f0ab93a8cb87c0040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "GhostProtocol",
+      "description": "A Uniswap v4 hook that mints on-chain \"ghost\" game entities for each ETH-in swap, implementing a PvP yield lifecycle: ghosts are created on swap, activated (haunted) to accrue yield, claimable by first movers (possessed), and expire with yield redistribution (vanish).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -60115,6 +60185,41 @@
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf1af42a4844641065604d608a8c6a773483c80cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "CursedLiquidity",
+      "description": "A Uniswap v4 hook that applies a hardcoded 10% ETH tax on buys (ETH-in exact-input swaps) and sells (ETH-out swaps) of its paired ERC20 token (uniCurs), using beforeSwap and afterSwap delta returns to skim the tax and forward it to a fixed treasury address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
