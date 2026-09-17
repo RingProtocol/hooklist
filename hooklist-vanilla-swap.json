@@ -8226,6 +8226,41 @@
   },
   {
     "hook": {
+      "address": "0x3192b1ab36d9440f6052efe60b0a563b63b50500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that enables creators to initialize ETH/token pools and seed one-sided liquidity from a configurable percentage of the token's total supply. Creators can later withdraw their full position (principal and accrued fees) via creator-gated entry points.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x32d36eb0c06fb9fa6a652236684d8a0e6c78d000",
       "chain": "ethereum",
       "chainId": 1,
@@ -10081,6 +10116,41 @@
   },
   {
     "hook": {
+      "address": "0x793ba759528c992752b85269023663dbd0890040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PrismHook",
+      "description": "ERC-20 token (PRISM) that doubles as a Uniswap v4 hook with a DN404-style NFT layer: each whole token backs one ERC-721 NFT, and LP fees earned from its own ETH/PRISM pool are distributed pro-rata to NFT holders. The afterSwap hook is a pure no-op used only to allow the token contract address to host its own pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7a68c85746679b45031b97e114ce3d612951d000",
       "chain": "ethereum",
       "chainId": 1,
@@ -11556,6 +11626,41 @@
       "chainId": 1,
       "name": "SaturnOmnichainV4Hook",
       "description": "A hook for the Saturn Omnichain project that registers an afterInitialize callback (currently a no-op). Exposes an initializePools() function that calls an external liquidity bootstrapper contract to seed initial liquidity and record the initial tick.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb3733e8eb8e352c576b97d9af1d86d44e6ad1000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "YieldVerseHook",
+      "description": "A minimal Uniswap v4 hook that calls token.start() on the associated IStartableToken during pool initialization via afterInitialize. It has no swap, liquidity, fee, or donate logic.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
