@@ -6791,6 +6791,41 @@
   },
   {
     "hook": {
+      "address": "0xfdecd4dd6161e58216333fc6996cec603f3b28a8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "EulerSwap",
+      "description": "A Uniswap v4 hook implementing a custom AMM curve backed by Euler Finance lending vaults. Each hook instance is a delegatecall proxy; swaps deposit input tokens into and withdraw output tokens from Euler vaults directly, enforcing a concentration-parameterized invariant curve rather than the standard xy=k formula.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xfe8e767e46025ed9f81793f6c2bdc0f7c5e8a8a8",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -43535,6 +43570,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x86817f6d05e0991beb04686a26963a38461b70c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "CumHook",
+      "description": "A dynamic-fee hook that adjusts LP fees based on cumulative price impact (a measure of pool illiquidity) with time-based decay. Requires explicit pool configuration via configurePool() before swaps are permitted; reverts with PoolNotConfigured otherwise.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
