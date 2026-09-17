@@ -10641,6 +10641,41 @@
   },
   {
     "hook": {
+      "address": "0x0c550d3b725de6485ef9bb73b4b7f0dd191bfaec",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ApexYieldHookV4",
+      "description": "An oracle-driven custom AMM hook that prices swaps using Pyth oracle rates and zone-based dynamic fees, with liquidity backed by an external vault. Includes a circuit breaker, owner-controlled pause/pool-registration, and full beforeSwap delta fulfillment that bypasses the pool's internal AMM math.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0e97f67d63ae989e37344b6a753c8a2c799dafdc",
       "chain": "base",
       "chainId": 8453,
@@ -11066,6 +11101,41 @@
       "chainId": 8453,
       "name": "BerylPadHookStaticFeeV2",
       "description": "A BerylPad launchpad hook that enforces asymmetric static LP fees (separate buy and sell rates for the launched token) and collects a 20% protocol fee on every swap via BeforeSwapDelta and AfterSwapDelta adjustments. Includes a time-limited MEV protection module active immediately after pool launch and optional configurable pool extensions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1573146c5b0cc3e6353fbe6fa78e9a1005f768cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "CornersHookStaticFee",
+      "description": "A Uniswap v4 hook that configures directional static LP fees per pool (separate rates for corners-token swaps vs paired-token swaps), collects a 20% protocol fee on each swap via BeforeSwapDelta/AfterSwapDelta, and runs an optional MEV protection module for the first 2 minutes after pool creation.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -13612,6 +13682,41 @@
       "requiresCustomSwapData": true,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x3afdfd442e3d8764261d4f274bb9ce5e08b1ea44",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TokenFab",
+      "description": "A bonding curve and AMM graduation hook for token launches. Sells newly-minted tokens through a single-sided Uniswap v4 bonding curve pool until the supply cap is reached, then automatically migrates liquidity to a full-range AMM pool. Charges a 5% swap fee on each trade, split 1% platform, 1% creator, and 3% to a reward pool via afterSwapReturnsDelta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -21419,6 +21524,41 @@
   },
   {
     "hook": {
+      "address": "0xa8a3c6c5598518e8aaf823f4d26d3f4f54c98888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "YieldNestHook",
+      "description": "Charges a configurable commission fee (in basis points) on every swap via beforeSwapReturnsDelta, taking tokens from the swap input and forwarding them to a designated fee collector. The owner can update the commission rate and fee collector address. The beforeAddLiquidity hook is registered but performs no access control logic.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xaa096f558f3d4c9226de77e7cc05f18e180b2544",
       "chain": "base",
       "chainId": 8453,
@@ -26700,6 +26840,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfebcdfec8fec75afb56ddbded4b2a2fd5240a844",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "IpStrategyHook",
+      "description": "A Uniswap v4 hook that restricts pool initialization and liquidity additions to an IpStrategyFactory contract. After each swap, it takes a 2.5% fee from the output token, converts non-ETH fees to ETH via a nested pool swap, then distributes the ETH to the strategy's NFT vault, owner, and platform through the factory.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
