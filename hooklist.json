@@ -27019,6 +27019,41 @@
   },
   {
     "hook": {
+      "address": "0x1111e560486d4de748850c8779f5346f939bd000",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "A minimal hook for the Saturn Omnichain project with an afterInitialize no-op callback. Pool initialization (including storing initialTick and poolInitialized) is performed via the initializePool() external function. All hook callbacks are no-op stubs with no swap, liquidity, or fee customization logic.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x11f29f7e785b8969a3e18ef7bfeec23f5539e8cc",
       "chain": "bnb",
       "chainId": 56,
@@ -30974,6 +31009,41 @@
   },
   {
     "hook": {
+      "address": "0x8e97930b29bdebbafbf22b10ed657eae54c2a888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "MiniBTCHook",
+      "description": "A bonding curve hook that takes over all ETH/MiniBTC swaps via BeforeSwapDelta: buys mint MiniBTC via a forward curve and sells burn MiniBTC via an inverse curve priced against accumulated ETH reserves. Liquidity additions are permanently disabled. Requires hookData encoding the swapper address; enforces a block-number cooldown between a wallet's last buy and its first sell.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8ea950bc458888ca929f03ec42bcb9cf06e1e888",
       "chain": "bnb",
       "chainId": 56,
@@ -31399,6 +31469,41 @@
       "chainId": 56,
       "name": "HookHook",
       "description": "A bonding curve hook that mints a HOOK token on buys (BNB in, HOOK out) via a forward curve and burns HOOK on sells (HOOK in, BNB out) via the inverse curve. It fully intercepts all swaps via beforeSwapReturnsDelta, replacing Uniswap AMM mechanics entirely. Liquidity additions are forbidden; sells require a block-number cooldown after the last buy.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9bb9d017d5aee67d82e8614c5cf4cb00e27c2888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SatHook",
+      "description": "A bonding curve hook that intercepts all swaps via BeforeSwapDelta. Buys (ETH\u2192SAT) mint SAT tokens through a forward curve; sells (SAT\u2192ETH) burn SAT and pay ETH from accumulated reserves. Liquidity additions are permanently forbidden; the hook acts as the sole counterparty.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -32339,6 +32444,41 @@
   },
   {
     "hook": {
+      "address": "0xb32343c31653479aea96af86f19eb8099186e888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SatoHook",
+      "description": "A bonding curve hook for an ETH/SATO token pair that fully replaces the AMM; buys mint SATO via a forward curve and sells burn SATO via an inverse curve, with a 0.3% fee. Includes per-wallet cooldown by block number, entropy-based multipliers in the first 100 blocks, and automatic self-deprecation when fair-curve supply nears the 21M cap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb3ea59248e7d7dbb9e0ea5f1f8a5b0d33ab5e8cc",
       "chain": "bnb",
       "chainId": 56,
@@ -32509,6 +32649,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb8c61b4fa403561b2a4d719f3e9d4afd67348250",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "UniswapV3Pool",
+      "description": "A Uniswap V3 pool contract (Solidity 0.7.6) submitted as a v4 hook. The source implements no Uniswap v4 hook interface \u2014 no hook callbacks (afterSwap, afterDonate, beforeRemoveLiquidity) are present. Any v4 pool using this address as a hook would revert on callback invocations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
@@ -33280,6 +33455,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcfbdd4a1bc605c44287cca25387d444ca99820cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "LuckyForge4dHook",
+      "description": "A game-theory hook that charges a fixed 5% fee on all ETH swaps (buys and sells), splitting proceeds between a jackpot, token dividends, and protocol fees. The last qualifying buyer above a minimum ETH threshold before a countdown timer expires wins 80% of the jackpot, with the remainder seeding the next round.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {

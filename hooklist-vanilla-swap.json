@@ -5111,6 +5111,41 @@
   },
   {
     "hook": {
+      "address": "0x1111e560486d4de748850c8779f5346f939bd000",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "A minimal hook for the Saturn Omnichain project with an afterInitialize no-op callback. Pool initialization (including storing initialTick and poolInitialized) is performed via the initializePool() external function. All hook callbacks are no-op stubs with no swap, liquidity, or fee customization logic.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1a4863bdbffcdb89e8fcdcddeeb25a69e4c4ca00",
       "chain": "bnb",
       "chainId": 56,
@@ -6741,6 +6776,41 @@
       "afterSwap": false,
       "beforeDonate": false,
       "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb8c61b4fa403561b2a4d719f3e9d4afd67348250",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "UniswapV3Pool",
+      "description": "A Uniswap V3 pool contract (Solidity 0.7.6) submitted as a v4 hook. The source implements no Uniswap v4 hook interface \u2014 no hook callbacks (afterSwap, afterDonate, beforeRemoveLiquidity) are present. Any v4 pool using this address as a hook would revert on callback invocations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
