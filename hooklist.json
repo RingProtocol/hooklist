@@ -26564,6 +26564,41 @@
   },
   {
     "hook": {
+      "address": "0x1fe633e42343efb545ce471b6a261cd6845288c0",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "OmniPriceHook",
+      "description": "A cross-chain oracle-priced hook that prices every swap against a coordinator-signed global reference price using JIT one-tick liquidity bands and a dynamic LP fee override. External liquidity is blocked; the hook exclusively manages a straddle book position in the pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2020835bcc8f868dcffc086b1652140b790200cc",
       "chain": "bnb",
       "chainId": 56,
@@ -27295,6 +27330,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x46063a2c1ccecd50fca9d105b81b3fa2f6650440",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "PokpegHook",
+      "description": "Calls `start` on a configured token contract when the first liquidity is added to the token's pool, and updates an on-chain pseudo-random seed after each swap involving that token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -29119,6 +29189,41 @@
   },
   {
     "hook": {
+      "address": "0x8b1a2f3d85e06ff9313307e4313b9b5f082f0888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "JurassicPlatformV4Hook",
+      "description": "Routes all exact-input swaps through the Jurassic Platform's external AMM (IJurassicV4Core) via beforeSwapReturnsDelta, fully bypassing Uniswap v4's concentrated liquidity logic and handling token settlement directly. Liquidity addition is permanently disabled; only pools registered and marked V4Active in the JurassicV4Registry can be used.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8bab0d3049b6d5d17b36d3263786fe587a9d00c4",
       "chain": "bnb",
       "chainId": 56,
@@ -29709,6 +29814,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa21bdbac331cb5d25ddfd49e4360e3c8f02680cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "IndexFeeHook",
+      "description": "Charges a fixed 3% fee on all swaps, always collected in native ETH (currency0), sent directly to an immutable treasury address. The fee is applied via return deltas: in beforeSwap when ETH is the specified currency, and in afterSwap when ETH is the unspecified currency. Pools where currency0 is not native ETH pass through untaxed.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -30581,6 +30721,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc8fce008b8b210e3373cceaa9e59a8d01201e8a8",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "EulerSwap",
+      "description": "Custom-curve AMM hook backed by Euler Finance vaults. Replaces Uniswap's CLAMM with its own pricing curve, handling all swap settlement in beforeSwap via a return delta by depositing input tokens into and withdrawing output tokens from EVC-controlled Euler vault accounts.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
