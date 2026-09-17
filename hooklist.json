@@ -43084,6 +43084,41 @@
   },
   {
     "hook": {
+      "address": "0x5f266a771540d3edaa834f7a7f7a39e8777fc0c8",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "JackpotLootboxHook",
+      "description": "Collects a 3% tax on every swap (2.5% to a prize vault, 0.5% to a platform wallet) and awards tiered lootbox tickets to qualifying buyers, with bonus flags for whale buys, dip buys, sell-streak reversals, and periodic guaranteed jackpots.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5f3e0558d4f7504d212eefaa488d31765b3a1000",
       "chain": "ethereum",
       "chainId": 1,
@@ -52429,6 +52464,41 @@
   },
   {
     "hook": {
+      "address": "0xbc9489766aef74411bfbaf165f51a6c999f3d800",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniV4Hook",
+      "description": "Uniswap v4 hook that sets a dynamic LP fee (initially 2%) on pool initialization and restricts liquidity additions to full-range positions only. A privileged owner/executor role can update the LP fee at any time via `forceUpdateLPFee`, including zeroing it temporarily during arbitrage trades.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xbca7d62eea67ac789d36700f77887a3c7e4860c4",
       "chain": "ethereum",
       "chainId": 1,
@@ -53229,6 +53299,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc53c0ddef7baa0de722f0de24f56a4eabb1680cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EigenGameHook",
+      "description": "Burns a fixed percentage of the pool token (currency1) on every swap via beforeSwap and afterSwap return deltas. For token-specified swaps the fee is taken in beforeSwap; for token-as-unspecified-output swaps it is taken in afterSwap. The burn rate (burnFeeBps) is immutable and set at deployment. Liquidity is managed exclusively by a single authorized address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -56940,6 +57045,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf0eecd9e6ddc2517dc0c2f3afd6f7246312f4acc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "MultiPoolsHook",
+      "description": "Collects a 1% swap fee on every trade (0.7% to pool creator, 0.3% to platform) via beforeSwap/afterSwap delta returns, covering exact-input and exact-output swaps in both directions. LP positions are permanently locked after the initial seed add; subsequent liquidity adds and all removes revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
