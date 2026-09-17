@@ -4866,6 +4866,41 @@
   },
   {
     "hook": {
+      "address": "0x0ee2a37d16f15c448b71eb67f0d239a576375540",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "GridHook",
+      "description": "Grid trading hook for Uniswap v4 that deploys weighted concentrated liquidity positions (grid orders) across configurable tick ranges. Supports manual and keeper-authorized rebalancing to recenter the grid when price moves, with slippage protection and Permit2-based token settlement.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x111101de7079cbde03aeebabb1f801d5dc221000",
       "chain": "bnb",
       "chainId": 56,
@@ -6126,6 +6161,41 @@
   },
   {
     "hook": {
+      "address": "0x8d952b95049faf6a1e5ad633d1cea4879ef52a40",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "PairHook",
+      "description": "A launchpad pair hook that restricts pool initialization to the launchpad address, enforces that liquidity can only be added during active minting, permanently locks liquidity removal (except zero-delta fee collection), and enforces a per-swap buy cap on launch token output during the token's protection window.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8ddebd7f31c744beeaad6d3759f195f9e05e1000",
       "chain": "bnb",
       "chainId": 56,
@@ -6787,6 +6857,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd9d9294c27b28ba7faadd6c5e3127df3ac438080",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "AccessControlHook",
+      "description": "A beforeSwap hook that enforces owner-managed access control in two configurable modes: blacklist mode (all swaps allowed except for blacklisted addresses) or whitelist mode (only whitelisted addresses can swap). The owner can toggle modes and manage address lists at any time.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
     }
   },
   {
