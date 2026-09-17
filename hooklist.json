@@ -28314,6 +28314,41 @@
   },
   {
     "hook": {
+      "address": "0x772dbc32148854bc9c26ce524d0182ee6bc210c0",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "Spot",
+      "description": "Dynamic LP fee hook using a truncated geometric mean oracle for volatility-based fee computation. Applies an additional configurable hook fee (default 0.10%, up to 50%) on top of the LP fee. A hardcoded wallet address can unilaterally adjust the hook fee and drain all ERC20 and native tokens held by the hook contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x77b2051204306786934be8bec29a48584e133ac4",
       "chain": "bnb",
       "chainId": 56,
@@ -31354,6 +31389,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfc2ca9e233dd1b4e5d7316624fd0f3e732ce4888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "ConstantSumCurve",
+      "description": "A constant-sum AMM hook that replaces Uniswap v4's pricing curve with a fixed 1:1 exchange ratio using hook-owned liquidity. All swaps are fully handled in beforeSwap via a BeforeSwapDelta, and standard v4 liquidity provision is blocked in favor of hook-managed liquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
