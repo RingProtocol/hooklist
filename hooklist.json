@@ -10746,6 +10746,41 @@
   },
   {
     "hook": {
+      "address": "0x10f775c7f82e57577b47e6401de31dfc9bade0cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LiqpadLaunchHook",
+      "description": "Factory-gated launch pool hook for B20/VVV token pairs. Collects a 1% fee on each swap: B20 (launch token) fees are burned via the token contract, while VVV fees are routed to an immutable FeeRouter that splits 70% to the token creator and 30% to the protocol. Only pools registered and initialized by the factory may be swapped.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x111157d643499ed3870cb7bdb848303c85fb9000",
       "chain": "base",
       "chainId": 8453,
@@ -10811,6 +10846,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1120bbc5b26d20e5d5b8170e46be56c05c4110c8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "GeneralLaunchHook",
+      "description": "A meme-token launch hook for Uniswap v4 that applies configurable buy/sell taxes and a time-decaying anti-snipe tax during the launch window. Tax proceeds are routed to configurable sinks (burn via buyback-and-burn, holder reflection, auto-LP deepening, creator, and extra wallets). Tracks price-multiple milestones (\"Chad Levels\") per pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -13576,6 +13646,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x42507d88ef61e0eb090135443e4b1c8ed24ae888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "FlashPerpsHook",
+      "description": "Custom-curve perpetuals hook that acts as the sole market maker for PERP/USDG pools. Buy swaps mint new perp exposure from a registered vault; sell swaps unwind it. A fixed 0.30% USDG fee on all trades is routed to a FLASH buyback module. No passive liquidity or external LPs are permitted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -16791,6 +16896,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x77293c0fe01c3d4badc669d8694e0ae6b344e044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "DecayFeeHook",
+      "description": "Charges a linearly decaying swap fee on the unspecified currency (via afterSwapReturnsDelta), from a configurable start rate down to an end rate over a fixed decay window. When the fee is denominated in the launched token, it converts it to stock via a nested pool swap and credits all proceeds to a MultiPool contract as ERC-6909 claims.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -20084,6 +20224,76 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa2c3b47008fc2bf86332dc5cfa1045722ccd80cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LaunchFeeHook",
+      "description": "A launchpad fee hook that charges a configurable fee (default 2%, max 3%) on every swap denominated in the quote asset using beforeSwap/afterSwap return deltas. For dual-pool tokens (coin + NFT floor token), it mirrors 50% of each trade through the paired collection pool to keep both markets synchronized.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa2f9ef299771f00ecca388ec46d3f4d30baaeac4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LeveragedLiquidityHook",
+      "description": "A JIT-liquidity hook for Morpho-backed leveraged tokens. Each swap atomically mints or redeems vault positions via a primary hook, installs a transaction-scoped concentrated liquidity position sized to match the swap, executes through the pool, then removes it in afterSwap. External liquidity additions are blocked; swaps use a dynamic fee override at a fixed 30 bps protocol charge.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
