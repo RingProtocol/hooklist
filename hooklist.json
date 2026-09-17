@@ -65869,6 +65869,41 @@
   },
   {
     "hook": {
+      "address": "0xd29aacdf56a878c09bea26b87629168154a7b7fe",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ProAdvancedTibuHooklet",
+      "description": "A concentrated liquidity hook for an ETH/TIBU pool that implements dynamic swap fees with surge protection and volume-based adjustments, auto-rebalancing of the liquidity position, an on-chain oracle with manipulation protection, and owner-controlled fee collection with configurable pause and emergency modes.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd29bf26587f761e50a309edc1f5157834887c040",
       "chain": "ethereum",
       "chainId": 1,
@@ -105209,6 +105244,41 @@
   },
   {
     "hook": {
+      "address": "0x01cc8dc6c3f7f03e845b1f4d491bdec975434088",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "AssetToAssetSwapHookForERC4626",
+      "description": "Converts raw ERC20 assets to/from ERC4626 vault wrapper shares in beforeSwap, then executes a nested swap on the corresponding vault wrapper pool via poolManager.swap(), returning a BeforeSwapDelta so users can trade underlying assets directly without manually managing vault shares. Falls back to owner-configured default vault wrappers when no hookData is provided.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x01e59650b3dcd887718a04000ddebea04b85e8a8",
       "chain": "unichain",
       "chainId": 130,
@@ -115289,6 +115359,41 @@
   },
   {
     "hook": {
+      "address": "0x7d820a043158d667f687d97432e0ef51437268a8",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "EulerSwap",
+      "description": "EulerSwap is a custom-curve AMM hook that routes swaps through Euler Finance lending vaults. The beforeSwap handler computes quotes via a custom curve invariant (CurveLib), deposits input tokens into and withdraws output tokens from Euler vaults, returning the full token delta to Uniswap v4's pool manager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7d9cfb1476e873b1951f061c52aeb06f0759a8a8",
       "chain": "unichain",
       "chainId": 130,
@@ -119074,6 +119179,41 @@
       "chainId": 130,
       "name": "EulerSwap",
       "description": "A custom-curve AMM hook backed by Euler vault positions. `beforeSwap` handles swaps end-to-end: it deposits input tokens into and withdraws output tokens from Euler lending vaults, enforcing a bespoke price curve invariant instead of Uniswap's standard concentrated liquidity. Standard liquidity addition and donations are intentionally blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa7f0c5c9d9e79184ed0eccae58299feb91be28a8",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "EulerSwap",
+      "description": "A custom-curve AMM hook backed by Euler lending vaults. Each swap deposits input tokens into and withdraws output tokens from Euler vaults, enforcing a proprietary bonding curve invariant instead of standard Uniswap concentrated liquidity pricing.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
