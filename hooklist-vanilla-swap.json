@@ -4201,6 +4201,41 @@
   },
   {
     "hook": {
+      "address": "0xd476156732ef0277db6abc58e490ae63caff4080",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PepFitLaunchHook",
+      "description": "A controlled-launch hook that blocks all swaps until the owner calls enableTrading(). Includes an optional anti-snipe mechanism capping individual swap size (in ETH) for the first 5 blocks after launch. After trading is open, the hook is a pass-through with no effect on swap math.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd53fe0aa99500ec696aa451272efaedf0b659000",
       "chain": "base",
       "chainId": 8453,
