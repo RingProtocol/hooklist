@@ -40774,6 +40774,41 @@
   },
   {
     "hook": {
+      "address": "0x3a10d2c79e8e747473de217121da731c2e17c0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "StopHook",
+      "description": "Uniswap v4 hook that imposes a flat 3% ETH buy fee and a dynamic sell tax (3\u201320%, based on time since last sell and trade size) directed to a vault, which uses collected ETH for periodic automated token buybacks and burns.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3a2ac4b5b13b9171a06aeb8d821eae05bb752044",
       "chain": "ethereum",
       "chainId": 1,
@@ -46858,6 +46893,41 @@
       "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6ac2aa03864dba19e24ac48a96d29a323d1480cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Monopoly",
+      "description": "A combined ERC-20 token ($MONO) and Uniswap v4 hook implementing a Monopoly-inspired board game. Every swap on the ETH/$MONO pool levies a 3% ETH rent fee distributed to street landowners, rolls virtual dice to advance the trader's board pawn, and supports buying/selling streets and claiming rent.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
     }
