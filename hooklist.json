@@ -10396,6 +10396,41 @@
   },
   {
     "hook": {
+      "address": "0x09a1db744e7353f95cf1cc080f692e2bff73eacc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "DiemCatLaunchHook",
+      "description": "A token launch hook that seeds initial liquidity and applies a time-decaying snipe-protection fee during a configurable window after launch. Token-side fees are burned to a dead address; quote-side fees are split between creator and platform. Liquidity is locked after seeding\u2014adds are restricted to the factory/hook and removes always revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0a10576d56379b951317e07363301c1e8c7e9fcc",
       "chain": "base",
       "chainId": 8453,
@@ -19774,6 +19809,41 @@
   },
   {
     "hook": {
+      "address": "0xa08a0e766e94d6b258e6ec353dcb099ea0cca080",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "DecayFeeHook",
+      "description": "A Uniswap v4 hook that applies a linearly decaying launch fee (anti-snipe) from a configurable START_FEE down to END_FEE over DECAY_SECONDS, then charges a flat fee. Pool initialization is restricted to a fixed MULTI_POOL address set at deployment.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa09FF20120D0dC9B9840C3260EA4F2be7e6cE888",
       "chain": "base",
       "chainId": 8453,
@@ -22811,6 +22881,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xce5d52c0c2345260502872b6108d0ce2559280cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "OmniHook",
+      "description": "Charges a fixed 10 bps fee on every swap's output amount (covering both exact-input and exact-output paths), splitting the cut among five hardcoded addresses via a pull-based ledger. The fee is mandatory and non-configurable; no owner or admin exists.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
