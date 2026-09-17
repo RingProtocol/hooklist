@@ -86449,6 +86449,41 @@
   },
   {
     "hook": {
+      "address": "0x2a100c4b29c2e2c76dbbc794334f54d794d8a0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "HoardFeeHook",
+      "description": "Fee engine for the canonical HOARD/USDG Uniswap v4 pool, charging a 3% gross fee on all swaps collected in USDG and split equally between a Stock Vault and a USDG Wall manager. Records post-swap prices to an oracle after every swap; a LiquidationRouter address can be set as fee-exempt by the owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2a3d8748d4de2efcea0c1c63da49eb3fd4d09000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -93830,6 +93865,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x762a84386841dca52c283ccbf2ba7afa7dc808c0",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "CacheTollHook",
+      "description": "Dynamic-fee hook that charges a time-decaying LP fee (90% at open, falling linearly to 3% over 3 hours). Restricts liquidity additions to a single designated desk, and after each swap calls an external token contract to open a per-trade settlement window for exactly the swap's amounts.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
