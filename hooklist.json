@@ -44239,6 +44239,41 @@
   },
   {
     "hook": {
+      "address": "0x441fc831c2c3efb00b817291e20d2b09b71ca8cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "IncineratorHook",
+      "description": "Applies a 1.2% fee on all swaps: buy fees collect as ETH in a burn pot; sell fees queue as tokens for burning. Every 20 swaps a buyback is queued (BuybackQueued event); the ETH buyback-and-burn is executed by a later buyAndBurn() call (a nested pool swap). Sells are blocked in the same block as a buyback. Sells can also be gated to a deployer-managed allowlist (via tx.origin) in afterSwap: any address can permissionlessly trigger this per token, after which only allowlisted addresses can sell.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4425ded67fe1e8b363c350ff8b7911b908b66840",
       "chain": "ethereum",
       "chainId": 1,
