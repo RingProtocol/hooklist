@@ -11131,6 +11131,41 @@
   },
   {
     "hook": {
+      "address": "0x128bedebaa9304db74726efba848a98e7fb53a80",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "UmiaHook",
+      "description": "Singleton oracle-only hook for Umia LBP pools that maintains dual-ring TWAP oracles (per-block fine ring and hourly coarse ring) and restricts liquidity management to a registered operator (SpotLiquidityVault). Swaps execute as vanilla Uniswap v4 swaps with no fee override or delta modification.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x130b18baa7f6f0d7b3730acc605aabe56df028cc",
       "chain": "base",
       "chainId": 8453,
@@ -13581,6 +13616,41 @@
   },
   {
     "hook": {
+      "address": "0x36671afd57d31d7d15b8b4d4620bc8a7cf226444",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "CDHook",
+      "description": "Uniswap v4 hook for CoinDAT token pools that collects a time-decaying fee in afterSwap (starting at 99%, decreasing by 1% per minute to a 7% floor) and distributes it among the CD token (72%), a protocol treasury (14%), and the pool deployer (14%). Only ETH/CD-token pools deployed via the CoinDAT factory are supported.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x367bf580a1a6cc784f30a77713e02eca76210044",
       "chain": "base",
       "chainId": 8453,
@@ -14731,6 +14801,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x49a538ec5402b9eef56a010fa439f42dfa7f0044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ADRIANSimpleTaxHook",
+      "description": "After-swap hook that deducts a configurable tax (default 10%, max 20%) on ADRIAN token purchases from a pool, taking the tax from PoolManager via `take()` and forwarding it to a designated tax recipient address. Tax rate and recipient are mutable by the contract owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -16694,6 +16799,41 @@
   },
   {
     "hook": {
+      "address": "0x6695ac555510e5b0001d151185354ba6667c20c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "MM",
+      "description": "Oracle-driven market maker hook that repositions liquidity to the oracle price before each swap (by removing all liquidity, executing an internal price-adjusting swap, and re-adding liquidity at a new range), then notifies an external hedge pool to adjust the hedged position after each swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x66e51deab56975bb1c64413bd3ab01fa95b82acc",
       "chain": "base",
       "chainId": 8453,
@@ -17736,6 +17876,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x7706ea3232cbca17e0c7ec417919a4b7a6202844",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TokenFab",
+      "description": "A bonding curve hook for token launches that blocks external pool initialization and liquidity additions. It collects a 1% swap fee split between creator and platform fee receivers, tracks token supply sold through swaps, and automatically migrates liquidity to a full-range AMM pool once the bonding curve supply threshold is reached.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -19525,6 +19700,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8c8b279a0b80061c2b6fe9a84d82f60ff045e0cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TaxHook",
+      "description": "Collects configurable buy and sell taxes (up to 10%) on a designated HOUSE token in registered pools, diverting a portion of each swap to a treasury address via BeforeSwapDelta (sell tax) and AfterSwapDelta (buy tax) mechanics.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
