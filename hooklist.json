@@ -10921,6 +10921,41 @@
   },
   {
     "hook": {
+      "address": "0x11f6db41d793079350a02a06e378aae76487a0cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "FlashHook",
+      "description": "A Uniswap v4 hook for the FLASH protocol implementing OTC buy fills from an on-chain inventory deck, realized sell taxes with dynamic basis points, multi-venue sell routing, and staking reward distribution. Taxes are split among stakers, pool admins, and a protocol owner; pool launches require a pre-staged intent and initializer validation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1216eefa98a268d5c610ffdd9c0eb2d6b1290aec",
       "chain": "base",
       "chainId": 8453,
@@ -12352,6 +12387,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2a2f73cdda098d639bd8bbcd7df2bf24e06728cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LiquidHookDynamicFeeV2",
+      "description": "Uniswap v4 hook with volatility-based dynamic LP fees adjusted per-swap using tick movement relative to a reference price, plus a 20% protocol fee collected via beforeSwap/afterSwap return deltas. Supports an optional MEV protection module active for up to 2 minutes after pool creation and an optional pool extension for post-swap callbacks.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -15959,6 +16029,41 @@
   },
   {
     "hook": {
+      "address": "0x65d35acdb6ce1fdf67a38c5ad0a211f73e24c0cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Politiswap",
+      "description": "A hook that creates Uniswap v4 pools for political-themed ERC-20 tokens (PolTokens), enforcing that only the token contract (currency1) can initiate swaps. It extracts a fixed 2% fee on each swap via beforeSwap/afterSwap delta returns, tracks daily net ETH flows per pool, and allows users to claim governance token rewards for trading in the highest-inflow pool each day.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6646B048fBa0a70a692f7690ae6daD83BCACb0C8",
       "chain": "base",
       "chainId": 8453,
@@ -19210,6 +19315,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x944252105c1e8c131da28f9a2fed80b81e35e088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LaunchHook",
+      "description": "Fee-splitting hook that extracts a configurable platform fee (up to 5%) and a per-pool creator fee (up to 20%) from each exact-input swap via BeforeSwapDelta. Only pools registered by the factory are subject to fees; pool initialization is gated to the factory, and exact-output swaps always revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -25535,6 +25675,41 @@
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf584d807aed2f681fa4420bb7e670abfcc5b9888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "NomadHook",
+      "description": "Uniswap v4 hook implementing a custom AMM with configurable liquidity density functions (LDFs), an auction-managed AMM (am-AMM) to recapture LVR and MEV by auctioning swap fee rights, automatic pool rebalancing via FloodPlain fill orders, a TWAP oracle, and dynamic surge fees.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
