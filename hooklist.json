@@ -35139,6 +35139,41 @@
   },
   {
     "hook": {
+      "address": "0x0a599aa89c9808ae1ddfcb5402e01c59f657e0c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "MUGENHookV1",
+      "description": "A Uniswap v4 hook for the MUGEN/ETH pool that collects fees on every swap and burns MUGEN tokens. On buys (ETH\u2192MUGEN), 1% of the MUGEN output is taken and burned directly. On sells (MUGEN\u2192ETH), 5% of the ETH output triggers a nested buyback swap (ETH\u2192MUGEN) inside afterSwap, and the purchased MUGEN is burned. Only exact-input swaps are supported.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0a64921a53e1daed380d5b44817befc4b5d39000",
       "chain": "ethereum",
       "chainId": 1,
@@ -45390,6 +45425,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5667145115f65cc47c7d163b277fd3c513260500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "Token launchpad hook that initializes ETH/token pools and manages one-sided LP positions on behalf of token creators. Liquidity is seeded at launch (token-only, below current tick) and withdrawn to the creator on demand. The afterAddLiquidity and afterRemoveLiquidity callbacks are pass-through (ZERO_DELTA).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -56699,6 +56769,41 @@
   },
   {
     "hook": {
+      "address": "0xa79e9c7077d2c5ac8d9f254c5db841936b490500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that manages creator-controlled one-sided (token-only) liquidity positions on Uniswap v4 ETH/token pools. Creators initialize a pool, seed LP at a configured price range, and later withdraw principal and accrued fees. The afterAddLiquidity and afterRemoveLiquidity callbacks return zero delta and do not modify swap behavior.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa7b55087b8908a59e2a353708adb543cdf6b6888",
       "chain": "ethereum",
       "chainId": 1,
@@ -58830,6 +58935,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb760acae5e292eb93a131d7bd9dc3365e50880cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "NyxoraTaxHook",
+      "description": "A 1% buy/sell tax hook for a NYX/ETH Uniswap v4 pool that always collects tax in the ETH/WETH side. In beforeSwap it skims ETH on exact-input buys; in afterSwap it skims ETH on exact-input sells and exact-output buys. Collected fees are sent via poolManager.take() directly to a configurable treasury address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -63629,6 +63769,41 @@
   },
   {
     "hook": {
+      "address": "0xdcf28422a828147926ca3f1f2d1ac534a5e4c440",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UpegHook",
+      "description": "Calls `start()` on a configured token when the first liquidity is added to the token's pool. Updates an internal random seed on every swap involving that token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xdd3beef2b5993f42532021d0654fbfef2d3280cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -66705,6 +66880,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf36ae7dd6d49921b7eb554b11eb8158e3544d040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Arc",
+      "description": "Arc is simultaneously an ERC-20 token and a Uniswap v4 hook bound to a single pool. After each swap it reads the current pool tick and records directional curvature statistics (last tick, direction, cumulative turn sum, swap count) on-chain via events and storage, without modifying swap execution in any way.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {

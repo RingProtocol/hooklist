@@ -9696,6 +9696,41 @@
   },
   {
     "hook": {
+      "address": "0x5667145115f65cc47c7d163b277fd3c513260500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "Token launchpad hook that initializes ETH/token pools and manages one-sided LP positions on behalf of token creators. Liquidity is seeded at launch (token-only, below current tick) and withdrawn to the creator on demand. The afterAddLiquidity and afterRemoveLiquidity callbacks are pass-through (ZERO_DELTA).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5832f3e51295cee676eebbb25748d527f64b5f80",
       "chain": "ethereum",
       "chainId": 1,
@@ -12566,6 +12601,41 @@
   },
   {
     "hook": {
+      "address": "0xa79e9c7077d2c5ac8d9f254c5db841936b490500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that manages creator-controlled one-sided (token-only) liquidity positions on Uniswap v4 ETH/token pools. Creators initialize a pool, seed LP at a configured price range, and later withdraw principal and accrued fees. The afterAddLiquidity and afterRemoveLiquidity callbacks return zero delta and do not modify swap behavior.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xab30e40f9419daf915fd2150d3b067995b07bac0",
       "chain": "ethereum",
       "chainId": 1,
@@ -13791,6 +13861,41 @@
   },
   {
     "hook": {
+      "address": "0xdcf28422a828147926ca3f1f2d1ac534a5e4c440",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UpegHook",
+      "description": "Calls `start()` on a configured token when the first liquidity is added to the token's pool. Updates an internal random seed on every swap involving that token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xde400595199e6dae55a1bcb742b3eb249af00800",
       "chain": "ethereum",
       "chainId": 1,
@@ -14538,6 +14643,41 @@
     "flags": {
       "beforeInitialize": false,
       "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf36ae7dd6d49921b7eb554b11eb8158e3544d040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Arc",
+      "description": "Arc is simultaneously an ERC-20 token and a Uniswap v4 hook bound to a single pool. After each swap it reads the current pool tick and records directional curvature statistics (last tick, direction, cumulative turn sum, swap count) on-chain via events and storage, without modifying swap execution in any way.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
