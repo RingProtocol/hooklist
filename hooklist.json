@@ -45814,6 +45814,41 @@
   },
   {
     "hook": {
+      "address": "0x762d5c098ac6eaf0d541e019ad4893dab2760500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that manages creator-gated, one-sided token/ETH liquidity positions. Creators initialize a Uniswap v4 pool, seed a single-sided token-only position at the launch price tick, and later withdraw their principal and accrued fees. The hook enforces token ownership and a one-launch-per-token constraint.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x763cd7059ec816ab7a1cbd11539d908afef940cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -48400,6 +48435,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8e3a2b6f8b885ce3c384605cd9c20ea6fc6a80cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "FeeHookV2",
+      "description": "Skims a configurable ETH-side fee (default 1%, max 2%) from every swap on an ETH/WORD pool, routing collected ETH 25% to a RewardsDistributor, 25% to a BountyEngine, and 50% to a WordStaking contract via a hardcoded, non-adjustable split. Swaps are gated until the owner calls enableTrading(); a per-buy WORD output cap is enforced for one hour after launch.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
