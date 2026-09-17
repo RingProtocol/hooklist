@@ -10151,6 +10151,41 @@
   },
   {
     "hook": {
+      "address": "0x0507140088aa5b266d6b44eef02ad55cf1fb40c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "FeeHook",
+      "description": "Uniswap v4 hook that overrides the LP fee per swap using a pluggable fee policy constrained to a 0.10%\u20131.00% corridor, and tracks per-wallet swap volume by season in the pool's USD leg. Only swaps routed through a trusted portal router receive personalized fees and volume tracking; all other swaps pay the maximum fee. No custody or swap delta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x06a0244c73924ec6b176206058341e5622f79ae4",
       "chain": "base",
       "chainId": 8453,
@@ -85609,6 +85644,41 @@
   },
   {
     "hook": {
+      "address": "0x34981f91a8039610c8451040a6ffa09de38deafc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "V2Hook",
+      "description": "Launchpad hook that charges a fee on the numeraire leg via hook deltas (bypassing LP fee, which is overridden to zero). The fee decays linearly from a configurable start (up to 80%) to a steady-state end (default 1%) over a configurable window (default 10 s) to deter opening-block snipers; exactOut swaps revert during this window. Liquidity additions are vault-only; principal removals are permanently locked. Optionally gates buys to NFT holders and locks sells for a presale period.",
+      "deployer": "0xcb811ec409A43F7B6C49570B3a3bc37C3107b444",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3545793892059340b63bc3aab8dd7e1b7fb50044",
       "chain": "robinhood",
       "chainId": 4663,
@@ -122639,6 +122709,41 @@
   },
   {
     "hook": {
+      "address": "0xb37dff8a2458efedb5e8ab5dfd004bf38e2328a8",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "EulerSwap",
+      "description": "Uniswap v4 hook implementing a custom AMM backed by Euler lending vaults. In beforeSwap, it computes quotes via a custom curve, routes token flows through Euler vaults, verifies a curve invariant, and returns a BeforeSwapDelta \u2014 fully replacing v4 pool swap math.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb386384936b03c6a3561c164d186f7e7884ae8a8",
       "chain": "unichain",
       "chainId": 130,
@@ -125444,6 +125549,41 @@
       "chainId": 130,
       "name": "EulerSwap",
       "description": "EulerSwap is a custom AMM hook that routes swaps through Euler Protocol vaults using a custom pricing curve. It fully handles swap execution in beforeSwap by taking input tokens from the PoolManager, depositing them into Euler vaults, and withdrawing output tokens from Euler vaults, bypassing Uniswap's concentrated liquidity model entirely.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd175ab310b66e21cd27a85f49209440e7df3a8a8",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "EulerSwap",
+      "description": "A custom curve AMM hook that routes swaps through Euler Finance lending vaults. In beforeSwap, it computes swap amounts via a concentration-weighted price curve, deposits input tokens into an Euler vault, withdraws output tokens from another Euler vault, and returns a BeforeSwapDelta to fully settle the swap within the hook.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
