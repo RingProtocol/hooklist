@@ -59114,6 +59114,41 @@
   },
   {
     "hook": {
+      "address": "0x9847e820142eea55f7725bc09e4d198ddf9f68cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ReflectionV4Hook",
+      "description": "Reflection-fee hook: buys collect 1.7% ETH into a buyback pot; sells send 1.7% of token input to the token via notifyReflection(). Every 20 swaps a buyback is queued, run by a manual buybackAndReflect() call. One liquidity add per token; only exact-input swaps supported. afterSwap gates sells: anyone can call excludeFromReflections() to set reflectionBase[token], after which only canReflect addresses (managed by genesisAddress) can sell; only genesisAddress can disable it.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x98fa6468c65ec0100cb92c62dc6109236c130440",
       "chain": "ethereum",
       "chainId": 1,
