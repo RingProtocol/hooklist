@@ -38114,6 +38114,41 @@
   },
   {
     "hook": {
+      "address": "0x1e1e7579db44f60e403320fe474f169d931f68cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniswapV4Hook",
+      "description": "A Uniswap v4 buy-and-burn hook: buys collect 1% of ETH input into a burn pot; sells queue 1% of tokens for burning. Every 20 swaps a buyback-and-burn can be triggered. Sells revert in the same block as a buyback and can be gated by a per-token tx.origin allowlist: any address can permissionlessly enable the sell gate via compress(), while adding addresses and disabling the gate are deployer-only.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1e40b0875dda35f41e15cfb475403859b8c860c4",
       "chain": "ethereum",
       "chainId": 1,
@@ -51589,6 +51624,41 @@
   },
   {
     "hook": {
+      "address": "0x795055f02be11f376404d1b23c3bcc5a2c6900cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "HID Domain Registry Hook",
+      "description": "A Uniswap v4 hook on an ETH/HID pool collecting protocol fees via BeforeSwapDelta/AfterSwapDelta. Plain buys (ETH->HID, no/unapproved hookData) are charged 1% of ETH input; domain-registration buys (hookData set, input >= autoRegisterThreshold, root approved) are charged a fixed 0.0005 ETH REGISTRATION_FEE. Sells (HID->ETH) are charged 1% of ETH output via afterSwap. On a successful registration swap, afterSwap registers the domain encoded in hookData on-chain to tx.origin.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x798f4f64fdc66c85ae3fab5bb3e7391ecce360c4",
       "chain": "ethereum",
       "chainId": 1,
@@ -60759,6 +60829,41 @@
   },
   {
     "hook": {
+      "address": "0xb21bda2e384c91238a3885279d1c003c7e78a8cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniswapV4Hook",
+      "description": "A Uniswap v4 hook collecting a 0.7% fee on every swap: ETH from buys accumulates in a burn pot for buyback-and-burn every 20 swaps, and token input from sells is burned directly. Liquidity addition is one-time per token, and sells are blocked in the same block as a buyback. Additionally, any address can activate a per-token sell allowlist by calling registerPixel, restricting sells to addresses the deployer pre-approves via preparePixels; only the deployer (genesisAddress) can deactivate it.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb331eaf86215c0a5d4adddfdab7405055ec7c0cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -61035,6 +61140,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb65fd2a1ff6fd0262baeb64f1e105a76bd36a8cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniswapV4Hook",
+      "description": "A Uniswap v4 hook with a 1.2% fee on buys and sells. Buy fees accumulate ETH in a burn pot for buyback-and-burn every 20 swaps; sell fees queue tokens for burning. Sells are blocked in the same block as a buyback. Exact-output swaps always revert. Only one liquidity addition is permitted per token. Additionally, afterSwap has an allowlist: once activated by any caller via superTokens(), sells are blocked for all addresses not pre-approved by the deployer.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
