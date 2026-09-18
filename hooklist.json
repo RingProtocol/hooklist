@@ -116514,6 +116514,41 @@
   },
   {
     "hook": {
+      "address": "0x3f2f0b4f9a50e2179be76b1f6f810a0f7cdc00c0",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "Spot",
+      "description": "A Uniswap v4 hook that applies a configurable fixed LP fee override (default 8%) on every swap via the dynamic fee override mechanism, and optionally collects a protocol fee share from swaps by minting ERC6909 balance claims to a liquidity manager for reinvestment.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3f67d62bbe3bc3d816c0adda020151008daa5000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -117175,6 +117210,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x438b86c71840c3b4df3f839aed6bb889e2d780c0",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PairV5LaunchV2NativeFeeHook",
+      "description": "Observation-only hook that records tick observations and swap counts on each swap to maintain a 30-minute TWAP oracle for launchpad-registered V4 pools. Exposes price quote functions from the TWAP; pools must be registered by a trusted registrar before swaps are accepted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
     }
   },
   {
@@ -125299,6 +125369,41 @@
   },
   {
     "hook": {
+      "address": "0x76f394c502f195c8171d1671104a2e7bcf8660cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FewHook",
+      "description": "A fee-collection hook for few.fun launchpad pools that takes a fixed percentage of each swap in the quote asset, split between the pool creator and a protocol treasury. Includes a temporal guard that caps individual buy sizes during a configurable opening window after pool launch.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x77835d3d42bbf93cdba50ea1599cd57a5ec920cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -126625,6 +126730,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x7fa46639d6c4cb000f2107cb6038c404b4a6a0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FewHook",
+      "description": "A fee-collection hook for few.fun token launches that charges a fixed percentage fee in the quote asset on every swap, then splits it between a creator and protocol treasury. Supports three fee modes: Creator (direct payout), Cashback (buyback-and-burn), and Holder Rewards. Enforces a configurable time-based maximum buy size during a pool's opening guard window.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
