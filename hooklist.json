@@ -127154,6 +127154,41 @@
   },
   {
     "hook": {
+      "address": "0x7f9386c56383734cff61fe602844714571c180cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "STONKBANK",
+      "description": "Fixed-supply ERC-20 token that also serves as a Uniswap v4 hook for a single immutably bound pool. Collects a configurable tax (in basis points) on the native ETH side of swaps for both buys and sells, routing collected taxes to a designated controller address via BeforeSwapDelta and AfterSwapDelta return values.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7fa46639d6c4cb000f2107cb6038c404b4a6a0cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -139426,6 +139461,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd38c3b8d58f487625878408523dd2fe7d35228cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchpadHook",
+      "description": "A shared Uniswap v4 hook for launchpad-created token pools that overrides LP fees to 0 and instead collects a tiered, market-cap-based fee directly from each swap, with an optional time-decaying anti-sniper surcharge. Liquidity additions are restricted to the initial launch position, and fees are distributed to configurable dev and partner wallets in the same transaction.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
