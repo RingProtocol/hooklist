@@ -1331,6 +1331,41 @@
   },
   {
     "hook": {
+      "address": "0x16f283e288d233eae358c56efb4c85882d895800",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BlockAddLiquidityHook",
+      "description": "Records tx.origin as the pool creator on initialization; restricts beforeAddLiquidity so only the original creator's EOA transaction origin can add liquidity, reverting with AddLiquidityBlocked for all others.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x17cd03d93888b67cadf5521f872c12bb66e4fa80",
       "chain": "base",
       "chainId": 8453,
@@ -2906,6 +2941,41 @@
   },
   {
     "hook": {
+      "address": "0x80d8e09988556f1d2422be14adaf74fd0f6a2000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "AquinasPoolHook",
+      "description": "A Uniswap v4 hook for Aquinas DAOs that gates pool initialization to factory-authorized addresses. The factory registers a Safe address as the authorized initializer for each pool; any other caller is reverted, preventing frontrunning of LP initialization. Has no swap-path logic.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x81b9e42d03ecafb5f66b42b4f70bad3c83ce1000",
       "chain": "base",
       "chainId": 8453,
@@ -4026,6 +4096,41 @@
   },
   {
     "hook": {
+      "address": "0xc77e884e82fdc9274bf17bf28b6c89d05b6d8ac0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "SwapHook",
+      "description": "A minimal counter hook that increments per-pool counters on each beforeSwap and afterSwap call. It does not modify swap behavior, fees, or token flows \u2014 purely observational.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc981b010edb021b8765f383ccd3f896ed47e1000",
       "chain": "base",
       "chainId": 8453,
@@ -4162,6 +4267,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd1c5eb0e244c14f14784fbbc0bd3b9eaa763c040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "CustomFeesHook",
+      "description": "Stub hook with afterSwap permission enabled but all fee-collection logic commented out. The contract stores an immutable fee recipient and swap fee in BIPS, but afterSwap returns a zero delta without executing any fee or token transfer logic.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -4464,6 +4604,41 @@
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
       "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdac86cd5c44acd3987bddea47a6c6003c4988040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TokenFactory",
+      "description": "A token factory that deploys ERC20 tokens, creates Uniswap v4 pools with initial liquidity, and allows token creators to claim accumulated LP fees. The afterSwap hook is a no-op that simply returns its selector.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
