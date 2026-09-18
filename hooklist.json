@@ -19181,6 +19181,41 @@
   },
   {
     "hook": {
+      "address": "0x391aa42ab42f50be30c4700435b4fc49c3bb0040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "FeeCollectHook",
+      "description": "Collects and processes fees for registered LP tokens after each swap by calling an external AutoRepayingManager contract in batches of up to 3. Pools and LP token IDs must be registered by the manager; unauthorized pools are skipped.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x395c377497386bcf0a98e76104f769878a40e888",
       "chain": "base",
       "chainId": 8453,
@@ -35940,6 +35975,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa1e307104052892089d1a3eca5acc1c8f5e8a0cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BitGold",
+      "description": "ERC20 token and Uniswap v4 hook implementing Bitcoin-like tokenomics: a fixed-price genesis mint phase seeds the ETH/BTG pool, followed by proof-of-work mining for the remaining supply. The hook collects a 1% swap fee on the ETH side of each trade, redirected to the contract for the controller to claim.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -129876,6 +129946,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x921d0be20a21e5a687734b4df6302ea55bd168c0",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "IncentifiV4LegibleHook",
+      "description": "A token launch bonding curve hook that represents the curve as a single Uniswap v4 range position. Applies a dynamic 2% LP fee split between the token creator and a loss reward pool, gates liquidity additions to the hook only, and automatically graduates the pool to a full-range position when the bonding curve is exhausted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
