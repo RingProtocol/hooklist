@@ -946,6 +946,41 @@
   },
   {
     "hook": {
+      "address": "0x046d9cc1b44a98cf28316de6c5dfac5392d3c040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "FeeCollectHook",
+      "description": "A post-swap hook that tracks trade counts per registered LP token position in authorized pools, designed to trigger fee processing via an external LeveragedLPManager contract on each swap. The fee collection call is currently disabled (commented out in source), so afterSwap only records trade counts and emits debug events.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x04e08a08bab77b389e970a65d91fba8bf4ef6080",
       "chain": "base",
       "chainId": 8453,
@@ -1187,6 +1222,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x11112d0042da957999f439649988684c1cd55000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "Minimal hook for the Saturn Omnichain project; the afterInitialize callback itself is a no-op. A separate initializePool() function on the contract records the initial pool tick and sets a poolInitialized flag. Has no effect on swaps, liquidity operations, or fees.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
