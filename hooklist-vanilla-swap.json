@@ -18516,6 +18516,41 @@
   },
   {
     "hook": {
+      "address": "0x1028d2cb521f66d7db7c7b7e16415c3871c66aa0",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "MarketHook",
+      "description": "A prediction market hook that gates all pool operations through a designated router contract. Swaps and liquidity additions require trading to be open (via IMarketHookRouter.isTradingOpen()), fees must remain at zero, and donations are permanently disabled.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x111157d643499ed3870cb7bdb848303c85fb9000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -20104,6 +20139,41 @@
       "beforeInitialize": false,
       "afterInitialize": true,
       "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4951338f057a27f6e1b57a8973b87bd263c2a800",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SkhoodHook",
+      "description": "Restricts pool initialization and liquidity additions to callers recognized as valid curves by the Factory contract. Swaps are unrestricted and behave identically to a standard Uniswap v4 pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
@@ -22086,6 +22156,41 @@
   },
   {
     "hook": {
+      "address": "0xa348b0ee52f762dd24ef4a7196d746d8e51e8040",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PoolGuard",
+      "description": "A per-pool afterSwap hook that enforces sell limits during a time-boxed launch window. During the window, swaps that sell the designated token above a threshold (measured in paired-currency units) are reverted, unless the sender is on the owner-managed exempt list. After the window expires, no enforcement occurs.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa513fe0c7f99d18fd898030582095d034d5f5000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -22379,6 +22484,41 @@
       "beforeInitialize": false,
       "afterInitialize": true,
       "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb267a0e6fe2794010102e7ca7d50e82d2b182800",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "MemeStonkCanonicalPoolHook",
+      "description": "Enforces exact-price initialization and temporary liquidity-addition exclusivity for canonical meme pools on Arbitrum. The beforeInitialize callback ensures only the immutable factory can initialize a pool at a pre-registered price; beforeAddLiquidity restricts deposits to a designated liquidity controller until an immutable block-height expiry.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
