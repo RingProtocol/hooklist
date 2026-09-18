@@ -18166,6 +18166,41 @@
   },
   {
     "hook": {
+      "address": "0x0a1e2c2b7cd133fcaf968f5e5644fda275b16080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SessionHook",
+      "description": "Restricts swaps to the regular US stock market session (9:30\u201316:00 New York time, Monday through Friday, with DST support), reverting with MarketClosed outside those hours. Pool initialization is gated to an authorized markets address and requires zero LP fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0a64921a53e1daed380d5b44817befc4b5d39000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -19041,6 +19076,41 @@
   },
   {
     "hook": {
+      "address": "0x30c714bbaa09be7dbe84766fd050779aef436080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SessionHook",
+      "description": "A Uniswap v4 hook that restricts swaps to regular US stock market hours (9:30\u201316:00 New York time, Monday\u2013Friday), computing DST transitions on-chain without an oracle. Pool initialization is restricted to an authorized `markets` address and must pair a specific token at zero LP fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x32d36eb0c06fb9fa6a652236684d8a0e6c78d000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -19334,6 +19404,76 @@
       "beforeInitialize": false,
       "afterInitialize": true,
       "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x40822718352e71be30a1880644bf6cc3003fd040",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchpadHook",
+      "description": "Uniswap v4 hook for launchpad pools that restricts pool initialization to a designated launchpad address (via afterInitialize) and emits a PoolSwap event on every swap for off-chain indexing. No hook deltas are taken and swap execution is otherwise unmodified.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4201ec638f68b59fc2a9fdbeb5abfec834f16800",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "VectisHook",
+      "description": "A shared hook for all Vectis pools that restricts pool initialization to the LaunchFactory address and liquidity additions to the Locker address. Swaps are fully unrestricted; the hook has no swap flags, no dynamic fee, and no delta modifications.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
@@ -22296,6 +22436,41 @@
   },
   {
     "hook": {
+      "address": "0xf62f296e6495e4029b0c5bf06243a71de9bb5040",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchpadHook",
+      "description": "A Uniswap v4 hook that restricts pool initialization to a designated launchpad address (via afterInitialize) and emits a PoolSwap event on every swap for off-chain indexing. No hook deltas are applied and swap execution is unmodified.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xf7311f0fe6a17495ddf2f60a069a48fd525f9000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -22378,6 +22553,41 @@
     "flags": {
       "beforeInitialize": false,
       "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfef8e78090697c808116c56a9e81fc83d4f76000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SettlePermissionHook",
+      "description": "Gates Uniswap v4 pool initialization to a permissioned settle adapter via a one-shot authorize(poolId) allowlist; unauthorized initializations revert. Liquidity operations after initialization are unrestricted. Has no swap hooks.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
