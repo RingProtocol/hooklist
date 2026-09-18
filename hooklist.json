@@ -11831,6 +11831,41 @@
   },
   {
     "hook": {
+      "address": "0x0d25ac21c91c4828c6a20048b9ed159aa9546888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom-curve hook for a phiEth/ETH pool that performs 1:1 ETH\u2194phiEth conversions via beforeSwap, bypassing concentrated liquidity entirely. The hook takes input from the PoolManager, converts via phiEth.deposit() or phiEth.withdraw(), and settles the output; direct liquidity addition is blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0d4379a719d901b009933f185fc9a2c078feb0cc",
       "chain": "base",
       "chainId": 8453,
@@ -12588,6 +12623,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x11f94f1177242678b4284fb358cd1543ded22888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Hook implementing a 1:1 custom-curve swap between ETH and phiEth (a wrapped-ETH token), handling deposit/withdraw in beforeSwap via a BeforeSwapDelta return. Pool initialization is restricted to ETH/phiEth pairs with zero fee, and direct liquidity addition always reverts.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -13406,6 +13476,41 @@
   },
   {
     "hook": {
+      "address": "0x18638c43e56c8968ba3edfa22eff8af14647a888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom-curve hook implementing 1:1 ETH/phiEth swaps. In beforeSwap, it takes the input token from the pool manager, converts via phiEth deposit or withdraw, settles the output, and returns a delta that no-ops the concentrated liquidity math. Adding liquidity to the pool is always reverted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1873a43a3fb43fa792fe05b6a345f401505000cc",
       "chain": "base",
       "chainId": 8453,
@@ -13651,6 +13756,41 @@
   },
   {
     "hook": {
+      "address": "0x192f159261a357c0df20de45f8c99b23f18f2888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom-curve hook implementing 1:1 ETH/phiEth swaps, bypassing concentrated liquidity by taking input from the PoolManager, converting via phiEth deposit/withdraw, and settling the output. Liquidity additions are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x19945cf328faad357df4e1cc809a2fb39bc300cc",
       "chain": "base",
       "chainId": 8453,
@@ -13707,6 +13847,41 @@
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1a5419447ff20ebeb43da32d3c6f4d234d3ae888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom swap curve between ETH and phiEth (a wrapped ETH token) by intercepting swaps in beforeSwap, taking input from the PoolManager, minting or burning phiEth accordingly, and returning a full delta to bypass concentrated liquidity. Blocks direct liquidity additions to the pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
@@ -13936,6 +14111,41 @@
       "chainId": 8453,
       "name": "PhiEthHooks",
       "description": "A 1:1 ETH/phiEth swap hook that implements a custom constant-price curve entirely within beforeSwap: it takes the input token from the PoolManager, calls phiEth.deposit or phiEth.withdraw to convert, settles the output, and returns a full BeforeSwapDelta to no-op the AMM. Direct liquidity additions are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1b9c15077d5af06dfd45eae6197fd5d4b36ea888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a custom 1:1 swap curve between ETH and phiEth (an ETH 1:1 wrapper token). In beforeSwap, it takes input tokens from the pool manager, calls phiEth.deposit() or phiEth.withdraw() to convert, then settles output \u2014 bypassing concentrated liquidity entirely. Direct liquidity additions are blocked; only ETH/phiEth zero-fee pools may use this hook.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -14246,6 +14456,41 @@
   },
   {
     "hook": {
+      "address": "0x1e930958f896d687447ad745c37e8e99d77ca888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A 1:1 custom-curve hook for ETH/phiEth pools. Intercepts swaps via beforeSwap with delta returns, calling phiEth.deposit() or phiEth.withdraw() to convert between ETH and phiEth at a 1:1 rate with zero fee. Liquidity addition is permanently blocked via beforeAddLiquidity revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1ed3afa8c99b4ab597c48a9f56cad6457d255000",
       "chain": "base",
       "chainId": 8453,
@@ -14303,6 +14548,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1f248d53153e67db8ba79bfcac1fe96e65a16888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom-curve hook implementing 1:1 ETH/phiEth swaps: it intercepts all swaps via beforeSwap, takes the input currency from the pool manager, deposits or withdraws through the phiEth wrapper, settles the output, and returns a delta that bypasses concentrated liquidity pricing entirely. Liquidity additions are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -14666,6 +14946,41 @@
   },
   {
     "hook": {
+      "address": "0x2026a91fa7d87bc78f316b72f98152099a7b2888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom-curve swap between ETH and phiEth (a wrapped ETH token) by intercepting swaps in beforeSwap, taking input tokens, converting via phiEth.deposit/withdraw, and settling the output \u2014 bypassing concentrated liquidity entirely. Liquidity addition to the pool is permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x20535951e277866fcf0cb22992c2ca91f8e7ed66",
       "chain": "base",
       "chainId": 8453,
@@ -14771,6 +15086,41 @@
   },
   {
     "hook": {
+      "address": "0x20dfdace224fb1552598f45ca0ce671d44d32888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A 1:1 ETH/phiEth swap hook that implements a custom constant-price curve using beforeSwapReturnsDelta. It intercepts all swaps, converts ETH to phiEth (via deposit) or phiEth to ETH (via withdrawal) at a strict 1:1 rate, bypassing Uniswap concentrated liquidity entirely. Liquidity addition to the pool is permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x21253dbe734f906c4096ce6208a7259df4662a44",
       "chain": "base",
       "chainId": 8453,
@@ -14868,6 +15218,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2161e999b64eb03973483e783690fefaff34e888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A 1:1 custom-curve hook for ETH/phiEth pools. On each swap, it takes the input from the PoolManager, converts it through the phiEth contract (deposit for ETH\u2192phiEth, withdraw for phiEth\u2192ETH), and settles the output \u2014 bypassing concentrated liquidity entirely. Liquidity addition is unconditionally blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -18656,6 +19041,41 @@
   },
   {
     "hook": {
+      "address": "0x3c738f9a833bfe8aa2a4234c179071e2a1c32888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 ETH\u2194phiEth swap using a custom curve via beforeSwapReturnsDelta, bypassing concentrated liquidity entirely. It takes the full input, converts via the phiEth contract (deposit/withdraw), and settles the output directly. Direct liquidity additions to the pool are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3c8c11f43bc0b08b3e245244e476aea738d82888",
       "chain": "base",
       "chainId": 8453,
@@ -19216,6 +19636,41 @@
   },
   {
     "hook": {
+      "address": "0x42391cda439f32cc03ade07f9087710c3c446888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A 1:1 ETH/phiEth custom-curve hook that intercepts swaps via beforeSwap to bypass the AMM entirely. It takes input from the pool manager, converts via phiEth.deposit() or phiEth.withdraw(), settles the output, and returns a BeforeSwapDelta consuming the full swap amount. Adding liquidity directly to the pool is blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x42507d88ef61e0eb090135443e4b1c8ed24ae888",
       "chain": "base",
       "chainId": 8453,
@@ -19291,6 +19746,41 @@
       "chainId": 8453,
       "name": "PhiEthHooks",
       "description": "A custom-curve hook that implements 1:1 ETH/phiETH swaps by taking input directly from the pool manager, converting via phiEth deposit/withdraw, and settling output\u2014bypassing Uniswap's concentrated liquidity pricing. Liquidity additions to the pool are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x42d95b4c5c4e915878f9c3507e8dd38943ed2888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 ETH/phiETH swap via a custom curve in beforeSwap, converting tokens directly using phiETH deposit/withdraw and returning the full BeforeSwapDelta to bypass concentrated liquidity. Blocks all liquidity additions to the pool.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -21106,6 +21596,41 @@
   },
   {
     "hook": {
+      "address": "0x4f99c9767923185649282f3629ffcfba9069e888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A Uniswap v4 hook implementing a 1:1 custom curve for ETH/phiEth swaps. In beforeSwap, it takes the input token from the pool manager, converts it via phiEth.deposit or phiEth.withdraw, and settles the output \u2014 fully bypassing concentrated liquidity. Adding liquidity to the pool is permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4fea24f88468e7a93acdeb91ad3fed799dc92acc",
       "chain": "base",
       "chainId": 8453,
@@ -22259,6 +22784,41 @@
   },
   {
     "hook": {
+      "address": "0x5974042f0617b1fa2aa36359148c2a0d85a26888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Hook implementing a 1:1 ETH \u2194 phiEth custom swap curve, bypassing concentrated liquidity by handling token conversion directly through the phiEth wrapper contract. Liquidity additions to the pool are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x59aef9799dea01a7fb7da73bea10dfb08858a088",
       "chain": "base",
       "chainId": 8453,
@@ -22779,6 +23339,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5bec40b9db3bd37635a11d4675dce6f0404c6888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom AMM hook that implements a 1:1 ETH/phiEth swap curve. In beforeSwap, it takes the input token from the PoolManager, calls phiEth.deposit or phiEth.withdraw to convert, then settles the output \u2014 bypassing concentrated liquidity entirely. Liquidity addition is permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -24184,6 +24779,41 @@
   },
   {
     "hook": {
+      "address": "0x64359a22e41a8d51508ed90b1867d8ff69dfa888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom curve swap between native ETH and phiEth (a wrapped ETH token) by taking input from the PoolManager, wrapping/unwrapping via phiEth, and settling output directly, bypassing concentrated liquidity. Blocks all direct liquidity additions to the pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x64746dca345c5652bc251597bd99562216a7a0cc",
       "chain": "base",
       "chainId": 8453,
@@ -24744,6 +25374,41 @@
   },
   {
     "hook": {
+      "address": "0x67ba1d28872c63580e862f3fb265c05367e9e888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom curve for ETH/phiEth pools by intercepting swaps in beforeSwap: takes the input token from the PoolManager, mints or burns phiEth accordingly, and settles the output \u2014 bypassing concentrated liquidity entirely. Liquidity provision is permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x67f1587aad8bd5bbf631f71f363192c53413ea44",
       "chain": "base",
       "chainId": 8453,
@@ -25234,6 +25899,41 @@
   },
   {
     "hook": {
+      "address": "0x6bdfbddda940bfcbc8f29e629af38578771ba888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A 1:1 ETH/phiEth conversion hook implementing a custom constant-price curve. In beforeSwap, it takes the full input amount from the PoolManager, wraps or unwraps ETH via the phiEth contract, and settles the output \u2014 bypassing the AMM entirely. Direct liquidity additions are blocked, and only ETH/phiEth pools with zero fee may use this hook.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6bfdee1391ef117c9eaf8ac059e252e558c16888",
       "chain": "base",
       "chainId": 8453,
@@ -25484,6 +26184,41 @@
       "chainId": 8453,
       "name": "PhiEthHooks",
       "description": "Implements a 1:1 custom curve swap between ETH and phiEth (a wrapped ETH ERC-20) by taking the full input from the pool manager, invoking phiEth deposit or withdraw, and settling the output back. Blocks all direct liquidity additions and enforces a zero-fee pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6d3a4ba7a3ef646e7538fbea8ecad1f32c9be888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Custom-curve hook that implements 1:1 ETH \u2194 phiEth swaps via beforeSwap. On each swap it takes input tokens, calls phiEth.deposit or phiEth.withdraw, and returns a full BeforeSwapDelta to bypass the AMM curve. Direct liquidity addition is blocked; only ETH/phiEth pools with zero fee are permitted.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -26424,6 +27159,41 @@
   },
   {
     "hook": {
+      "address": "0x761024fc9bc7eca9407523b27e9bbddbd3136888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 ETH\u2194phiEth custom curve swap by intercepting beforeSwap to take input tokens, mint or burn phiEth via deposit/withdraw, and settle the output \u2014 bypassing the pool's concentrated liquidity entirely. Direct liquidity additions are blocked via beforeAddLiquidity revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x761de69195091b4a099a9b97b2dd85f73848efdc",
       "chain": "base",
       "chainId": 8453,
@@ -26726,6 +27496,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x773abddf56d79fa203e047c63227cd6d58a7a888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom-curve hook that enables 1:1 ETH\u2194phiEth swaps by intercepting beforeSwap to take input, mint or burn phiEth tokens, and settle output \u2014 bypassing concentrated liquidity entirely. Liquidity additions are blocked, and the pool is restricted to ETH/phiEth pairs with zero fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -27404,6 +28209,41 @@
   },
   {
     "hook": {
+      "address": "0x7d181686e9ef0ade0d47e8be275cc560eb91e888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A 1:1 ETH/phiETH swap hook that bypasses concentrated liquidity: takes input tokens from the pool manager, calls phiEth.deposit() or withdraw() to convert, and settles the output at parity. Adding liquidity to the pool is permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7d21abcbac5d3b6794ccd582d86b8a42b1f12fdc",
       "chain": "base",
       "chainId": 8453,
@@ -27461,6 +28301,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x7daf52a0ec3e9c78d69a1196e18194efb5d9e888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom-curve hook enabling 1:1 ETH\u2194phiEth swaps by intercepting beforeSwap, taking input from the PoolManager, calling phiEth.deposit/withdraw for conversion, and settling the output\u2014fully bypassing concentrated liquidity. Liquidity addition to the pool is blocked via a beforeAddLiquidity revert. Only ETH/phiEth pools with zero fee are permitted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -28069,6 +28944,41 @@
   },
   {
     "hook": {
+      "address": "0x80d5179e59196ab9a4e69e5b384ad2ae6ceea888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom-curve hook enabling 1:1 swaps between ETH and phiEth (an ETH wrapper token). It uses beforeSwapReturnsDelta to take input tokens, deposit or withdraw via the phiEth contract, and settle outputs directly, bypassing concentrated liquidity. Direct liquidity additions to the pool are permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x80d86b6106942fb41786169340b1b7f250a24440",
       "chain": "base",
       "chainId": 8453,
@@ -28412,6 +29322,41 @@
     "properties": {
       "dynamicFee": false,
       "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x819b2e9eefa31ebf9cb016d92bfb81935a422888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom curve swap between ETH and phiEth (a wrapped ETH token) by intercepting swaps in beforeSwap, taking input from the PoolManager, wrapping or unwrapping via the phiEth contract, and settling the output \u2014 bypassing concentrated liquidity entirely. Direct liquidity addition to the pool is blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
@@ -30204,6 +31149,41 @@
   },
   {
     "hook": {
+      "address": "0x8e93a7060bbc54ab62a3c13efa5a35d18b6fe888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A 1:1 ETH/phiEth wrapper hook that intercepts all swaps via BeforeSwapDelta, calling phiEth.deposit() or phiEth.withdraw() directly to convert between ETH and phiEth without using concentrated liquidity. Liquidity provision to the pool is permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8f29bd5c8429730fa4c46e6295c4e679ededd0cc",
       "chain": "base",
       "chainId": 8453,
@@ -30340,6 +31320,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8f9db33cbef86c3e22852759556d443ca1bc2888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A Uniswap v4 hook that implements a 1:1 custom curve for swapping ETH and phiEth (an ETH wrapper token). It intercepts swaps via beforeSwap to directly mint/burn phiEth using deposit/withdraw, blocks all liquidity additions, and only allows ETH/phiEth pools with zero fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -32186,6 +33201,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9c8469803fe4b8ccac3b5ede92449ac9bcb0e888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom swap curve between native ETH and phiETH (a wrapped ETH token). The entire swap is executed in beforeSwap via a delta return: input is taken from the PoolManager, phiETH is minted or burned through the phiEth contract, and output is settled back. Liquidity provision is blocked; the pool functions purely as a fee-free ETH\u2194phiETH conversion mechanism.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -34404,6 +35454,41 @@
   },
   {
     "hook": {
+      "address": "0xa9de6f34f9dcfaa7da90c94155e53d16dcf3c040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "FeeCollectHook",
+      "description": "After each swap, decodes an LP token ID from hookData, increments a per-token trade counter, and every 10 swaps collects fees from the Uniswap V4 position manager and forwards them to a leveraged LP manager contract for processing.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xaa096f558f3d4c9226de77e7cc05f18e180b2544",
       "chain": "base",
       "chainId": 8453,
@@ -34584,6 +35669,41 @@
       "chainId": 8453,
       "name": "PhiEthHooks",
       "description": "Implements a 1:1 custom curve swap between ETH and phiEth (a wrapped ETH token) by taking the full input amount, converting via phiEth.deposit/withdraw, settling the output, and returning a BeforeSwapDelta that no-ops the AMM concentrated liquidity math. Direct liquidity addition to the pool is permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xab41d20b2057bd83a02e229e1c7000016ebb6888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A 1:1 ETH/phiEth custom-curve hook that intercepts swaps in beforeSwap to wrap or unwrap via the phiEth contract, settling directly with the PoolManager and returning a full delta to no-op the AMM. Enforces zero fee and ETH/phiEth-only pool initialization, and reverts on all liquidity additions.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -36084,6 +37204,41 @@
   },
   {
     "hook": {
+      "address": "0xb4523422621cb6787299e4be5659ffc6a48aa888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom-curve swap between ETH and phiEth by intercepting swaps in beforeSwap: takes input from the pool manager, calls phiEth.deposit() or phiEth.withdraw() to convert, then settles output \u2014 bypassing concentrated liquidity entirely. Liquidity addition is permanently blocked via beforeAddLiquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb46d25ffb9c147f5470effdc71559634870b2fdc",
       "chain": "base",
       "chainId": 8453,
@@ -36504,6 +37659,41 @@
   },
   {
     "hook": {
+      "address": "0xb64de205272f396da9b5a19d67655ac821df6888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom-curve hook that implements 1:1 swapping between ETH and phiEth by intercepting swaps in beforeSwap, wrapping/unwrapping ETH through the phiEth contract, and returning a full BeforeSwapDelta to bypass concentrated liquidity pricing. Pool initialization is restricted to ETH/phiEth pairs with zero fee, and direct liquidity addition is blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb675bb9337bf662e6f9484845edaffedfee85040",
       "chain": "base",
       "chainId": 8453,
@@ -36884,6 +38074,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xba3eb6c67e737c0e732f1b2e7bb049d802492888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a custom 1:1 ETH/phiEth swap curve by intercepting swaps entirely in beforeSwap: takes the input token from the PoolManager, converts via phiEth deposit/withdraw, and settles the output back. Blocks direct liquidity addition and restricts pool initialization to zero-fee ETH/phiEth pairs only.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -38184,6 +39409,41 @@
   },
   {
     "hook": {
+      "address": "0xc4557546c16da09f319aab352616b62fdde0a888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom swap curve between ETH and phiETH by intercepting beforeSwap, minting or burning phiETH via deposit/withdraw, and returning a BeforeSwapDelta that bypasses concentrated liquidity. Direct liquidity additions are blocked; only ETH/phiETH pools with zero fee are permitted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc4a1c45a46778e92d6f29efe43958c74b95de888",
       "chain": "base",
       "chainId": 8453,
@@ -38389,6 +39649,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc6bc336cf190c95da16156e873354d11e49d6888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom curve hook that enables 1:1 swapping between ETH and phiEth (a wrapped ETH token) via the beforeSwap delta mechanism, bypassing concentrated liquidity entirely. Adding liquidity directly to the pool is blocked; the hook mints/burns phiEth via deposit/withdraw on every swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -39440,6 +40735,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcd2c185f66ecf9c5860465675be9d8ec86902888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom-curve hook that implements 1:1 ETH\u2194phiETH swaps by taking tokens from the pool manager, calling phiETH deposit/withdraw, and settling back \u2014 bypassing concentrated liquidity entirely. Blocks all direct liquidity additions and restricts pools to ETH/phiETH pairs with zero fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -41054,6 +42384,41 @@
   },
   {
     "hook": {
+      "address": "0xd7f9f611e6076d41bba32622414eb3a94d3aa888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom-curve hook implementing 1:1 ETH\u2194phiEth swapping: intercepts beforeSwap, takes input from PoolManager, converts through the phiEth contract (deposit/withdraw), and settles the output directly without using AMM liquidity. Liquidity additions to the pool are permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd8094e720f00db03ae91cdc7bb5f75e5f8c3a888",
       "chain": "base",
       "chainId": 8453,
@@ -42069,6 +43434,41 @@
   },
   {
     "hook": {
+      "address": "0xe1ebb470c5c095521d6cf4334b06c9f061e5e888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom swap curve for ETH\u2194phiETH pools, bypassing concentrated liquidity by taking input tokens and calling phiEth.deposit/withdraw to produce output. Prevents direct liquidity addition to the pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe215b87b41197463b3ce635210e1443d96e368cc",
       "chain": "base",
       "chainId": 8453,
@@ -42314,6 +43714,41 @@
   },
   {
     "hook": {
+      "address": "0xe491caf8e7877d279ab9a9fe58bb0fe6b8775000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ProjectHook",
+      "description": "A registry hook that stores project metadata (website URL and X/Twitter address) for tokens paired with native ETH. Pools can only be initialized if the token was pre-registered by the owner; the metadata is then stored per pool and emitted as an event.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe5a4f1961bb0d9b3f0e86b5dea6d929240102088",
       "chain": "base",
       "chainId": 8453,
@@ -42419,6 +43854,41 @@
   },
   {
     "hook": {
+      "address": "0xe65433afc27f67e7946a0549a5ba0904e034e888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom curve for ETH/phiEth swaps: beforeSwap takes the input from the PoolManager, calls phiEth.deposit() or phiEth.withdraw() to convert, then settles the output \u2014 fully bypassing concentrated liquidity. Direct liquidity additions are blocked via beforeAddLiquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe6b2b3e59d5df7827eb0a7915675db66ab12a044",
       "chain": "base",
       "chainId": 8453,
@@ -42467,6 +43937,41 @@
       "beforeInitialize": true,
       "afterInitialize": false,
       "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe6f4bf77a36282e6c1f11f5493df74a9a06a8088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "P2Hook",
+      "description": "A swap-tax hook for the $P2/WETH pool on Base that deducts a 5% tax on each swap's input amount via beforeSwap delta. WETH taxes are split 40/40/20 to buyback, claim pool (lottery), and ops wallets; $P2 taxes go entirely to a buyback vault for burning. Certain addresses can be excluded from tax by the owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
@@ -43329,6 +44834,41 @@
   },
   {
     "hook": {
+      "address": "0xefa2b855a476b947a4c497893ecc727a60972888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 constant-price swap between ETH and phiEth via a custom curve using beforeSwap delta returns. On each swap, the hook takes the input from the pool manager, mints or burns phiEth accordingly, and settles the output \u2014 bypassing concentrated liquidity entirely. Direct liquidity addition is blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xf001cf7c51d873d8c78f7dd9736e6259e753e888",
       "chain": "base",
       "chainId": 8453,
@@ -43679,11 +45219,81 @@
   },
   {
     "hook": {
+      "address": "0xf2ea8880d1ecb9b8fe5ef13a8c1f5f6195736888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 ETH/phiEth swap hook with a custom curve, bypassing concentrated liquidity entirely. Swaps mint or burn phiEth via deposit/withdraw on the phiEth contract; liquidity additions are permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xf30f437862e66fe274bdb95906ac7a77a2746888",
       "chain": "base",
       "chainId": 8453,
       "name": "PhiEthHooks",
       "description": "A custom-curve hook for ETH/phiETH pools that enforces a 1:1 exchange rate: beforeSwap takes the input, calls phiETH deposit or withdraw to convert it, then settles the output, bypassing the concentrated liquidity mechanism entirely. Liquidity addition is blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf3c5692a695fc8814080c0a7064ee07df9a5a888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "A custom-curve hook that enables 1:1 swaps between ETH and phiEth (a wrapped ETH token) by intercepting beforeSwap, taking the full input from the PoolManager, calling phiEth.deposit/withdraw to convert, and settling the output directly \u2014 bypassing concentrated liquidity entirely. Direct liquidity addition to the pool is permanently blocked.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -44169,6 +45779,41 @@
   },
   {
     "hook": {
+      "address": "0xf6cdd0049c706ed104f9b77eb8bf8e294432e888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 ETH\u2194phiEth custom swap curve via beforeSwap: takes the full input amount, converts using phiEth.deposit()/withdraw(), and settles the equivalent output directly to PoolManager via BeforeSwapDelta, bypassing concentrated liquidity. All direct liquidity additions to the pool are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xF6d0A13609bb5779Bc5D639F2bA3Bfda83D4D0C0",
       "chain": "base",
       "chainId": 8453,
@@ -44449,6 +46094,41 @@
   },
   {
     "hook": {
+      "address": "0xf8d53537b4d8ef5e7da488b1be730783b4902888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Custom curve hook that implements 1:1 ETH\u2194phiEth swaps by bypassing the concentrated liquidity AMM. In beforeSwap, it takes the input from the PoolManager, converts via phiEth.deposit()/withdraw(), and settles the output \u2014 returning a full BeforeSwapDelta to no-op the AMM. Liquidity addition is permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xf909c86a67b28fc70c63ab2b816f924235996888",
       "chain": "base",
       "chainId": 8453,
@@ -44651,6 +46331,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf9e39eb8383ea209610d1355d3672be5c1caa888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom swap curve between ETH and phiEth (an ETH wrapper), using beforeSwapReturnsDelta to handle swaps entirely without concentrated liquidity. Liquidity addition is blocked; pool must be initialized with the ETH/phiEth pair at zero fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -44961,6 +46676,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfb82010f9b33f3007a789ea815d6c21ce94fe044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "NewTknHook",
+      "description": "Uniswap v4 hook for a single ETH/token pool that restricts initialization to one pool and is designed to collect configurable buy/sell fees via afterSwap with a delta return. The fee collection logic is currently commented out, so afterSwap always returns a zero delta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -45425,6 +47175,41 @@
       "requiresCustomSwapData": true,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfedcfd1f3c5253e692de9fe5fb27b55a2d9ea888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PhiEthHooks",
+      "description": "Implements a 1:1 custom-curve swap between ETH and phiEth, a wrapped ETH token. In beforeSwap, the hook takes the input from the pool manager, calls phiEth.deposit() or phiEth.withdraw() to convert, and settles the output, returning a delta that fully bypasses the standard AMM curve. Liquidity additions to the pool are permanently blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
